@@ -1,0 +1,83 @@
+﻿[0012 ms] [JobGenerator] J01 ARRIVED
+[0026 ms] [Scheduler] J01 READY
+[0037 ms] [Worker-2] J01 START cpu=2500ms
+[0109 ms] [JobGenerator] J02 ARRIVED
+[0109 ms] [Scheduler] J02 READY
+[0109 ms] [Worker-3] J02 START cpu=2400ms
+[0209 ms] [JobGenerator] J03 ARRIVED
+[0209 ms] [Scheduler] J03 READY
+[0209 ms] [Worker-1] J03 START cpu=2500ms
+[0309 ms] [JobGenerator] J04 ARRIVED
+[0309 ms] [Scheduler] J04 READY
+[0409 ms] [JobGenerator] J05 ARRIVED
+[0409 ms] [Scheduler] J05 READY
+[0509 ms] [JobGenerator] J06 ARRIVED
+[0509 ms] [Scheduler] J06 READY
+[1008 ms] [JobGenerator] J07 ARRIVED
+[1008 ms] [Scheduler] J07 READY
+[1028 ms] [Monitor] STATUS ready=4 running=3 completed=0 printer=0/1 database=0/2
+[1210 ms] [JobGenerator] J08 ARRIVED
+[1210 ms] [Scheduler] J08 READY
+[1410 ms] [JobGenerator] J09 ARRIVED
+[1410 ms] [Scheduler] J09 READY
+[1609 ms] [JobGenerator] J10 ARRIVED
+[1609 ms] [Scheduler] J10 READY
+[2029 ms] [Monitor] STATUS ready=7 running=3 completed=0 printer=0/1 database=0/2
+[2512 ms] [Worker-3] J02 WAIT resource=PRINTER
+[2515 ms] [Worker-3] J02 ACQUIRE resource=PRINTER wait=2ms
+[2538 ms] [Worker-2] J01 COMPLETE
+[2538 ms] [Worker-2] J07 START cpu=700ms
+[2711 ms] [Worker-1] J03 COMPLETE
+[2711 ms] [Worker-1] J08 START cpu=600ms
+[3045 ms] [Monitor] STATUS ready=5 running=3 completed=2 printer=1/1 database=0/2
+[3249 ms] [Worker-2] J07 WAIT resource=PRINTER
+[3312 ms] [Worker-1] J08 WAIT resource=PRINTER
+[3718 ms] [Worker-2] J07 ACQUIRE resource=PRINTER wait=469ms
+[3718 ms] [Worker-3] J02 RELEASE resource=PRINTER
+[3718 ms] [Worker-3] J02 COMPLETE
+[3718 ms] [Worker-3] J09 START cpu=700ms
+[4047 ms] [Monitor] STATUS ready=4 running=3 completed=3 printer=1/1 database=0/2
+[4428 ms] [Worker-3] J09 WAIT resource=DATABASE
+[4428 ms] [Worker-3] J09 ACQUIRE resource=DATABASE wait=0ms
+[4632 ms] [Worker-2] J07 RELEASE resource=PRINTER
+[4632 ms] [Worker-2] J07 COMPLETE
+[4632 ms] [Worker-1] J08 ACQUIRE resource=PRINTER wait=1320ms
+[4632 ms] [Worker-2] J10 START cpu=600ms
+[5055 ms] [Monitor] STATUS ready=3 running=3 completed=4 printer=1/1 database=1/2
+[5243 ms] [Worker-2] J10 COMPLETE
+[5243 ms] [Worker-2] J06 START cpu=2400ms
+[5338 ms] [Worker-3] J09 RELEASE resource=DATABASE
+[5338 ms] [Worker-3] J09 COMPLETE
+[5338 ms] [Worker-3] J04 START cpu=2400ms
+[5544 ms] [Worker-1] J08 RELEASE resource=PRINTER
+[5544 ms] [Worker-1] J08 COMPLETE
+[5544 ms] [Worker-1] J05 START cpu=2500ms
+[6064 ms] [Monitor] STATUS ready=0 running=3 completed=7 printer=0/1 database=0/2
+[7644 ms] [Worker-2] J06 WAIT resource=DATABASE
+[7644 ms] [Worker-2] J06 ACQUIRE resource=DATABASE wait=0ms
+[7754 ms] [Worker-3] J04 WAIT resource=DATABASE
+[7754 ms] [Worker-3] J04 ACQUIRE resource=DATABASE wait=0ms
+[8054 ms] [Worker-1] J05 WAIT resource=PRINTER
+[8054 ms] [Worker-1] J05 ACQUIRE resource=PRINTER wait=0ms
+[8070 ms] [Monitor] STATUS ready=0 running=3 completed=7 printer=1/1 database=2/2
+[8649 ms] [Worker-2] J06 RELEASE resource=DATABASE
+[8649 ms] [Worker-2] J06 COMPLETE
+[8760 ms] [Worker-3] J04 RELEASE resource=DATABASE
+[8760 ms] [Worker-3] J04 COMPLETE
+[9076 ms] [Monitor] STATUS ready=0 running=1 completed=9 printer=1/1 database=0/2
+[9265 ms] [Worker-1] J05 RELEASE resource=PRINTER
+[9265 ms] [Worker-1] J05 COMPLETE
+Loaded jobs: 10
+Policy: priority
+Execution order:
+J01 state=COMPLETED start=27ms done=2538ms
+J02 state=COMPLETED start=109ms done=3718ms
+J03 state=COMPLETED start=209ms done=2711ms
+J07 state=COMPLETED start=2538ms done=4632ms
+J08 state=COMPLETED start=2711ms done=5544ms
+J09 state=COMPLETED start=3718ms done=5338ms
+J10 state=COMPLETED start=4632ms done=5243ms
+J06 state=COMPLETED start=5243ms done=8649ms
+J04 state=COMPLETED start=5338ms done=8760ms
+J05 state=COMPLETED start=5544ms done=9265ms
+Summary: completed=10/10 turnaround=4961ms waiting=2328ms resourceWait=256ms throughput=1.08 jobs/s

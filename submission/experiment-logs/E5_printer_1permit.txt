@@ -1,0 +1,58 @@
+﻿[0012 ms] [JobGenerator] P01 ARRIVED
+[0027 ms] [Scheduler] P01 READY
+[0032 ms] [Worker-2] P01 START cpu=250ms
+[0108 ms] [JobGenerator] P02 ARRIVED
+[0108 ms] [Scheduler] P02 READY
+[0109 ms] [Worker-3] P02 START cpu=300ms
+[0209 ms] [JobGenerator] P03 ARRIVED
+[0209 ms] [Scheduler] P03 READY
+[0209 ms] [Worker-1] P03 START cpu=250ms
+[0293 ms] [Worker-2] P01 WAIT resource=PRINTER
+[0301 ms] [Worker-2] P01 ACQUIRE resource=PRINTER wait=11ms
+[0308 ms] [JobGenerator] P04 ARRIVED
+[0308 ms] [Scheduler] P04 READY
+[0408 ms] [JobGenerator] P05 ARRIVED
+[0408 ms] [Scheduler] P05 READY
+[0410 ms] [Worker-3] P02 WAIT resource=PRINTER
+[0461 ms] [Worker-1] P03 WAIT resource=PRINTER
+[0508 ms] [JobGenerator] P06 ARRIVED
+[0508 ms] [Scheduler] P06 READY
+[1029 ms] [Monitor] STATUS ready=3 running=3 completed=0 printer=1/1 database=0/2
+[1502 ms] [Worker-3] P02 ACQUIRE resource=PRINTER wait=1092ms
+[1502 ms] [Worker-2] P01 RELEASE resource=PRINTER
+[1502 ms] [Worker-2] P01 COMPLETE
+[1503 ms] [Worker-2] P05 START cpu=250ms
+[1755 ms] [Worker-2] P05 WAIT resource=PRINTER
+[2038 ms] [Monitor] STATUS ready=2 running=3 completed=1 printer=1/1 database=0/2
+[2713 ms] [Worker-1] P03 ACQUIRE resource=PRINTER wait=2252ms
+[2713 ms] [Worker-3] P02 RELEASE resource=PRINTER
+[2713 ms] [Worker-3] P02 COMPLETE
+[2713 ms] [Worker-3] P04 START cpu=300ms
+[3028 ms] [Worker-3] P04 WAIT resource=PRINTER
+[3044 ms] [Monitor] STATUS ready=1 running=3 completed=2 printer=1/1 database=0/2
+[3920 ms] [Worker-1] P03 RELEASE resource=PRINTER
+[3920 ms] [Worker-2] P05 ACQUIRE resource=PRINTER wait=2165ms
+[3920 ms] [Worker-1] P03 COMPLETE
+[3921 ms] [Worker-1] P06 START cpu=300ms
+[4046 ms] [Monitor] STATUS ready=0 running=3 completed=3 printer=1/1 database=0/2
+[4236 ms] [Worker-1] P06 WAIT resource=PRINTER
+[5125 ms] [Worker-2] P05 RELEASE resource=PRINTER
+[5125 ms] [Worker-2] P05 COMPLETE
+[5125 ms] [Worker-3] P04 ACQUIRE resource=PRINTER wait=2097ms
+[6071 ms] [Monitor] STATUS ready=0 running=2 completed=4 printer=1/1 database=0/2
+[6339 ms] [Worker-3] P04 RELEASE resource=PRINTER
+[6339 ms] [Worker-3] P04 COMPLETE
+[6339 ms] [Worker-1] P06 ACQUIRE resource=PRINTER wait=2103ms
+[7078 ms] [Monitor] STATUS ready=0 running=1 completed=5 printer=1/1 database=0/2
+[7551 ms] [Worker-1] P06 RELEASE resource=PRINTER
+[7551 ms] [Worker-1] P06 COMPLETE
+Loaded jobs: 6
+Policy: priority
+Execution order:
+P01 state=COMPLETED start=27ms done=1502ms
+P02 state=COMPLETED start=108ms done=2713ms
+P03 state=COMPLETED start=209ms done=3920ms
+P05 state=COMPLETED start=1503ms done=5125ms
+P04 state=COMPLETED start=2713ms done=6339ms
+P06 state=COMPLETED start=3920ms done=7551ms
+Summary: completed=6/6 turnaround=4266ms waiting=1155ms resourceWait=1620ms throughput=0.79 jobs/s
