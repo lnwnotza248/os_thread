@@ -1,0 +1,3 @@
+id,arrivalMs,priority,workMs,resource,resourceMs
+DB_HOLDER,0,1,0,DATABASE,1200
+PARTIAL_ACQUIRE,0,1,50,PRINTER+DATABASE,100

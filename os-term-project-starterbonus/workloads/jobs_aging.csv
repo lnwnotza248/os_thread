@@ -1,0 +1,6 @@
+id,arrivalMs,priority,workMs,resource,resourceMs
+BLOCK,0,1,7000,NONE,0
+LOW,100,5,300,NONE,0
+HIGH1,6000,1,300,NONE,0
+HIGH2,6100,1,300,NONE,0
+HIGH3,6200,1,300,NONE,0
