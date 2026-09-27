@@ -1,0 +1,41 @@
+[      28 ms] [main      ] SYSTEM_START       workload=C:\Users\not24\OneDrive\Desktop\os-term-project-starterbonus\workloads\jobs_aging.csv policy=priority workers=1 printer=1 database=1 aging=on dynamic=false virtual=false resourceTimeoutMs=0
+[      34 ms] [main      ] SYSTEM             โหลดงานได้ 5 ชิ้น
+[      43 ms] [generator ] JOB_ARRIVED        job=BLOCK priority=1 work=7000ms
+[      43 ms] [worker-poo] WORKER_POOL        active=1 target=1
+[      48 ms] [worker-1  ] JOB_STARTED        job=BLOCK priority=1
+[      49 ms] [monitor   ] MONITOR            ready=0 running=0 completed=0 printer=0/1 database=0/1
+[     102 ms] [generator ] JOB_ARRIVED        job=LOW priority=5 work=300ms
+[    1050 ms] [monitor   ] MONITOR            ready=1 running=1 completed=0 printer=0/1 database=0/1
+[    2051 ms] [monitor   ] MONITOR            ready=1 running=1 completed=0 printer=0/1 database=0/1
+[    3052 ms] [monitor   ] MONITOR            ready=1 running=1 completed=0 printer=0/1 database=0/1
+[    4053 ms] [monitor   ] MONITOR            ready=1 running=1 completed=0 printer=0/1 database=0/1
+[    5055 ms] [monitor   ] MONITOR            ready=1 running=1 completed=0 printer=0/1 database=0/1
+[    6002 ms] [generator ] JOB_ARRIVED        job=HIGH1 priority=1 work=300ms
+[    6056 ms] [monitor   ] MONITOR            ready=2 running=1 completed=0 printer=0/1 database=0/1
+[    6101 ms] [generator ] JOB_ARRIVED        job=HIGH2 priority=1 work=300ms
+[    6202 ms] [generator ] JOB_ARRIVED        job=HIGH3 priority=1 work=300ms
+[    7049 ms] [worker-1  ] WORK_FINISHED      job=BLOCK
+[    7050 ms] [worker-1  ] JOB_COMPLETED      job=BLOCK
+[    7050 ms] [worker-1  ] JOB_STARTED        job=LOW priority=5
+[    7057 ms] [monitor   ] MONITOR            ready=3 running=1 completed=1 printer=0/1 database=0/1
+[    7360 ms] [worker-1  ] WORK_FINISHED      job=LOW
+[    7360 ms] [worker-1  ] JOB_COMPLETED      job=LOW
+[    7360 ms] [worker-1  ] JOB_STARTED        job=HIGH1 priority=1
+[    7672 ms] [worker-1  ] WORK_FINISHED      job=HIGH1
+[    7673 ms] [worker-1  ] JOB_COMPLETED      job=HIGH1
+[    7673 ms] [worker-1  ] JOB_STARTED        job=HIGH2 priority=1
+[    7983 ms] [worker-1  ] WORK_FINISHED      job=HIGH2
+[    7984 ms] [worker-1  ] JOB_COMPLETED      job=HIGH2
+[    7984 ms] [worker-1  ] JOB_STARTED        job=HIGH3 priority=1
+[    8062 ms] [monitor   ] MONITOR            ready=0 running=1 completed=4 printer=0/1 database=0/1
+[    8295 ms] [worker-1  ] WORK_FINISHED      job=HIGH3
+[    8296 ms] [worker-1  ] JOB_COMPLETED      job=HIGH3
+===== SUMMARY =====
+Completed: 5/5
+Cancelled: 0
+Average Waiting Time: 2332 ms
+Average Total Queue Waiting Time: 2332 ms
+Average Turnaround Time: 3982 ms
+Throughput: 0.60 jobs/s
+Average Resource Wait Time: 0 ms
+[    8413 ms] [main      ] SYSTEM_STOP        completed=5 cancelled=0 total=5

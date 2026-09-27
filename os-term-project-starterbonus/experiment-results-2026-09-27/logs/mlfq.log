@@ -1,0 +1,25 @@
+[      30 ms] [main      ] SYSTEM_START       workload=C:\Users\not24\OneDrive\Desktop\os-term-project-starterbonus\workloads\jobs_mlfq.csv policy=mlfq workers=1 printer=1 database=1 aging=off dynamic=false virtual=false resourceTimeoutMs=0
+[      33 ms] [main      ] SYSTEM             โหลดงานได้ 2 ชิ้น
+[      41 ms] [generator ] JOB_ARRIVED        job=LONG priority=1 work=650ms
+[      42 ms] [worker-poo] WORKER_POOL        active=1 target=1
+[      46 ms] [worker-1  ] JOB_STARTED        job=LONG priority=1
+[      47 ms] [monitor   ] MONITOR            ready=0 running=0 completed=0 printer=0/1 database=0/1
+[      51 ms] [generator ] JOB_ARRIVED        job=SHORT priority=5 work=50ms
+[     152 ms] [worker-1  ] JOB_REQUEUED       job=LONG level=1 remainingWorkMs=550
+[     152 ms] [worker-1  ] JOB_STARTED        job=SHORT priority=5
+[     218 ms] [worker-1  ] WORK_FINISHED      job=SHORT
+[     219 ms] [worker-1  ] JOB_COMPLETED      job=SHORT
+[     219 ms] [worker-1  ] JOB_RESUMED        job=LONG level=1 remainingWorkMs=550
+[     421 ms] [worker-1  ] JOB_REQUEUED       job=LONG level=2 remainingWorkMs=350
+[     421 ms] [worker-1  ] JOB_RESUMED        job=LONG level=2 remainingWorkMs=350
+[     780 ms] [worker-1  ] WORK_FINISHED      job=LONG
+[     780 ms] [worker-1  ] JOB_COMPLETED      job=LONG
+===== SUMMARY =====
+Completed: 2/2
+Cancelled: 0
+Average Waiting Time: 51 ms
+Average Total Queue Waiting Time: 87 ms
+Average Turnaround Time: 453 ms
+Throughput: 2.56 jobs/s
+Average Resource Wait Time: 0 ms
+[     892 ms] [main      ] SYSTEM_STOP        completed=2 cancelled=0 total=2

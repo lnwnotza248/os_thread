@@ -1,0 +1,22 @@
+PASS: New job starts at level 0 / 100ms
+PASS: New level-0 job precedes requeued level-1 job
+PASS: Requeue preserves remaining work / level 1 uses 200ms
+PASS: Level 2 uses 400ms
+PASS: Demotion stops at level 2
+PASS: Multi-worker job completes once with zero remaining work
+PASS: Printer permit returned
+REQUEUE HANDOFF TRACE:
+[       9 ms] [test-2    ] JOB_STARTED        job=RACE priority=1
+[     124 ms] [test-2    ] JOB_REQUEUED       job=RACE level=1 remainingWorkMs=250
+[     124 ms] [test-1    ] JOB_RESUMED        job=RACE level=1 remainingWorkMs=250
+[     325 ms] [test-1    ] JOB_REQUEUED       job=RACE level=2 remainingWorkMs=50
+[     326 ms] [test-1    ] JOB_RESUMED        job=RACE level=2 remainingWorkMs=50
+[     388 ms] [test-1    ] WORK_FINISHED      job=RACE
+[     392 ms] [test-1    ] RESOURCE_WAIT      job=RACE resource=PRINTER
+[     397 ms] [test-1    ] RESOURCE_ACQUIRED  job=RACE resource=PRINTER waited=1ms
+[     420 ms] [test-1    ] RESOURCE_RELEASED  job=RACE resource=PRINTER
+[     421 ms] [test-1    ] JOB_COMPLETED      job=RACE
+
+PASS: Requeue logs precede resume and completion despite delayed handoff
+PASS: Requeue logs preserve the correct remaining-work snapshots
+PASS: First-start waiting and total queue waiting are separate

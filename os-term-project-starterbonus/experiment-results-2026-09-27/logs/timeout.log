@@ -1,0 +1,29 @@
+[      35 ms] [main      ] SYSTEM_START       workload=C:\Users\not24\OneDrive\Desktop\os-term-project-starterbonus\workloads\jobs_timeout.csv policy=fcfs workers=2 printer=1 database=1 aging=off dynamic=false virtual=false resourceTimeoutMs=100
+[      41 ms] [main      ] SYSTEM             โหลดงานได้ 2 ชิ้น
+[      49 ms] [generator ] JOB_ARRIVED        job=DB_HOLDER priority=1 work=0ms resource=[DATABASE](1200ms)
+[      49 ms] [generator ] JOB_ARRIVED        job=PARTIAL_ACQUIRE priority=1 work=50ms resource=[PRINTER, DATABASE](100ms)
+[      50 ms] [worker-poo] WORKER_POOL        active=2 target=2
+[      55 ms] [worker-1  ] JOB_STARTED        job=DB_HOLDER priority=1
+[      55 ms] [worker-2  ] JOB_STARTED        job=PARTIAL_ACQUIRE priority=1
+[      55 ms] [worker-1  ] WORK_FINISHED      job=DB_HOLDER
+[      56 ms] [monitor   ] MONITOR            ready=0 running=0 completed=0 printer=0/1 database=0/1
+[      59 ms] [worker-1  ] RESOURCE_WAIT      job=DB_HOLDER resource=DATABASE
+[      65 ms] [worker-1  ] RESOURCE_ACQUIRED  job=DB_HOLDER resource=DATABASE waited=1ms
+[     116 ms] [worker-2  ] WORK_FINISHED      job=PARTIAL_ACQUIRE
+[     116 ms] [worker-2  ] RESOURCE_WAIT      job=PARTIAL_ACQUIRE resource=PRINTER
+[     116 ms] [worker-2  ] RESOURCE_ACQUIRED  job=PARTIAL_ACQUIRE resource=PRINTER waited=0ms
+[     116 ms] [worker-2  ] RESOURCE_WAIT      job=PARTIAL_ACQUIRE resource=DATABASE
+[     225 ms] [worker-2  ] RESOURCE_RELEASED  job=PARTIAL_ACQUIRE resource=PRINTER
+[     225 ms] [worker-2  ] JOB_CANCELLED      job=PARTIAL_ACQUIRE reason=resource-timeout=DATABASE released=[PRINTER]
+[    1070 ms] [monitor   ] MONITOR            ready=0 running=1 completed=0 printer=0/1 database=1/1
+[    1274 ms] [worker-1  ] RESOURCE_RELEASED  job=DB_HOLDER resource=DATABASE
+[    1275 ms] [worker-1  ] JOB_COMPLETED      job=DB_HOLDER
+===== SUMMARY =====
+Completed: 1/2
+Cancelled: 1
+Average Waiting Time: 1 ms
+Average Total Queue Waiting Time: 1 ms
+Average Turnaround Time: 1225 ms
+Throughput: 0.78 jobs/s
+Average Resource Wait Time: 1 ms
+[    1390 ms] [main      ] SYSTEM_STOP        completed=1 cancelled=1 total=2

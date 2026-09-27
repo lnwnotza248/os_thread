@@ -1,0 +1,13 @@
+PASS: slow-log terminal state
+PASS: 300ms WAIT log excluded: 2ms
+PASS: Completed once
+PASS: Permits restored
+PASS: timeout terminal state
+PASS: timeout wait retained: 109ms
+PASS: Cancelled once
+PASS: Permits restored
+PASS: Reached acquire
+PASS: interrupt terminal state
+PASS: interrupt wait retained: 134ms
+PASS: Cancelled once
+PASS: Permits restored

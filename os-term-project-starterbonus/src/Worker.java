@@ -112,15 +112,28 @@ public class Worker extends Thread {
         List<ResourceType> acquired = new ArrayList<>();
         try {
             if (!job.resources.isEmpty()) {
-                job.resourceWaitStartTime = logger.now();
-
                 for (ResourceType resource : job.resources) {
-                    long waitStart = logger.now();
                     logger.resourceWaitStarted(job, resource);
-                    if (resourceTimeoutMs == 0) {
-                        resources.acquire(resource);
-                        acquired.add(resource);
-                    } else if (resources.tryAcquire(resource, resourceTimeoutMs)) {
+                    // Exclude WAIT logging from the measured semaphore wait.
+                    long waitStart = logger.now();
+                    if (job.resourceWaitStartTime < 0) {
+                        job.resourceWaitStartTime = waitStart;
+                    }
+                    boolean obtained;
+                    long waitedMs;
+                    try {
+                        if (resourceTimeoutMs == 0) {
+                            resources.acquire(resource);
+                            obtained = true;
+                        } else {
+                            obtained = resources.tryAcquire(resource, resourceTimeoutMs);
+                        }
+                    } finally {
+                        // Preserve elapsed wait even on timeout or interruption.
+                        waitedMs = logger.now() - waitStart;
+                        job.resourceWaitMs += waitedMs;
+                    }
+                    if (obtained) {
                         acquired.add(resource);
                     } else {
                         String releasedResources = acquired.toString();
@@ -131,8 +144,6 @@ public class Worker extends Thread {
                         statistics.recordCancellation(job);
                         return;
                     }
-                    long waitedMs = logger.now() - waitStart;
-                    job.resourceWaitMs += waitedMs;
                     logger.resourceAcquired(job, resource, waitedMs);
                 }
 

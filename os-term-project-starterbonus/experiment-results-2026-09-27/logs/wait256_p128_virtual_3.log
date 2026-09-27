@@ -1,0 +1,1805 @@
+[      35 ms] [main      ] SYSTEM_START       workload=C:\Users\not24\OneDrive\Desktop\os-term-project-starterbonus\workloads\jobs_wait256.csv policy=fcfs workers=256 printer=128 database=128 aging=off dynamic=false virtual=true resourceTimeoutMs=0
+[      41 ms] [main      ] SYSTEM             โหลดงานได้ 256 ชิ้น
+[      52 ms] [generator ] JOB_ARRIVED        job=W001 priority=1 work=20ms resource=[PRINTER](40ms)
+[      52 ms] [generator ] JOB_ARRIVED        job=W002 priority=1 work=20ms resource=[DATABASE](40ms)
+[      52 ms] [generator ] JOB_ARRIVED        job=W003 priority=1 work=20ms resource=[PRINTER](40ms)
+[      52 ms] [generator ] JOB_ARRIVED        job=W004 priority=1 work=20ms resource=[DATABASE](40ms)
+[      52 ms] [generator ] JOB_ARRIVED        job=W005 priority=1 work=20ms resource=[PRINTER](40ms)
+[      52 ms] [generator ] JOB_ARRIVED        job=W006 priority=1 work=20ms resource=[DATABASE](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W007 priority=1 work=20ms resource=[PRINTER](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W008 priority=1 work=20ms resource=[DATABASE](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W009 priority=1 work=20ms resource=[PRINTER](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W010 priority=1 work=20ms resource=[DATABASE](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W011 priority=1 work=20ms resource=[PRINTER](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W012 priority=1 work=20ms resource=[DATABASE](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W013 priority=1 work=20ms resource=[PRINTER](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W014 priority=1 work=20ms resource=[DATABASE](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W015 priority=1 work=20ms resource=[PRINTER](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W016 priority=1 work=20ms resource=[DATABASE](40ms)
+[      53 ms] [generator ] JOB_ARRIVED        job=W017 priority=1 work=20ms resource=[PRINTER](40ms)
+[      54 ms] [generator ] JOB_ARRIVED        job=W018 priority=1 work=20ms resource=[DATABASE](40ms)
+[      54 ms] [generator ] JOB_ARRIVED        job=W019 priority=1 work=20ms resource=[PRINTER](40ms)
+[      54 ms] [generator ] JOB_ARRIVED        job=W020 priority=1 work=20ms resource=[DATABASE](40ms)
+[      54 ms] [generator ] JOB_ARRIVED        job=W021 priority=1 work=20ms resource=[PRINTER](40ms)
+[      54 ms] [generator ] JOB_ARRIVED        job=W022 priority=1 work=20ms resource=[DATABASE](40ms)
+[      54 ms] [generator ] JOB_ARRIVED        job=W023 priority=1 work=20ms resource=[PRINTER](40ms)
+[      54 ms] [generator ] JOB_ARRIVED        job=W024 priority=1 work=20ms resource=[DATABASE](40ms)
+[      55 ms] [generator ] JOB_ARRIVED        job=W025 priority=1 work=20ms resource=[PRINTER](40ms)
+[      55 ms] [generator ] JOB_ARRIVED        job=W026 priority=1 work=20ms resource=[DATABASE](40ms)
+[      55 ms] [generator ] JOB_ARRIVED        job=W027 priority=1 work=20ms resource=[PRINTER](40ms)
+[      55 ms] [generator ] JOB_ARRIVED        job=W028 priority=1 work=20ms resource=[DATABASE](40ms)
+[      55 ms] [generator ] JOB_ARRIVED        job=W029 priority=1 work=20ms resource=[PRINTER](40ms)
+[      55 ms] [generator ] JOB_ARRIVED        job=W030 priority=1 work=20ms resource=[DATABASE](40ms)
+[      56 ms] [generator ] JOB_ARRIVED        job=W031 priority=1 work=20ms resource=[PRINTER](40ms)
+[      56 ms] [generator ] JOB_ARRIVED        job=W032 priority=1 work=20ms resource=[DATABASE](40ms)
+[      56 ms] [generator ] JOB_ARRIVED        job=W033 priority=1 work=20ms resource=[PRINTER](40ms)
+[      56 ms] [generator ] JOB_ARRIVED        job=W034 priority=1 work=20ms resource=[DATABASE](40ms)
+[      56 ms] [generator ] JOB_ARRIVED        job=W035 priority=1 work=20ms resource=[PRINTER](40ms)
+[      56 ms] [generator ] JOB_ARRIVED        job=W036 priority=1 work=20ms resource=[DATABASE](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W037 priority=1 work=20ms resource=[PRINTER](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W038 priority=1 work=20ms resource=[DATABASE](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W039 priority=1 work=20ms resource=[PRINTER](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W040 priority=1 work=20ms resource=[DATABASE](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W041 priority=1 work=20ms resource=[PRINTER](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W042 priority=1 work=20ms resource=[DATABASE](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W043 priority=1 work=20ms resource=[PRINTER](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W044 priority=1 work=20ms resource=[DATABASE](40ms)
+[      57 ms] [generator ] JOB_ARRIVED        job=W045 priority=1 work=20ms resource=[PRINTER](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W046 priority=1 work=20ms resource=[DATABASE](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W047 priority=1 work=20ms resource=[PRINTER](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W048 priority=1 work=20ms resource=[DATABASE](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W049 priority=1 work=20ms resource=[PRINTER](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W050 priority=1 work=20ms resource=[DATABASE](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W051 priority=1 work=20ms resource=[PRINTER](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W052 priority=1 work=20ms resource=[DATABASE](40ms)
+[      58 ms] [generator ] JOB_ARRIVED        job=W053 priority=1 work=20ms resource=[PRINTER](40ms)
+[      59 ms] [generator ] JOB_ARRIVED        job=W054 priority=1 work=20ms resource=[DATABASE](40ms)
+[      59 ms] [generator ] JOB_ARRIVED        job=W055 priority=1 work=20ms resource=[PRINTER](40ms)
+[      59 ms] [worker-3  ] JOB_STARTED        job=W003 priority=1
+[      59 ms] [worker-11 ] JOB_STARTED        job=W010 priority=1
+[      59 ms] [worker-5  ] JOB_STARTED        job=W005 priority=1
+[      59 ms] [worker-7  ] JOB_STARTED        job=W007 priority=1
+[      59 ms] [worker-4  ] JOB_STARTED        job=W004 priority=1
+[      59 ms] [worker-12 ] JOB_STARTED        job=W012 priority=1
+[      59 ms] [worker-2  ] JOB_STARTED        job=W002 priority=1
+[      59 ms] [worker-6  ] JOB_STARTED        job=W006 priority=1
+[      59 ms] [generator ] JOB_ARRIVED        job=W056 priority=1 work=20ms resource=[DATABASE](40ms)
+[      59 ms] [worker-10 ] JOB_STARTED        job=W011 priority=1
+[      59 ms] [worker-8  ] JOB_STARTED        job=W008 priority=1
+[      59 ms] [worker-9  ] JOB_STARTED        job=W009 priority=1
+[      59 ms] [worker-1  ] JOB_STARTED        job=W001 priority=1
+[      60 ms] [generator ] JOB_ARRIVED        job=W057 priority=1 work=20ms resource=[PRINTER](40ms)
+[      61 ms] [generator ] JOB_ARRIVED        job=W058 priority=1 work=20ms resource=[DATABASE](40ms)
+[      61 ms] [generator ] JOB_ARRIVED        job=W059 priority=1 work=20ms resource=[PRINTER](40ms)
+[      61 ms] [generator ] JOB_ARRIVED        job=W060 priority=1 work=20ms resource=[DATABASE](40ms)
+[      61 ms] [generator ] JOB_ARRIVED        job=W061 priority=1 work=20ms resource=[PRINTER](40ms)
+[      61 ms] [generator ] JOB_ARRIVED        job=W062 priority=1 work=20ms resource=[DATABASE](40ms)
+[      61 ms] [generator ] JOB_ARRIVED        job=W063 priority=1 work=20ms resource=[PRINTER](40ms)
+[      62 ms] [generator ] JOB_ARRIVED        job=W064 priority=1 work=20ms resource=[DATABASE](40ms)
+[      62 ms] [generator ] JOB_ARRIVED        job=W065 priority=1 work=20ms resource=[PRINTER](40ms)
+[      62 ms] [generator ] JOB_ARRIVED        job=W066 priority=1 work=20ms resource=[DATABASE](40ms)
+[      62 ms] [monitor   ] MONITOR            ready=0 running=0 completed=0 printer=0/128 database=0/128
+[      63 ms] [generator ] JOB_ARRIVED        job=W067 priority=1 work=20ms resource=[PRINTER](40ms)
+[      63 ms] [worker-poo] WORKER_POOL        active=256 target=256
+[      63 ms] [generator ] JOB_ARRIVED        job=W068 priority=1 work=20ms resource=[DATABASE](40ms)
+[      63 ms] [generator ] JOB_ARRIVED        job=W069 priority=1 work=20ms resource=[PRINTER](40ms)
+[      63 ms] [worker-19 ] JOB_STARTED        job=W016 priority=1
+[      63 ms] [worker-20 ] JOB_STARTED        job=W017 priority=1
+[      63 ms] [worker-23 ] JOB_STARTED        job=W020 priority=1
+[      63 ms] [worker-24 ] JOB_STARTED        job=W021 priority=1
+[      63 ms] [worker-28 ] JOB_STARTED        job=W027 priority=1
+[      63 ms] [generator ] JOB_ARRIVED        job=W070 priority=1 work=20ms resource=[DATABASE](40ms)
+[      63 ms] [worker-13 ] JOB_STARTED        job=W013 priority=1
+[      63 ms] [worker-32 ] JOB_STARTED        job=W029 priority=1
+[      63 ms] [generator ] JOB_ARRIVED        job=W071 priority=1 work=20ms resource=[PRINTER](40ms)
+[      63 ms] [worker-31 ] JOB_STARTED        job=W028 priority=1
+[      63 ms] [worker-26 ] JOB_STARTED        job=W023 priority=1
+[      64 ms] [generator ] JOB_ARRIVED        job=W072 priority=1 work=20ms resource=[DATABASE](40ms)
+[      63 ms] [worker-30 ] JOB_STARTED        job=W026 priority=1
+[      63 ms] [worker-29 ] JOB_STARTED        job=W025 priority=1
+[      63 ms] [worker-25 ] JOB_STARTED        job=W022 priority=1
+[      63 ms] [worker-27 ] JOB_STARTED        job=W024 priority=1
+[      64 ms] [worker-38 ] JOB_STARTED        job=W035 priority=1
+[      63 ms] [worker-17 ] JOB_STARTED        job=W014 priority=1
+[      63 ms] [worker-22 ] JOB_STARTED        job=W019 priority=1
+[      63 ms] [worker-18 ] JOB_STARTED        job=W015 priority=1
+[      63 ms] [worker-21 ] JOB_STARTED        job=W018 priority=1
+[      64 ms] [worker-40 ] JOB_STARTED        job=W037 priority=1
+[      64 ms] [worker-16 ] JOB_STARTED        job=W039 priority=1
+[      64 ms] [worker-41 ] JOB_STARTED        job=W038 priority=1
+[      64 ms] [worker-39 ] JOB_STARTED        job=W036 priority=1
+[      64 ms] [worker-37 ] JOB_STARTED        job=W034 priority=1
+[      64 ms] [generator ] JOB_ARRIVED        job=W073 priority=1 work=20ms resource=[PRINTER](40ms)
+[      64 ms] [worker-36 ] JOB_STARTED        job=W033 priority=1
+[      64 ms] [worker-35 ] JOB_STARTED        job=W032 priority=1
+[      65 ms] [generator ] JOB_ARRIVED        job=W074 priority=1 work=20ms resource=[DATABASE](40ms)
+[      64 ms] [worker-34 ] JOB_STARTED        job=W031 priority=1
+[      64 ms] [worker-33 ] JOB_STARTED        job=W030 priority=1
+[      65 ms] [worker-50 ] JOB_STARTED        job=W049 priority=1
+[      65 ms] [worker-48 ] JOB_STARTED        job=W047 priority=1
+[      65 ms] [worker-46 ] JOB_STARTED        job=W045 priority=1
+[      65 ms] [worker-54 ] JOB_STARTED        job=W053 priority=1
+[      65 ms] [worker-47 ] JOB_STARTED        job=W046 priority=1
+[      65 ms] [worker-14 ] JOB_STARTED        job=W044 priority=1
+[      65 ms] [worker-57 ] JOB_STARTED        job=W056 priority=1
+[      65 ms] [worker-45 ] JOB_STARTED        job=W043 priority=1
+[      64 ms] [worker-44 ] JOB_STARTED        job=W042 priority=1
+[      64 ms] [worker-42 ] JOB_STARTED        job=W040 priority=1
+[      65 ms] [worker-60 ] JOB_STARTED        job=W060 priority=1
+[      64 ms] [worker-43 ] JOB_STARTED        job=W041 priority=1
+[      66 ms] [worker-61 ] JOB_STARTED        job=W061 priority=1
+[      65 ms] [worker-59 ] JOB_STARTED        job=W059 priority=1
+[      66 ms] [worker-63 ] JOB_STARTED        job=W063 priority=1
+[      66 ms] [worker-64 ] JOB_STARTED        job=W064 priority=1
+[      65 ms] [worker-15 ] JOB_STARTED        job=W057 priority=1
+[      66 ms] [worker-66 ] JOB_STARTED        job=W066 priority=1
+[      65 ms] [worker-58 ] JOB_STARTED        job=W058 priority=1
+[      66 ms] [worker-69 ] JOB_STARTED        job=W069 priority=1
+[      65 ms] [worker-55 ] JOB_STARTED        job=W054 priority=1
+[      65 ms] [worker-56 ] JOB_STARTED        job=W055 priority=1
+[      65 ms] [worker-52 ] JOB_STARTED        job=W051 priority=1
+[      65 ms] [worker-53 ] JOB_STARTED        job=W052 priority=1
+[      65 ms] [worker-51 ] JOB_STARTED        job=W050 priority=1
+[      65 ms] [generator ] JOB_ARRIVED        job=W075 priority=1 work=20ms resource=[PRINTER](40ms)
+[      65 ms] [worker-49 ] JOB_STARTED        job=W048 priority=1
+[      66 ms] [worker-74 ] JOB_STARTED        job=W074 priority=1
+[      66 ms] [worker-73 ] JOB_STARTED        job=W073 priority=1
+[      66 ms] [worker-72 ] JOB_STARTED        job=W072 priority=1
+[      66 ms] [worker-71 ] JOB_STARTED        job=W071 priority=1
+[      66 ms] [worker-70 ] JOB_STARTED        job=W070 priority=1
+[      66 ms] [worker-68 ] JOB_STARTED        job=W068 priority=1
+[      66 ms] [worker-67 ] JOB_STARTED        job=W067 priority=1
+[      66 ms] [worker-65 ] JOB_STARTED        job=W065 priority=1
+[      66 ms] [worker-62 ] JOB_STARTED        job=W062 priority=1
+[      66 ms] [worker-83 ] JOB_STARTED        job=W075 priority=1
+[      66 ms] [generator ] JOB_ARRIVED        job=W076 priority=1 work=20ms resource=[DATABASE](40ms)
+[      67 ms] [worker-133] JOB_STARTED        job=W076 priority=1
+[      67 ms] [generator ] JOB_ARRIVED        job=W077 priority=1 work=20ms resource=[PRINTER](40ms)
+[      67 ms] [generator ] JOB_ARRIVED        job=W078 priority=1 work=20ms resource=[DATABASE](40ms)
+[      67 ms] [generator ] JOB_ARRIVED        job=W079 priority=1 work=20ms resource=[PRINTER](40ms)
+[      68 ms] [generator ] JOB_ARRIVED        job=W080 priority=1 work=20ms resource=[DATABASE](40ms)
+[      68 ms] [generator ] JOB_ARRIVED        job=W081 priority=1 work=20ms resource=[PRINTER](40ms)
+[      68 ms] [generator ] JOB_ARRIVED        job=W082 priority=1 work=20ms resource=[DATABASE](40ms)
+[      68 ms] [worker-77 ] JOB_STARTED        job=W077 priority=1
+[      68 ms] [worker-78 ] JOB_STARTED        job=W078 priority=1
+[      68 ms] [generator ] JOB_ARRIVED        job=W083 priority=1 work=20ms resource=[PRINTER](40ms)
+[      68 ms] [generator ] JOB_ARRIVED        job=W084 priority=1 work=20ms resource=[DATABASE](40ms)
+[      68 ms] [worker-79 ] JOB_STARTED        job=W079 priority=1
+[      68 ms] [generator ] JOB_ARRIVED        job=W085 priority=1 work=20ms resource=[PRINTER](40ms)
+[      68 ms] [worker-81 ] JOB_STARTED        job=W081 priority=1
+[      68 ms] [worker-80 ] JOB_STARTED        job=W080 priority=1
+[      68 ms] [generator ] JOB_ARRIVED        job=W086 priority=1 work=20ms resource=[DATABASE](40ms)
+[      68 ms] [worker-84 ] JOB_STARTED        job=W083 priority=1
+[      68 ms] [generator ] JOB_ARRIVED        job=W087 priority=1 work=20ms resource=[PRINTER](40ms)
+[      68 ms] [worker-85 ] JOB_STARTED        job=W084 priority=1
+[      68 ms] [worker-86 ] JOB_STARTED        job=W085 priority=1
+[      68 ms] [worker-82 ] JOB_STARTED        job=W082 priority=1
+[      69 ms] [worker-88 ] JOB_STARTED        job=W087 priority=1
+[      69 ms] [worker-87 ] JOB_STARTED        job=W086 priority=1
+[      69 ms] [generator ] JOB_ARRIVED        job=W088 priority=1 work=20ms resource=[DATABASE](40ms)
+[      69 ms] [generator ] JOB_ARRIVED        job=W089 priority=1 work=20ms resource=[PRINTER](40ms)
+[      69 ms] [generator ] JOB_ARRIVED        job=W090 priority=1 work=20ms resource=[DATABASE](40ms)
+[      69 ms] [worker-89 ] JOB_STARTED        job=W088 priority=1
+[      70 ms] [generator ] JOB_ARRIVED        job=W091 priority=1 work=20ms resource=[PRINTER](40ms)
+[      70 ms] [worker-91 ] JOB_STARTED        job=W090 priority=1
+[      70 ms] [worker-90 ] JOB_STARTED        job=W089 priority=1
+[      70 ms] [generator ] JOB_ARRIVED        job=W092 priority=1 work=20ms resource=[DATABASE](40ms)
+[      70 ms] [worker-92 ] JOB_STARTED        job=W091 priority=1
+[      70 ms] [generator ] JOB_ARRIVED        job=W093 priority=1 work=20ms resource=[PRINTER](40ms)
+[      70 ms] [worker-93 ] JOB_STARTED        job=W092 priority=1
+[      70 ms] [worker-94 ] JOB_STARTED        job=W093 priority=1
+[      70 ms] [generator ] JOB_ARRIVED        job=W094 priority=1 work=20ms resource=[DATABASE](40ms)
+[      70 ms] [generator ] JOB_ARRIVED        job=W095 priority=1 work=20ms resource=[PRINTER](40ms)
+[      70 ms] [worker-95 ] JOB_STARTED        job=W094 priority=1
+[      70 ms] [generator ] JOB_ARRIVED        job=W096 priority=1 work=20ms resource=[DATABASE](40ms)
+[      71 ms] [generator ] JOB_ARRIVED        job=W097 priority=1 work=20ms resource=[PRINTER](40ms)
+[      71 ms] [worker-97 ] JOB_STARTED        job=W096 priority=1
+[      71 ms] [generator ] JOB_ARRIVED        job=W098 priority=1 work=20ms resource=[DATABASE](40ms)
+[      71 ms] [worker-98 ] JOB_STARTED        job=W097 priority=1
+[      71 ms] [worker-96 ] JOB_STARTED        job=W095 priority=1
+[      71 ms] [generator ] JOB_ARRIVED        job=W099 priority=1 work=20ms resource=[PRINTER](40ms)
+[      71 ms] [worker-99 ] JOB_STARTED        job=W098 priority=1
+[      71 ms] [generator ] JOB_ARRIVED        job=W100 priority=1 work=20ms resource=[DATABASE](40ms)
+[      71 ms] [generator ] JOB_ARRIVED        job=W101 priority=1 work=20ms resource=[PRINTER](40ms)
+[      71 ms] [worker-100] JOB_STARTED        job=W099 priority=1
+[      71 ms] [worker-101] JOB_STARTED        job=W100 priority=1
+[      71 ms] [generator ] JOB_ARRIVED        job=W102 priority=1 work=20ms resource=[DATABASE](40ms)
+[      71 ms] [worker-102] JOB_STARTED        job=W101 priority=1
+[      71 ms] [generator ] JOB_ARRIVED        job=W103 priority=1 work=20ms resource=[PRINTER](40ms)
+[      71 ms] [worker-103] JOB_STARTED        job=W102 priority=1
+[      71 ms] [generator ] JOB_ARRIVED        job=W104 priority=1 work=20ms resource=[DATABASE](40ms)
+[      71 ms] [worker-104] JOB_STARTED        job=W103 priority=1
+[      71 ms] [generator ] JOB_ARRIVED        job=W105 priority=1 work=20ms resource=[PRINTER](40ms)
+[      71 ms] [worker-106] JOB_STARTED        job=W104 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W106 priority=1 work=20ms resource=[DATABASE](40ms)
+[      72 ms] [worker-105] JOB_STARTED        job=W105 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W107 priority=1 work=20ms resource=[PRINTER](40ms)
+[      72 ms] [worker-107] JOB_STARTED        job=W106 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W108 priority=1 work=20ms resource=[DATABASE](40ms)
+[      72 ms] [worker-108] JOB_STARTED        job=W107 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W109 priority=1 work=20ms resource=[PRINTER](40ms)
+[      72 ms] [worker-109] JOB_STARTED        job=W108 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W110 priority=1 work=20ms resource=[DATABASE](40ms)
+[      72 ms] [worker-110] JOB_STARTED        job=W109 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W111 priority=1 work=20ms resource=[PRINTER](40ms)
+[      72 ms] [worker-112] JOB_STARTED        job=W110 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W112 priority=1 work=20ms resource=[DATABASE](40ms)
+[      72 ms] [generator ] JOB_ARRIVED        job=W113 priority=1 work=20ms resource=[PRINTER](40ms)
+[      72 ms] [worker-111] JOB_STARTED        job=W111 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W114 priority=1 work=20ms resource=[DATABASE](40ms)
+[      72 ms] [worker-114] JOB_STARTED        job=W113 priority=1
+[      72 ms] [worker-113] JOB_STARTED        job=W112 priority=1
+[      72 ms] [worker-116] JOB_STARTED        job=W114 priority=1
+[      72 ms] [generator ] JOB_ARRIVED        job=W115 priority=1 work=20ms resource=[PRINTER](40ms)
+[      72 ms] [generator ] JOB_ARRIVED        job=W116 priority=1 work=20ms resource=[DATABASE](40ms)
+[      72 ms] [worker-115] JOB_STARTED        job=W115 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W117 priority=1 work=20ms resource=[PRINTER](40ms)
+[      73 ms] [generator ] JOB_ARRIVED        job=W118 priority=1 work=20ms resource=[DATABASE](40ms)
+[      73 ms] [worker-117] JOB_STARTED        job=W116 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W119 priority=1 work=20ms resource=[PRINTER](40ms)
+[      73 ms] [worker-118] JOB_STARTED        job=W117 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W120 priority=1 work=20ms resource=[DATABASE](40ms)
+[      73 ms] [worker-119] JOB_STARTED        job=W118 priority=1
+[      73 ms] [worker-123] JOB_STARTED        job=W119 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W121 priority=1 work=20ms resource=[PRINTER](40ms)
+[      73 ms] [worker-125] JOB_STARTED        job=W120 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W122 priority=1 work=20ms resource=[DATABASE](40ms)
+[      73 ms] [worker-124] JOB_STARTED        job=W121 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W123 priority=1 work=20ms resource=[PRINTER](40ms)
+[      73 ms] [generator ] JOB_ARRIVED        job=W124 priority=1 work=20ms resource=[DATABASE](40ms)
+[      73 ms] [worker-126] JOB_STARTED        job=W122 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W125 priority=1 work=20ms resource=[PRINTER](40ms)
+[      73 ms] [worker-120] JOB_STARTED        job=W123 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W126 priority=1 work=20ms resource=[DATABASE](40ms)
+[      73 ms] [worker-128] JOB_STARTED        job=W124 priority=1
+[      73 ms] [worker-129] JOB_STARTED        job=W125 priority=1
+[      73 ms] [worker-127] JOB_STARTED        job=W126 priority=1
+[      73 ms] [generator ] JOB_ARRIVED        job=W127 priority=1 work=20ms resource=[PRINTER](40ms)
+[      73 ms] [generator ] JOB_ARRIVED        job=W128 priority=1 work=20ms resource=[DATABASE](40ms)
+[      73 ms] [generator ] JOB_ARRIVED        job=W129 priority=1 work=20ms resource=[PRINTER](40ms)
+[      73 ms] [worker-132] JOB_STARTED        job=W127 priority=1
+[      74 ms] [worker-135] JOB_STARTED        job=W128 priority=1
+[      74 ms] [worker-137] JOB_STARTED        job=W129 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W130 priority=1 work=20ms resource=[DATABASE](40ms)
+[      74 ms] [generator ] JOB_ARRIVED        job=W131 priority=1 work=20ms resource=[PRINTER](40ms)
+[      74 ms] [worker-136] JOB_STARTED        job=W130 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W132 priority=1 work=20ms resource=[DATABASE](40ms)
+[      74 ms] [worker-131] JOB_STARTED        job=W131 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W133 priority=1 work=20ms resource=[PRINTER](40ms)
+[      74 ms] [worker-139] JOB_STARTED        job=W132 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W134 priority=1 work=20ms resource=[DATABASE](40ms)
+[      74 ms] [worker-140] JOB_STARTED        job=W133 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W135 priority=1 work=20ms resource=[PRINTER](40ms)
+[      74 ms] [worker-141] JOB_STARTED        job=W134 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W136 priority=1 work=20ms resource=[DATABASE](40ms)
+[      74 ms] [generator ] JOB_ARRIVED        job=W137 priority=1 work=20ms resource=[PRINTER](40ms)
+[      74 ms] [worker-142] JOB_STARTED        job=W135 priority=1
+[      74 ms] [worker-143] JOB_STARTED        job=W136 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W138 priority=1 work=20ms resource=[DATABASE](40ms)
+[      74 ms] [worker-144] JOB_STARTED        job=W137 priority=1
+[      74 ms] [generator ] JOB_ARRIVED        job=W139 priority=1 work=20ms resource=[PRINTER](40ms)
+[      75 ms] [worker-145] JOB_STARTED        job=W138 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W140 priority=1 work=20ms resource=[DATABASE](40ms)
+[      75 ms] [worker-146] JOB_STARTED        job=W139 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W141 priority=1 work=20ms resource=[PRINTER](40ms)
+[      75 ms] [worker-147] JOB_STARTED        job=W140 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W142 priority=1 work=20ms resource=[DATABASE](40ms)
+[      75 ms] [worker-148] JOB_STARTED        job=W141 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W143 priority=1 work=20ms resource=[PRINTER](40ms)
+[      75 ms] [worker-150] JOB_STARTED        job=W142 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W144 priority=1 work=20ms resource=[DATABASE](40ms)
+[      75 ms] [worker-151] JOB_STARTED        job=W143 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W145 priority=1 work=20ms resource=[PRINTER](40ms)
+[      75 ms] [worker-152] JOB_STARTED        job=W144 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W146 priority=1 work=20ms resource=[DATABASE](40ms)
+[      75 ms] [generator ] JOB_ARRIVED        job=W147 priority=1 work=20ms resource=[PRINTER](40ms)
+[      75 ms] [worker-153] JOB_STARTED        job=W145 priority=1
+[      75 ms] [generator ] JOB_ARRIVED        job=W148 priority=1 work=20ms resource=[DATABASE](40ms)
+[      75 ms] [worker-155] JOB_STARTED        job=W146 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W149 priority=1 work=20ms resource=[PRINTER](40ms)
+[      76 ms] [worker-156] JOB_STARTED        job=W147 priority=1
+[      76 ms] [worker-157] JOB_STARTED        job=W148 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W150 priority=1 work=20ms resource=[DATABASE](40ms)
+[      76 ms] [worker-158] JOB_STARTED        job=W149 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W151 priority=1 work=20ms resource=[PRINTER](40ms)
+[      76 ms] [worker-159] JOB_STARTED        job=W150 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W152 priority=1 work=20ms resource=[DATABASE](40ms)
+[      76 ms] [worker-160] JOB_STARTED        job=W151 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W153 priority=1 work=20ms resource=[PRINTER](40ms)
+[      76 ms] [worker-161] JOB_STARTED        job=W152 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W154 priority=1 work=20ms resource=[DATABASE](40ms)
+[      76 ms] [worker-162] JOB_STARTED        job=W153 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W155 priority=1 work=20ms resource=[PRINTER](40ms)
+[      76 ms] [worker-163] JOB_STARTED        job=W154 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W156 priority=1 work=20ms resource=[DATABASE](40ms)
+[      76 ms] [worker-164] JOB_STARTED        job=W155 priority=1
+[      76 ms] [generator ] JOB_ARRIVED        job=W157 priority=1 work=20ms resource=[PRINTER](40ms)
+[      77 ms] [worker-165] JOB_STARTED        job=W156 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W158 priority=1 work=20ms resource=[DATABASE](40ms)
+[      77 ms] [worker-167] JOB_STARTED        job=W157 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W159 priority=1 work=20ms resource=[PRINTER](40ms)
+[      77 ms] [generator ] JOB_ARRIVED        job=W160 priority=1 work=20ms resource=[DATABASE](40ms)
+[      77 ms] [worker-166] JOB_STARTED        job=W158 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W161 priority=1 work=20ms resource=[PRINTER](40ms)
+[      77 ms] [worker-169] JOB_STARTED        job=W159 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W162 priority=1 work=20ms resource=[DATABASE](40ms)
+[      77 ms] [worker-170] JOB_STARTED        job=W160 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W163 priority=1 work=20ms resource=[PRINTER](40ms)
+[      77 ms] [worker-175] JOB_STARTED        job=W161 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W164 priority=1 work=20ms resource=[DATABASE](40ms)
+[      77 ms] [worker-174] JOB_STARTED        job=W162 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W165 priority=1 work=20ms resource=[PRINTER](40ms)
+[      77 ms] [generator ] JOB_ARRIVED        job=W166 priority=1 work=20ms resource=[DATABASE](40ms)
+[      77 ms] [worker-176] JOB_STARTED        job=W163 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W167 priority=1 work=20ms resource=[PRINTER](40ms)
+[      77 ms] [worker-180] JOB_STARTED        job=W166 priority=1
+[      77 ms] [worker-177] JOB_STARTED        job=W164 priority=1
+[      77 ms] [worker-178] JOB_STARTED        job=W165 priority=1
+[      77 ms] [worker-179] JOB_STARTED        job=W167 priority=1
+[      77 ms] [generator ] JOB_ARRIVED        job=W168 priority=1 work=20ms resource=[DATABASE](40ms)
+[      77 ms] [generator ] JOB_ARRIVED        job=W169 priority=1 work=20ms resource=[PRINTER](40ms)
+[      78 ms] [worker-181] JOB_STARTED        job=W168 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W170 priority=1 work=20ms resource=[DATABASE](40ms)
+[      78 ms] [worker-182] JOB_STARTED        job=W169 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W171 priority=1 work=20ms resource=[PRINTER](40ms)
+[      78 ms] [worker-183] JOB_STARTED        job=W170 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W172 priority=1 work=20ms resource=[DATABASE](40ms)
+[      78 ms] [worker-185] JOB_STARTED        job=W171 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W173 priority=1 work=20ms resource=[PRINTER](40ms)
+[      78 ms] [worker-186] JOB_STARTED        job=W172 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W174 priority=1 work=20ms resource=[DATABASE](40ms)
+[      78 ms] [worker-187] JOB_STARTED        job=W173 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W175 priority=1 work=20ms resource=[PRINTER](40ms)
+[      78 ms] [worker-188] JOB_STARTED        job=W174 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W176 priority=1 work=20ms resource=[DATABASE](40ms)
+[      78 ms] [worker-189] JOB_STARTED        job=W175 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W177 priority=1 work=20ms resource=[PRINTER](40ms)
+[      78 ms] [worker-190] JOB_STARTED        job=W176 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W178 priority=1 work=20ms resource=[DATABASE](40ms)
+[      78 ms] [worker-191] JOB_STARTED        job=W177 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W179 priority=1 work=20ms resource=[PRINTER](40ms)
+[      78 ms] [worker-192] JOB_STARTED        job=W178 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W180 priority=1 work=20ms resource=[DATABASE](40ms)
+[      78 ms] [worker-193] JOB_STARTED        job=W179 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W181 priority=1 work=20ms resource=[PRINTER](40ms)
+[      78 ms] [worker-194] JOB_STARTED        job=W180 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W182 priority=1 work=20ms resource=[DATABASE](40ms)
+[      78 ms] [worker-195] JOB_STARTED        job=W181 priority=1
+[      78 ms] [generator ] JOB_ARRIVED        job=W183 priority=1 work=20ms resource=[PRINTER](40ms)
+[      79 ms] [worker-196] JOB_STARTED        job=W182 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W184 priority=1 work=20ms resource=[DATABASE](40ms)
+[      79 ms] [worker-197] JOB_STARTED        job=W183 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W185 priority=1 work=20ms resource=[PRINTER](40ms)
+[      79 ms] [worker-198] JOB_STARTED        job=W184 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W186 priority=1 work=20ms resource=[DATABASE](40ms)
+[      79 ms] [worker-199] JOB_STARTED        job=W185 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W187 priority=1 work=20ms resource=[PRINTER](40ms)
+[      79 ms] [worker-201] JOB_STARTED        job=W186 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W188 priority=1 work=20ms resource=[DATABASE](40ms)
+[      79 ms] [worker-208] JOB_STARTED        job=W187 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W189 priority=1 work=20ms resource=[PRINTER](40ms)
+[      79 ms] [worker-207] JOB_STARTED        job=W188 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W190 priority=1 work=20ms resource=[DATABASE](40ms)
+[      79 ms] [worker-211] JOB_STARTED        job=W189 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W191 priority=1 work=20ms resource=[PRINTER](40ms)
+[      79 ms] [worker-206] JOB_STARTED        job=W190 priority=1
+[      79 ms] [worker-213] JOB_STARTED        job=W191 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W192 priority=1 work=20ms resource=[DATABASE](40ms)
+[      79 ms] [generator ] JOB_ARRIVED        job=W193 priority=1 work=20ms resource=[PRINTER](40ms)
+[      79 ms] [worker-214] JOB_STARTED        job=W192 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W194 priority=1 work=20ms resource=[DATABASE](40ms)
+[      79 ms] [worker-217] JOB_STARTED        job=W193 priority=1
+[      79 ms] [generator ] JOB_ARRIVED        job=W195 priority=1 work=20ms resource=[PRINTER](40ms)
+[      80 ms] [worker-216] JOB_STARTED        job=W194 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W196 priority=1 work=20ms resource=[DATABASE](40ms)
+[      80 ms] [worker-218] JOB_STARTED        job=W195 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W197 priority=1 work=20ms resource=[PRINTER](40ms)
+[      80 ms] [worker-219] JOB_STARTED        job=W196 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W198 priority=1 work=20ms resource=[DATABASE](40ms)
+[      80 ms] [worker-222] JOB_STARTED        job=W197 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W199 priority=1 work=20ms resource=[PRINTER](40ms)
+[      80 ms] [worker-224] JOB_STARTED        job=W198 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W200 priority=1 work=20ms resource=[DATABASE](40ms)
+[      80 ms] [worker-225] JOB_STARTED        job=W199 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W201 priority=1 work=20ms resource=[PRINTER](40ms)
+[      80 ms] [worker-226] JOB_STARTED        job=W200 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W202 priority=1 work=20ms resource=[DATABASE](40ms)
+[      80 ms] [worker-227] JOB_STARTED        job=W201 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W203 priority=1 work=20ms resource=[PRINTER](40ms)
+[      80 ms] [worker-228] JOB_STARTED        job=W202 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W204 priority=1 work=20ms resource=[DATABASE](40ms)
+[      80 ms] [worker-232] JOB_STARTED        job=W203 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W205 priority=1 work=20ms resource=[PRINTER](40ms)
+[      80 ms] [worker-231] JOB_STARTED        job=W204 priority=1
+[      80 ms] [generator ] JOB_ARRIVED        job=W206 priority=1 work=20ms resource=[DATABASE](40ms)
+[      81 ms] [worker-233] JOB_STARTED        job=W205 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W207 priority=1 work=20ms resource=[PRINTER](40ms)
+[      81 ms] [worker-234] JOB_STARTED        job=W206 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W208 priority=1 work=20ms resource=[DATABASE](40ms)
+[      81 ms] [worker-235] JOB_STARTED        job=W207 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W209 priority=1 work=20ms resource=[PRINTER](40ms)
+[      81 ms] [worker-241] JOB_STARTED        job=W208 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W210 priority=1 work=20ms resource=[DATABASE](40ms)
+[      81 ms] [worker-240] JOB_STARTED        job=W209 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W211 priority=1 work=20ms resource=[PRINTER](40ms)
+[      81 ms] [worker-242] JOB_STARTED        job=W210 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W212 priority=1 work=20ms resource=[DATABASE](40ms)
+[      81 ms] [worker-243] JOB_STARTED        job=W211 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W213 priority=1 work=20ms resource=[PRINTER](40ms)
+[      81 ms] [worker-244] JOB_STARTED        job=W212 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W214 priority=1 work=20ms resource=[DATABASE](40ms)
+[      81 ms] [worker-245] JOB_STARTED        job=W213 priority=1
+[      81 ms] [worker-247] JOB_STARTED        job=W214 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W215 priority=1 work=20ms resource=[PRINTER](40ms)
+[      81 ms] [generator ] JOB_ARRIVED        job=W216 priority=1 work=20ms resource=[DATABASE](40ms)
+[      81 ms] [worker-249] JOB_STARTED        job=W215 priority=1
+[      81 ms] [generator ] JOB_ARRIVED        job=W217 priority=1 work=20ms resource=[PRINTER](40ms)
+[      81 ms] [worker-248] JOB_STARTED        job=W216 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W218 priority=1 work=20ms resource=[DATABASE](40ms)
+[      82 ms] [worker-250] JOB_STARTED        job=W217 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W219 priority=1 work=20ms resource=[PRINTER](40ms)
+[      82 ms] [worker-252] JOB_STARTED        job=W218 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W220 priority=1 work=20ms resource=[DATABASE](40ms)
+[      82 ms] [worker-253] JOB_STARTED        job=W219 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W221 priority=1 work=20ms resource=[PRINTER](40ms)
+[      82 ms] [worker-255] JOB_STARTED        job=W220 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W222 priority=1 work=20ms resource=[DATABASE](40ms)
+[      82 ms] [generator ] JOB_ARRIVED        job=W223 priority=1 work=20ms resource=[PRINTER](40ms)
+[      82 ms] [worker-75 ] JOB_STARTED        job=W221 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W224 priority=1 work=20ms resource=[DATABASE](40ms)
+[      82 ms] [worker-121] JOB_STARTED        job=W222 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W225 priority=1 work=20ms resource=[PRINTER](40ms)
+[      82 ms] [worker-130] JOB_STARTED        job=W224 priority=1
+[      82 ms] [worker-122] JOB_STARTED        job=W223 priority=1
+[      82 ms] [worker-134] JOB_STARTED        job=W225 priority=1
+[      82 ms] [generator ] JOB_ARRIVED        job=W226 priority=1 work=20ms resource=[DATABASE](40ms)
+[      83 ms] [worker-138] JOB_STARTED        job=W226 priority=1
+[      83 ms] [generator ] JOB_ARRIVED        job=W227 priority=1 work=20ms resource=[PRINTER](40ms)
+[      83 ms] [generator ] JOB_ARRIVED        job=W228 priority=1 work=20ms resource=[DATABASE](40ms)
+[      83 ms] [worker-149] JOB_STARTED        job=W227 priority=1
+[      83 ms] [generator ] JOB_ARRIVED        job=W229 priority=1 work=20ms resource=[PRINTER](40ms)
+[      83 ms] [worker-154] JOB_STARTED        job=W228 priority=1
+[      83 ms] [generator ] JOB_ARRIVED        job=W230 priority=1 work=20ms resource=[DATABASE](40ms)
+[      83 ms] [worker-168] JOB_STARTED        job=W229 priority=1
+[      83 ms] [generator ] JOB_ARRIVED        job=W231 priority=1 work=20ms resource=[PRINTER](40ms)
+[      83 ms] [worker-171] JOB_STARTED        job=W230 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W232 priority=1 work=20ms resource=[DATABASE](40ms)
+[      84 ms] [worker-173] JOB_STARTED        job=W231 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W233 priority=1 work=20ms resource=[PRINTER](40ms)
+[      84 ms] [worker-172] JOB_STARTED        job=W232 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W234 priority=1 work=20ms resource=[DATABASE](40ms)
+[      84 ms] [generator ] JOB_ARRIVED        job=W235 priority=1 work=20ms resource=[PRINTER](40ms)
+[      84 ms] [worker-184] JOB_STARTED        job=W233 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W236 priority=1 work=20ms resource=[DATABASE](40ms)
+[      84 ms] [worker-200] JOB_STARTED        job=W234 priority=1
+[      84 ms] [worker-202] JOB_STARTED        job=W235 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W237 priority=1 work=20ms resource=[PRINTER](40ms)
+[      84 ms] [worker-204] JOB_STARTED        job=W236 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W238 priority=1 work=20ms resource=[DATABASE](40ms)
+[      84 ms] [worker-203] JOB_STARTED        job=W237 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W239 priority=1 work=20ms resource=[PRINTER](40ms)
+[      84 ms] [worker-205] JOB_STARTED        job=W238 priority=1
+[      85 ms] [worker-210] JOB_STARTED        job=W239 priority=1
+[      84 ms] [generator ] JOB_ARRIVED        job=W240 priority=1 work=20ms resource=[DATABASE](40ms)
+[      85 ms] [generator ] JOB_ARRIVED        job=W241 priority=1 work=20ms resource=[PRINTER](40ms)
+[      85 ms] [generator ] JOB_ARRIVED        job=W242 priority=1 work=20ms resource=[DATABASE](40ms)
+[      85 ms] [worker-209] JOB_STARTED        job=W240 priority=1
+[      85 ms] [generator ] JOB_ARRIVED        job=W243 priority=1 work=20ms resource=[PRINTER](40ms)
+[      85 ms] [worker-212] JOB_STARTED        job=W241 priority=1
+[      85 ms] [generator ] JOB_ARRIVED        job=W244 priority=1 work=20ms resource=[DATABASE](40ms)
+[      85 ms] [worker-215] JOB_STARTED        job=W242 priority=1
+[      85 ms] [worker-220] JOB_STARTED        job=W243 priority=1
+[      85 ms] [generator ] JOB_ARRIVED        job=W245 priority=1 work=20ms resource=[PRINTER](40ms)
+[      85 ms] [worker-221] JOB_STARTED        job=W244 priority=1
+[      85 ms] [generator ] JOB_ARRIVED        job=W246 priority=1 work=20ms resource=[DATABASE](40ms)
+[      85 ms] [worker-223] JOB_STARTED        job=W245 priority=1
+[      85 ms] [worker-229] JOB_STARTED        job=W246 priority=1
+[      85 ms] [generator ] JOB_ARRIVED        job=W247 priority=1 work=20ms resource=[PRINTER](40ms)
+[      86 ms] [generator ] JOB_ARRIVED        job=W248 priority=1 work=20ms resource=[DATABASE](40ms)
+[      86 ms] [generator ] JOB_ARRIVED        job=W249 priority=1 work=20ms resource=[PRINTER](40ms)
+[      86 ms] [generator ] JOB_ARRIVED        job=W250 priority=1 work=20ms resource=[DATABASE](40ms)
+[      86 ms] [generator ] JOB_ARRIVED        job=W251 priority=1 work=20ms resource=[PRINTER](40ms)
+[      86 ms] [generator ] JOB_ARRIVED        job=W252 priority=1 work=20ms resource=[DATABASE](40ms)
+[      86 ms] [generator ] JOB_ARRIVED        job=W253 priority=1 work=20ms resource=[PRINTER](40ms)
+[      86 ms] [worker-3  ] WORK_FINISHED      job=W003
+[      86 ms] [worker-12 ] WORK_FINISHED      job=W012
+[      86 ms] [worker-6  ] WORK_FINISHED      job=W006
+[      86 ms] [worker-10 ] WORK_FINISHED      job=W011
+[      86 ms] [generator ] JOB_ARRIVED        job=W254 priority=1 work=20ms resource=[DATABASE](40ms)
+[      86 ms] [worker-8  ] WORK_FINISHED      job=W008
+[      86 ms] [worker-4  ] WORK_FINISHED      job=W004
+[      86 ms] [worker-7  ] WORK_FINISHED      job=W007
+[      86 ms] [generator ] JOB_ARRIVED        job=W255 priority=1 work=20ms resource=[PRINTER](40ms)
+[      86 ms] [worker-2  ] WORK_FINISHED      job=W002
+[      86 ms] [worker-1  ] WORK_FINISHED      job=W001
+[      86 ms] [worker-9  ] WORK_FINISHED      job=W009
+[      86 ms] [worker-5  ] WORK_FINISHED      job=W005
+[      86 ms] [worker-11 ] WORK_FINISHED      job=W010
+[      87 ms] [generator ] JOB_ARRIVED        job=W256 priority=1 work=20ms resource=[DATABASE](40ms)
+[      94 ms] [worker-12 ] RESOURCE_WAIT      job=W012 resource=DATABASE
+[      94 ms] [worker-3  ] RESOURCE_WAIT      job=W003 resource=PRINTER
+[      94 ms] [worker-10 ] RESOURCE_WAIT      job=W011 resource=PRINTER
+[      94 ms] [worker-4  ] RESOURCE_WAIT      job=W004 resource=DATABASE
+[      94 ms] [worker-6  ] RESOURCE_WAIT      job=W006 resource=DATABASE
+[      94 ms] [worker-2  ] RESOURCE_WAIT      job=W002 resource=DATABASE
+[      94 ms] [worker-7  ] RESOURCE_WAIT      job=W007 resource=PRINTER
+[      94 ms] [worker-11 ] RESOURCE_WAIT      job=W010 resource=DATABASE
+[      94 ms] [worker-9  ] RESOURCE_WAIT      job=W009 resource=PRINTER
+[      94 ms] [worker-5  ] RESOURCE_WAIT      job=W005 resource=PRINTER
+[      94 ms] [worker-8  ] RESOURCE_WAIT      job=W008 resource=DATABASE
+[      94 ms] [worker-1  ] RESOURCE_WAIT      job=W001 resource=PRINTER
+[     107 ms] [worker-8  ] RESOURCE_ACQUIRED  job=W008 resource=DATABASE waited=1ms
+[     107 ms] [worker-11 ] RESOURCE_ACQUIRED  job=W010 resource=DATABASE waited=2ms
+[     107 ms] [worker-2  ] RESOURCE_ACQUIRED  job=W002 resource=DATABASE waited=2ms
+[     107 ms] [worker-12 ] RESOURCE_ACQUIRED  job=W012 resource=DATABASE waited=1ms
+[     107 ms] [worker-7  ] RESOURCE_ACQUIRED  job=W007 resource=PRINTER waited=1ms
+[     107 ms] [worker-10 ] RESOURCE_ACQUIRED  job=W011 resource=PRINTER waited=2ms
+[     107 ms] [worker-5  ] RESOURCE_ACQUIRED  job=W005 resource=PRINTER waited=1ms
+[     107 ms] [worker-4  ] RESOURCE_ACQUIRED  job=W004 resource=DATABASE waited=2ms
+[     108 ms] [worker-28 ] WORK_FINISHED      job=W027
+[     108 ms] [worker-31 ] WORK_FINISHED      job=W028
+[     108 ms] [worker-13 ] WORK_FINISHED      job=W013
+[     107 ms] [worker-24 ] WORK_FINISHED      job=W021
+[     107 ms] [worker-1  ] RESOURCE_ACQUIRED  job=W001 resource=PRINTER waited=1ms
+[     108 ms] [worker-24 ] RESOURCE_WAIT      job=W021 resource=PRINTER
+[     107 ms] [worker-20 ] WORK_FINISHED      job=W017
+[     107 ms] [worker-19 ] WORK_FINISHED      job=W016
+[     107 ms] [worker-23 ] WORK_FINISHED      job=W020
+[     107 ms] [worker-6  ] RESOURCE_ACQUIRED  job=W006 resource=DATABASE waited=2ms
+[     107 ms] [worker-3  ] RESOURCE_ACQUIRED  job=W003 resource=PRINTER waited=1ms
+[     107 ms] [worker-9  ] RESOURCE_ACQUIRED  job=W009 resource=PRINTER waited=1ms
+[     108 ms] [worker-30 ] WORK_FINISHED      job=W026
+[     108 ms] [worker-23 ] RESOURCE_WAIT      job=W020 resource=DATABASE
+[     108 ms] [worker-19 ] RESOURCE_WAIT      job=W016 resource=DATABASE
+[     108 ms] [worker-23 ] RESOURCE_ACQUIRED  job=W020 resource=DATABASE waited=0ms
+[     108 ms] [worker-20 ] RESOURCE_WAIT      job=W017 resource=PRINTER
+[     108 ms] [worker-26 ] WORK_FINISHED      job=W023
+[     108 ms] [worker-24 ] RESOURCE_ACQUIRED  job=W021 resource=PRINTER waited=0ms
+[     108 ms] [worker-13 ] RESOURCE_WAIT      job=W013 resource=PRINTER
+[     108 ms] [worker-31 ] RESOURCE_WAIT      job=W028 resource=DATABASE
+[     108 ms] [worker-28 ] RESOURCE_WAIT      job=W027 resource=PRINTER
+[     108 ms] [worker-32 ] WORK_FINISHED      job=W029
+[     108 ms] [worker-28 ] RESOURCE_ACQUIRED  job=W027 resource=PRINTER waited=0ms
+[     109 ms] [worker-32 ] RESOURCE_WAIT      job=W029 resource=PRINTER
+[     108 ms] [worker-31 ] RESOURCE_ACQUIRED  job=W028 resource=DATABASE waited=0ms
+[     108 ms] [worker-13 ] RESOURCE_ACQUIRED  job=W013 resource=PRINTER waited=0ms
+[     108 ms] [worker-38 ] WORK_FINISHED      job=W035
+[     109 ms] [worker-22 ] WORK_FINISHED      job=W019
+[     108 ms] [worker-26 ] RESOURCE_WAIT      job=W023 resource=PRINTER
+[     108 ms] [worker-20 ] RESOURCE_ACQUIRED  job=W017 resource=PRINTER waited=0ms
+[     108 ms] [worker-27 ] WORK_FINISHED      job=W024
+[     109 ms] [worker-21 ] WORK_FINISHED      job=W018
+[     108 ms] [worker-19 ] RESOURCE_ACQUIRED  job=W016 resource=DATABASE waited=0ms
+[     108 ms] [worker-25 ] WORK_FINISHED      job=W022
+[     108 ms] [worker-30 ] RESOURCE_WAIT      job=W026 resource=DATABASE
+[     109 ms] [worker-25 ] RESOURCE_WAIT      job=W022 resource=DATABASE
+[     108 ms] [worker-29 ] WORK_FINISHED      job=W025
+[     109 ms] [worker-25 ] RESOURCE_ACQUIRED  job=W022 resource=DATABASE waited=0ms
+[     109 ms] [worker-29 ] RESOURCE_WAIT      job=W025 resource=PRINTER
+[     109 ms] [worker-30 ] RESOURCE_ACQUIRED  job=W026 resource=DATABASE waited=0ms
+[     109 ms] [worker-16 ] WORK_FINISHED      job=W039
+[     109 ms] [worker-40 ] WORK_FINISHED      job=W037
+[     109 ms] [worker-21 ] RESOURCE_WAIT      job=W018 resource=DATABASE
+[     109 ms] [worker-40 ] RESOURCE_WAIT      job=W037 resource=PRINTER
+[     109 ms] [worker-27 ] RESOURCE_WAIT      job=W024 resource=DATABASE
+[     109 ms] [worker-40 ] RESOURCE_ACQUIRED  job=W037 resource=PRINTER waited=0ms
+[     109 ms] [worker-27 ] RESOURCE_ACQUIRED  job=W024 resource=DATABASE waited=0ms
+[     109 ms] [worker-26 ] RESOURCE_ACQUIRED  job=W023 resource=PRINTER waited=0ms
+[     109 ms] [worker-39 ] WORK_FINISHED      job=W036
+[     109 ms] [worker-22 ] RESOURCE_WAIT      job=W019 resource=PRINTER
+[     109 ms] [worker-38 ] RESOURCE_WAIT      job=W035 resource=PRINTER
+[     109 ms] [worker-18 ] WORK_FINISHED      job=W015
+[     110 ms] [worker-38 ] RESOURCE_ACQUIRED  job=W035 resource=PRINTER waited=0ms
+[     109 ms] [worker-32 ] RESOURCE_ACQUIRED  job=W029 resource=PRINTER waited=0ms
+[     109 ms] [worker-17 ] WORK_FINISHED      job=W014
+[     110 ms] [worker-35 ] WORK_FINISHED      job=W032
+[     110 ms] [worker-18 ] RESOURCE_WAIT      job=W015 resource=PRINTER
+[     110 ms] [worker-22 ] RESOURCE_ACQUIRED  job=W019 resource=PRINTER waited=0ms
+[     110 ms] [worker-39 ] RESOURCE_WAIT      job=W036 resource=DATABASE
+[     110 ms] [worker-33 ] WORK_FINISHED      job=W030
+[     110 ms] [worker-36 ] WORK_FINISHED      job=W033
+[     110 ms] [worker-37 ] WORK_FINISHED      job=W034
+[     109 ms] [worker-21 ] RESOURCE_ACQUIRED  job=W018 resource=DATABASE waited=0ms
+[     109 ms] [worker-41 ] WORK_FINISHED      job=W038
+[     109 ms] [worker-16 ] RESOURCE_WAIT      job=W039 resource=PRINTER
+[     111 ms] [worker-50 ] WORK_FINISHED      job=W049
+[     109 ms] [worker-29 ] RESOURCE_ACQUIRED  job=W025 resource=PRINTER waited=0ms
+[     111 ms] [worker-50 ] RESOURCE_WAIT      job=W049 resource=PRINTER
+[     111 ms] [worker-16 ] RESOURCE_ACQUIRED  job=W039 resource=PRINTER waited=0ms
+[     111 ms] [worker-48 ] WORK_FINISHED      job=W047
+[     111 ms] [worker-41 ] RESOURCE_WAIT      job=W038 resource=DATABASE
+[     111 ms] [worker-37 ] RESOURCE_WAIT      job=W034 resource=DATABASE
+[     111 ms] [worker-36 ] RESOURCE_WAIT      job=W033 resource=PRINTER
+[     110 ms] [worker-33 ] RESOURCE_WAIT      job=W030 resource=DATABASE
+[     110 ms] [worker-39 ] RESOURCE_ACQUIRED  job=W036 resource=DATABASE waited=0ms
+[     111 ms] [worker-33 ] RESOURCE_ACQUIRED  job=W030 resource=DATABASE waited=0ms
+[     110 ms] [worker-18 ] RESOURCE_ACQUIRED  job=W015 resource=PRINTER waited=0ms
+[     110 ms] [worker-35 ] RESOURCE_WAIT      job=W032 resource=DATABASE
+[     110 ms] [worker-17 ] RESOURCE_WAIT      job=W014 resource=DATABASE
+[     110 ms] [worker-34 ] WORK_FINISHED      job=W031
+[     112 ms] [worker-17 ] RESOURCE_ACQUIRED  job=W014 resource=DATABASE waited=0ms
+[     112 ms] [worker-14 ] WORK_FINISHED      job=W044
+[     112 ms] [worker-35 ] RESOURCE_ACQUIRED  job=W032 resource=DATABASE waited=0ms
+[     112 ms] [worker-57 ] WORK_FINISHED      job=W056
+[     111 ms] [worker-47 ] WORK_FINISHED      job=W046
+[     111 ms] [worker-54 ] WORK_FINISHED      job=W053
+[     111 ms] [worker-36 ] RESOURCE_ACQUIRED  job=W033 resource=PRINTER waited=0ms
+[     111 ms] [worker-37 ] RESOURCE_ACQUIRED  job=W034 resource=DATABASE waited=0ms
+[     111 ms] [worker-41 ] RESOURCE_ACQUIRED  job=W038 resource=DATABASE waited=0ms
+[     112 ms] [worker-44 ] WORK_FINISHED      job=W042
+[     111 ms] [worker-46 ] WORK_FINISHED      job=W045
+[     111 ms] [worker-48 ] RESOURCE_WAIT      job=W047 resource=PRINTER
+[     112 ms] [worker-46 ] RESOURCE_WAIT      job=W045 resource=PRINTER
+[     111 ms] [worker-50 ] RESOURCE_ACQUIRED  job=W049 resource=PRINTER waited=0ms
+[     112 ms] [worker-46 ] RESOURCE_ACQUIRED  job=W045 resource=PRINTER waited=0ms
+[     112 ms] [worker-48 ] RESOURCE_ACQUIRED  job=W047 resource=PRINTER waited=0ms
+[     112 ms] [worker-60 ] WORK_FINISHED      job=W060
+[     112 ms] [worker-44 ] RESOURCE_WAIT      job=W042 resource=DATABASE
+[     112 ms] [worker-42 ] WORK_FINISHED      job=W040
+[     112 ms] [worker-54 ] RESOURCE_WAIT      job=W053 resource=PRINTER
+[     112 ms] [worker-47 ] RESOURCE_WAIT      job=W046 resource=DATABASE
+[     112 ms] [worker-45 ] WORK_FINISHED      job=W043
+[     112 ms] [worker-57 ] RESOURCE_WAIT      job=W056 resource=DATABASE
+[     112 ms] [worker-14 ] RESOURCE_WAIT      job=W044 resource=DATABASE
+[     112 ms] [worker-34 ] RESOURCE_WAIT      job=W031 resource=PRINTER
+[     113 ms] [worker-14 ] RESOURCE_ACQUIRED  job=W044 resource=DATABASE waited=0ms
+[     113 ms] [worker-57 ] RESOURCE_ACQUIRED  job=W056 resource=DATABASE waited=0ms
+[     113 ms] [worker-45 ] RESOURCE_WAIT      job=W043 resource=PRINTER
+[     113 ms] [worker-63 ] WORK_FINISHED      job=W063
+[     113 ms] [worker-45 ] RESOURCE_ACQUIRED  job=W043 resource=PRINTER waited=0ms
+[     113 ms] [worker-47 ] RESOURCE_ACQUIRED  job=W046 resource=DATABASE waited=0ms
+[     113 ms] [worker-54 ] RESOURCE_ACQUIRED  job=W053 resource=PRINTER waited=0ms
+[     112 ms] [worker-42 ] RESOURCE_WAIT      job=W040 resource=DATABASE
+[     112 ms] [worker-44 ] RESOURCE_ACQUIRED  job=W042 resource=DATABASE waited=0ms
+[     113 ms] [worker-42 ] RESOURCE_ACQUIRED  job=W040 resource=DATABASE waited=0ms
+[     112 ms] [worker-60 ] RESOURCE_WAIT      job=W060 resource=DATABASE
+[     113 ms] [worker-69 ] WORK_FINISHED      job=W069
+[     112 ms] [worker-59 ] WORK_FINISHED      job=W059
+[     112 ms] [worker-43 ] WORK_FINISHED      job=W041
+[     112 ms] [worker-61 ] WORK_FINISHED      job=W061
+[     113 ms] [worker-43 ] RESOURCE_WAIT      job=W041 resource=PRINTER
+[     113 ms] [worker-61 ] RESOURCE_WAIT      job=W061 resource=PRINTER
+[     113 ms] [worker-59 ] RESOURCE_WAIT      job=W059 resource=PRINTER
+[     113 ms] [worker-60 ] RESOURCE_ACQUIRED  job=W060 resource=DATABASE waited=0ms
+[     113 ms] [worker-69 ] RESOURCE_WAIT      job=W069 resource=PRINTER
+[     113 ms] [worker-55 ] WORK_FINISHED      job=W054
+[     113 ms] [worker-58 ] WORK_FINISHED      job=W058
+[     113 ms] [worker-66 ] WORK_FINISHED      job=W066
+[     113 ms] [worker-15 ] WORK_FINISHED      job=W057
+[     113 ms] [worker-66 ] RESOURCE_WAIT      job=W066 resource=DATABASE
+[     113 ms] [worker-64 ] WORK_FINISHED      job=W064
+[     114 ms] [worker-66 ] RESOURCE_ACQUIRED  job=W066 resource=DATABASE waited=0ms
+[     113 ms] [worker-63 ] RESOURCE_WAIT      job=W063 resource=PRINTER
+[     113 ms] [worker-34 ] RESOURCE_ACQUIRED  job=W031 resource=PRINTER waited=0ms
+[     114 ms] [worker-52 ] WORK_FINISHED      job=W051
+[     114 ms] [worker-64 ] RESOURCE_WAIT      job=W064 resource=DATABASE
+[     114 ms] [worker-15 ] RESOURCE_WAIT      job=W057 resource=PRINTER
+[     113 ms] [worker-58 ] RESOURCE_WAIT      job=W058 resource=DATABASE
+[     113 ms] [worker-55 ] RESOURCE_WAIT      job=W054 resource=DATABASE
+[     113 ms] [worker-56 ] WORK_FINISHED      job=W055
+[     113 ms] [worker-69 ] RESOURCE_ACQUIRED  job=W069 resource=PRINTER waited=0ms
+[     113 ms] [worker-59 ] RESOURCE_ACQUIRED  job=W059 resource=PRINTER waited=0ms
+[     113 ms] [worker-61 ] RESOURCE_ACQUIRED  job=W061 resource=PRINTER waited=0ms
+[     114 ms] [worker-49 ] WORK_FINISHED      job=W048
+[     113 ms] [worker-43 ] RESOURCE_ACQUIRED  job=W041 resource=PRINTER waited=0ms
+[     114 ms] [worker-74 ] WORK_FINISHED      job=W074
+[     114 ms] [worker-49 ] RESOURCE_WAIT      job=W048 resource=DATABASE
+[     114 ms] [worker-73 ] WORK_FINISHED      job=W073
+[     114 ms] [worker-51 ] WORK_FINISHED      job=W050
+[     114 ms] [worker-56 ] RESOURCE_WAIT      job=W055 resource=PRINTER
+[     114 ms] [worker-55 ] RESOURCE_ACQUIRED  job=W054 resource=DATABASE waited=0ms
+[     114 ms] [worker-58 ] RESOURCE_ACQUIRED  job=W058 resource=DATABASE waited=0ms
+[     114 ms] [worker-15 ] RESOURCE_ACQUIRED  job=W057 resource=PRINTER waited=0ms
+[     114 ms] [worker-64 ] RESOURCE_ACQUIRED  job=W064 resource=DATABASE waited=0ms
+[     114 ms] [worker-52 ] RESOURCE_WAIT      job=W051 resource=PRINTER
+[     114 ms] [worker-53 ] WORK_FINISHED      job=W052
+[     114 ms] [worker-63 ] RESOURCE_ACQUIRED  job=W063 resource=PRINTER waited=0ms
+[     115 ms] [worker-53 ] RESOURCE_WAIT      job=W052 resource=DATABASE
+[     115 ms] [worker-52 ] RESOURCE_ACQUIRED  job=W051 resource=PRINTER waited=0ms
+[     115 ms] [worker-68 ] WORK_FINISHED      job=W068
+[     115 ms] [worker-70 ] WORK_FINISHED      job=W070
+[     115 ms] [worker-71 ] WORK_FINISHED      job=W071
+[     114 ms] [worker-72 ] WORK_FINISHED      job=W072
+[     114 ms] [worker-56 ] RESOURCE_ACQUIRED  job=W055 resource=PRINTER waited=0ms
+[     114 ms] [worker-51 ] RESOURCE_WAIT      job=W050 resource=DATABASE
+[     114 ms] [worker-73 ] RESOURCE_WAIT      job=W073 resource=PRINTER
+[     114 ms] [worker-49 ] RESOURCE_ACQUIRED  job=W048 resource=DATABASE waited=0ms
+[     114 ms] [worker-74 ] RESOURCE_WAIT      job=W074 resource=DATABASE
+[     115 ms] [worker-73 ] RESOURCE_ACQUIRED  job=W073 resource=PRINTER waited=0ms
+[     115 ms] [worker-83 ] WORK_FINISHED      job=W075
+[     115 ms] [worker-51 ] RESOURCE_ACQUIRED  job=W050 resource=DATABASE waited=0ms
+[     115 ms] [worker-83 ] RESOURCE_WAIT      job=W075 resource=PRINTER
+[     115 ms] [worker-83 ] RESOURCE_ACQUIRED  job=W075 resource=PRINTER waited=0ms
+[     115 ms] [worker-78 ] WORK_FINISHED      job=W078
+[     115 ms] [worker-62 ] WORK_FINISHED      job=W062
+[     116 ms] [worker-62 ] RESOURCE_WAIT      job=W062 resource=DATABASE
+[     115 ms] [worker-72 ] RESOURCE_WAIT      job=W072 resource=DATABASE
+[     116 ms] [worker-62 ] RESOURCE_ACQUIRED  job=W062 resource=DATABASE waited=0ms
+[     115 ms] [worker-71 ] RESOURCE_WAIT      job=W071 resource=PRINTER
+[     115 ms] [worker-70 ] RESOURCE_WAIT      job=W070 resource=DATABASE
+[     116 ms] [worker-79 ] WORK_FINISHED      job=W079
+[     115 ms] [worker-65 ] WORK_FINISHED      job=W065
+[     115 ms] [worker-68 ] RESOURCE_WAIT      job=W068 resource=DATABASE
+[     117 ms] [worker-65 ] RESOURCE_WAIT      job=W065 resource=PRINTER
+[     115 ms] [worker-67 ] WORK_FINISHED      job=W067
+[     115 ms] [worker-53 ] RESOURCE_ACQUIRED  job=W052 resource=DATABASE waited=0ms
+[     117 ms] [worker-67 ] RESOURCE_WAIT      job=W067 resource=PRINTER
+[     117 ms] [worker-65 ] RESOURCE_ACQUIRED  job=W065 resource=PRINTER waited=0ms
+[     117 ms] [worker-68 ] RESOURCE_ACQUIRED  job=W068 resource=DATABASE waited=0ms
+[     116 ms] [worker-79 ] RESOURCE_WAIT      job=W079 resource=PRINTER
+[     116 ms] [worker-70 ] RESOURCE_ACQUIRED  job=W070 resource=DATABASE waited=0ms
+[     116 ms] [worker-71 ] RESOURCE_ACQUIRED  job=W071 resource=PRINTER waited=0ms
+[     116 ms] [worker-72 ] RESOURCE_ACQUIRED  job=W072 resource=DATABASE waited=0ms
+[     116 ms] [worker-78 ] RESOURCE_WAIT      job=W078 resource=DATABASE
+[     115 ms] [worker-77 ] WORK_FINISHED      job=W077
+[     115 ms] [worker-133] WORK_FINISHED      job=W076
+[     115 ms] [worker-74 ] RESOURCE_ACQUIRED  job=W074 resource=DATABASE waited=0ms
+[     118 ms] [worker-133] RESOURCE_WAIT      job=W076 resource=DATABASE
+[     118 ms] [worker-77 ] RESOURCE_WAIT      job=W077 resource=PRINTER
+[     118 ms] [worker-78 ] RESOURCE_ACQUIRED  job=W078 resource=DATABASE waited=0ms
+[     118 ms] [worker-82 ] WORK_FINISHED      job=W082
+[     118 ms] [worker-86 ] WORK_FINISHED      job=W085
+[     119 ms] [worker-82 ] RESOURCE_WAIT      job=W082 resource=DATABASE
+[     119 ms] [worker-86 ] RESOURCE_WAIT      job=W085 resource=PRINTER
+[     118 ms] [worker-85 ] WORK_FINISHED      job=W084
+[     118 ms] [worker-79 ] RESOURCE_ACQUIRED  job=W079 resource=PRINTER waited=0ms
+[     119 ms] [worker-85 ] RESOURCE_WAIT      job=W084 resource=DATABASE
+[     118 ms] [worker-80 ] WORK_FINISHED      job=W080
+[     119 ms] [worker-85 ] RESOURCE_ACQUIRED  job=W084 resource=DATABASE waited=0ms
+[     119 ms] [worker-89 ] WORK_FINISHED      job=W088
+[     118 ms] [worker-84 ] WORK_FINISHED      job=W083
+[     119 ms] [worker-89 ] RESOURCE_WAIT      job=W088 resource=DATABASE
+[     117 ms] [worker-81 ] WORK_FINISHED      job=W081
+[     117 ms] [worker-67 ] RESOURCE_ACQUIRED  job=W067 resource=PRINTER waited=0ms
+[     119 ms] [worker-81 ] RESOURCE_WAIT      job=W081 resource=PRINTER
+[     119 ms] [worker-89 ] RESOURCE_ACQUIRED  job=W088 resource=DATABASE waited=0ms
+[     119 ms] [worker-81 ] RESOURCE_ACQUIRED  job=W081 resource=PRINTER waited=0ms
+[     119 ms] [worker-84 ] RESOURCE_WAIT      job=W083 resource=PRINTER
+[     119 ms] [worker-91 ] WORK_FINISHED      job=W090
+[     119 ms] [worker-93 ] WORK_FINISHED      job=W092
+[     119 ms] [worker-80 ] RESOURCE_WAIT      job=W080 resource=DATABASE
+[     119 ms] [worker-93 ] RESOURCE_WAIT      job=W092 resource=DATABASE
+[     119 ms] [worker-86 ] RESOURCE_ACQUIRED  job=W085 resource=PRINTER waited=0ms
+[     119 ms] [worker-82 ] RESOURCE_ACQUIRED  job=W082 resource=DATABASE waited=0ms
+[     119 ms] [worker-87 ] WORK_FINISHED      job=W086
+[     119 ms] [worker-77 ] RESOURCE_ACQUIRED  job=W077 resource=PRINTER waited=0ms
+[     119 ms] [worker-133] RESOURCE_ACQUIRED  job=W076 resource=DATABASE waited=1ms
+[     118 ms] [worker-88 ] WORK_FINISHED      job=W087
+[     120 ms] [worker-97 ] WORK_FINISHED      job=W096
+[     120 ms] [worker-87 ] RESOURCE_WAIT      job=W086 resource=DATABASE
+[     120 ms] [worker-97 ] RESOURCE_WAIT      job=W096 resource=DATABASE
+[     120 ms] [worker-95 ] WORK_FINISHED      job=W094
+[     120 ms] [worker-97 ] RESOURCE_ACQUIRED  job=W096 resource=DATABASE waited=0ms
+[     120 ms] [worker-94 ] WORK_FINISHED      job=W093
+[     120 ms] [worker-93 ] RESOURCE_ACQUIRED  job=W092 resource=DATABASE waited=0ms
+[     119 ms] [worker-80 ] RESOURCE_ACQUIRED  job=W080 resource=DATABASE waited=0ms
+[     119 ms] [worker-91 ] RESOURCE_WAIT      job=W090 resource=DATABASE
+[     120 ms] [worker-99 ] WORK_FINISHED      job=W098
+[     119 ms] [worker-84 ] RESOURCE_ACQUIRED  job=W083 resource=PRINTER waited=0ms
+[     119 ms] [worker-92 ] WORK_FINISHED      job=W091
+[     119 ms] [worker-90 ] WORK_FINISHED      job=W089
+[     120 ms] [worker-101] WORK_FINISHED      job=W100
+[     120 ms] [worker-92 ] RESOURCE_WAIT      job=W091 resource=PRINTER
+[     120 ms] [worker-101] RESOURCE_WAIT      job=W100 resource=DATABASE
+[     120 ms] [worker-99 ] RESOURCE_WAIT      job=W098 resource=DATABASE
+[     120 ms] [worker-91 ] RESOURCE_ACQUIRED  job=W090 resource=DATABASE waited=0ms
+[     121 ms] [worker-99 ] RESOURCE_ACQUIRED  job=W098 resource=DATABASE waited=0ms
+[     120 ms] [worker-100] WORK_FINISHED      job=W099
+[     120 ms] [worker-94 ] RESOURCE_WAIT      job=W093 resource=PRINTER
+[     120 ms] [worker-96 ] WORK_FINISHED      job=W095
+[     120 ms] [worker-95 ] RESOURCE_WAIT      job=W094 resource=DATABASE
+[     120 ms] [worker-87 ] RESOURCE_ACQUIRED  job=W086 resource=DATABASE waited=0ms
+[     120 ms] [worker-98 ] WORK_FINISHED      job=W097
+[     120 ms] [worker-88 ] RESOURCE_WAIT      job=W087 resource=PRINTER
+[     121 ms] [worker-104] WORK_FINISHED      job=W103
+[     121 ms] [worker-95 ] RESOURCE_ACQUIRED  job=W094 resource=DATABASE waited=0ms
+[     121 ms] [worker-104] RESOURCE_WAIT      job=W103 resource=PRINTER
+[     121 ms] [worker-96 ] RESOURCE_WAIT      job=W095 resource=PRINTER
+[     121 ms] [worker-104] RESOURCE_ACQUIRED  job=W103 resource=PRINTER waited=0ms
+[     121 ms] [worker-94 ] RESOURCE_ACQUIRED  job=W093 resource=PRINTER waited=0ms
+[     121 ms] [worker-103] WORK_FINISHED      job=W102
+[     121 ms] [worker-100] RESOURCE_WAIT      job=W099 resource=PRINTER
+[     121 ms] [worker-107] WORK_FINISHED      job=W106
+[     121 ms] [worker-102] WORK_FINISHED      job=W101
+[     121 ms] [worker-101] RESOURCE_ACQUIRED  job=W100 resource=DATABASE waited=0ms
+[     121 ms] [worker-102] RESOURCE_WAIT      job=W101 resource=PRINTER
+[     121 ms] [worker-92 ] RESOURCE_ACQUIRED  job=W091 resource=PRINTER waited=0ms
+[     120 ms] [worker-90 ] RESOURCE_WAIT      job=W089 resource=PRINTER
+[     121 ms] [worker-102] RESOURCE_ACQUIRED  job=W101 resource=PRINTER waited=0ms
+[     121 ms] [worker-109] WORK_FINISHED      job=W108
+[     121 ms] [worker-108] WORK_FINISHED      job=W107
+[     121 ms] [worker-109] RESOURCE_WAIT      job=W108 resource=DATABASE
+[     122 ms] [worker-108] RESOURCE_WAIT      job=W107 resource=PRINTER
+[     121 ms] [worker-107] RESOURCE_WAIT      job=W106 resource=DATABASE
+[     122 ms] [worker-108] RESOURCE_ACQUIRED  job=W107 resource=PRINTER waited=0ms
+[     122 ms] [worker-107] RESOURCE_ACQUIRED  job=W106 resource=DATABASE waited=0ms
+[     121 ms] [worker-100] RESOURCE_ACQUIRED  job=W099 resource=PRINTER waited=0ms
+[     121 ms] [worker-103] RESOURCE_WAIT      job=W102 resource=DATABASE
+[     121 ms] [worker-105] WORK_FINISHED      job=W105
+[     121 ms] [worker-96 ] RESOURCE_ACQUIRED  job=W095 resource=PRINTER waited=0ms
+[     121 ms] [worker-106] WORK_FINISHED      job=W104
+[     121 ms] [worker-88 ] RESOURCE_ACQUIRED  job=W087 resource=PRINTER waited=0ms
+[     122 ms] [worker-106] RESOURCE_WAIT      job=W104 resource=DATABASE
+[     121 ms] [worker-98 ] RESOURCE_WAIT      job=W097 resource=PRINTER
+[     122 ms] [worker-116] WORK_FINISHED      job=W114
+[     122 ms] [worker-113] WORK_FINISHED      job=W112
+[     122 ms] [worker-105] RESOURCE_WAIT      job=W105 resource=PRINTER
+[     122 ms] [worker-103] RESOURCE_ACQUIRED  job=W102 resource=DATABASE waited=0ms
+[     122 ms] [worker-105] RESOURCE_ACQUIRED  job=W105 resource=PRINTER waited=0ms
+[     122 ms] [worker-114] WORK_FINISHED      job=W113
+[     122 ms] [worker-115] WORK_FINISHED      job=W115
+[     122 ms] [worker-112] WORK_FINISHED      job=W110
+[     122 ms] [worker-115] RESOURCE_WAIT      job=W115 resource=PRINTER
+[     122 ms] [worker-111] WORK_FINISHED      job=W111
+[     122 ms] [worker-109] RESOURCE_ACQUIRED  job=W108 resource=DATABASE waited=0ms
+[     121 ms] [worker-110] WORK_FINISHED      job=W109
+[     121 ms] [worker-90 ] RESOURCE_ACQUIRED  job=W089 resource=PRINTER waited=0ms
+[     122 ms] [worker-118] WORK_FINISHED      job=W117
+[     122 ms] [worker-110] RESOURCE_WAIT      job=W109 resource=PRINTER
+[     122 ms] [worker-111] RESOURCE_WAIT      job=W111 resource=PRINTER
+[     123 ms] [worker-110] RESOURCE_ACQUIRED  job=W109 resource=PRINTER waited=0ms
+[     122 ms] [worker-115] RESOURCE_ACQUIRED  job=W115 resource=PRINTER waited=0ms
+[     122 ms] [worker-112] RESOURCE_WAIT      job=W110 resource=DATABASE
+[     122 ms] [worker-114] RESOURCE_WAIT      job=W113 resource=PRINTER
+[     122 ms] [worker-117] WORK_FINISHED      job=W116
+[     123 ms] [worker-114] RESOURCE_ACQUIRED  job=W113 resource=PRINTER waited=0ms
+[     122 ms] [worker-113] RESOURCE_WAIT      job=W112 resource=DATABASE
+[     123 ms] [worker-124] WORK_FINISHED      job=W121
+[     122 ms] [worker-116] RESOURCE_WAIT      job=W114 resource=DATABASE
+[     123 ms] [worker-124] RESOURCE_WAIT      job=W121 resource=PRINTER
+[     122 ms] [worker-98 ] RESOURCE_ACQUIRED  job=W097 resource=PRINTER waited=0ms
+[     122 ms] [worker-106] RESOURCE_ACQUIRED  job=W104 resource=DATABASE waited=0ms
+[     123 ms] [worker-124] RESOURCE_ACQUIRED  job=W121 resource=PRINTER waited=0ms
+[     123 ms] [worker-116] RESOURCE_ACQUIRED  job=W114 resource=DATABASE waited=0ms
+[     123 ms] [worker-113] RESOURCE_ACQUIRED  job=W112 resource=DATABASE waited=0ms
+[     123 ms] [worker-117] RESOURCE_WAIT      job=W116 resource=DATABASE
+[     123 ms] [worker-129] WORK_FINISHED      job=W125
+[     123 ms] [worker-112] RESOURCE_ACQUIRED  job=W110 resource=DATABASE waited=0ms
+[     123 ms] [worker-125] WORK_FINISHED      job=W120
+[     123 ms] [worker-123] WORK_FINISHED      job=W119
+[     123 ms] [worker-111] RESOURCE_ACQUIRED  job=W111 resource=PRINTER waited=0ms
+[     123 ms] [worker-123] RESOURCE_WAIT      job=W119 resource=PRINTER
+[     122 ms] [worker-118] RESOURCE_WAIT      job=W117 resource=PRINTER
+[     122 ms] [worker-119] WORK_FINISHED      job=W118
+[     123 ms] [worker-118] RESOURCE_ACQUIRED  job=W117 resource=PRINTER waited=0ms
+[     123 ms] [worker-119] RESOURCE_WAIT      job=W118 resource=DATABASE
+[     123 ms] [worker-123] RESOURCE_ACQUIRED  job=W119 resource=PRINTER waited=0ms
+[     123 ms] [worker-119] RESOURCE_ACQUIRED  job=W118 resource=DATABASE waited=0ms
+[     123 ms] [worker-135] WORK_FINISHED      job=W128
+[     123 ms] [worker-131] WORK_FINISHED      job=W131
+[     123 ms] [worker-125] RESOURCE_WAIT      job=W120 resource=DATABASE
+[     123 ms] [worker-132] WORK_FINISHED      job=W127
+[     123 ms] [worker-129] RESOURCE_WAIT      job=W125 resource=PRINTER
+[     123 ms] [worker-117] RESOURCE_ACQUIRED  job=W116 resource=DATABASE waited=0ms
+[     123 ms] [worker-127] WORK_FINISHED      job=W126
+[     124 ms] [worker-139] WORK_FINISHED      job=W132
+[     123 ms] [worker-128] WORK_FINISHED      job=W124
+[     123 ms] [worker-120] WORK_FINISHED      job=W123
+[     123 ms] [worker-126] WORK_FINISHED      job=W122
+[     124 ms] [worker-120] RESOURCE_WAIT      job=W123 resource=PRINTER
+[     124 ms] [worker-128] RESOURCE_WAIT      job=W124 resource=DATABASE
+[     124 ms] [worker-120] RESOURCE_ACQUIRED  job=W123 resource=PRINTER waited=0ms
+[     124 ms] [worker-139] RESOURCE_WAIT      job=W132 resource=DATABASE
+[     124 ms] [worker-128] RESOURCE_ACQUIRED  job=W124 resource=DATABASE waited=0ms
+[     124 ms] [worker-139] RESOURCE_ACQUIRED  job=W132 resource=DATABASE waited=0ms
+[     124 ms] [worker-129] RESOURCE_ACQUIRED  job=W125 resource=PRINTER waited=0ms
+[     124 ms] [worker-127] RESOURCE_WAIT      job=W126 resource=DATABASE
+[     124 ms] [worker-143] WORK_FINISHED      job=W136
+[     123 ms] [worker-132] RESOURCE_WAIT      job=W127 resource=PRINTER
+[     123 ms] [worker-125] RESOURCE_ACQUIRED  job=W120 resource=DATABASE waited=0ms
+[     125 ms] [worker-132] RESOURCE_ACQUIRED  job=W127 resource=PRINTER waited=0ms
+[     123 ms] [worker-135] RESOURCE_WAIT      job=W128 resource=DATABASE
+[     125 ms] [worker-144] WORK_FINISHED      job=W137
+[     123 ms] [worker-131] RESOURCE_WAIT      job=W131 resource=PRINTER
+[     123 ms] [worker-136] WORK_FINISHED      job=W130
+[     123 ms] [worker-137] WORK_FINISHED      job=W129
+[     125 ms] [worker-136] RESOURCE_WAIT      job=W130 resource=DATABASE
+[     125 ms] [worker-131] RESOURCE_ACQUIRED  job=W131 resource=PRINTER waited=0ms
+[     125 ms] [worker-145] WORK_FINISHED      job=W138
+[     125 ms] [worker-144] RESOURCE_WAIT      job=W137 resource=PRINTER
+[     125 ms] [worker-135] RESOURCE_ACQUIRED  job=W128 resource=DATABASE waited=0ms
+[     124 ms] [worker-143] RESOURCE_WAIT      job=W136 resource=DATABASE
+[     124 ms] [worker-127] RESOURCE_ACQUIRED  job=W126 resource=DATABASE waited=0ms
+[     124 ms] [worker-142] WORK_FINISHED      job=W135
+[     124 ms] [worker-141] WORK_FINISHED      job=W134
+[     124 ms] [worker-140] WORK_FINISHED      job=W133
+[     124 ms] [worker-126] RESOURCE_WAIT      job=W122 resource=DATABASE
+[     125 ms] [worker-140] RESOURCE_WAIT      job=W133 resource=PRINTER
+[     125 ms] [worker-126] RESOURCE_ACQUIRED  job=W122 resource=DATABASE waited=0ms
+[     125 ms] [worker-141] RESOURCE_WAIT      job=W134 resource=DATABASE
+[     125 ms] [worker-142] RESOURCE_WAIT      job=W135 resource=PRINTER
+[     125 ms] [worker-148] WORK_FINISHED      job=W141
+[     125 ms] [worker-143] RESOURCE_ACQUIRED  job=W136 resource=DATABASE waited=0ms
+[     125 ms] [worker-147] WORK_FINISHED      job=W140
+[     125 ms] [worker-144] RESOURCE_ACQUIRED  job=W137 resource=PRINTER waited=0ms
+[     125 ms] [worker-145] RESOURCE_WAIT      job=W138 resource=DATABASE
+[     125 ms] [worker-146] WORK_FINISHED      job=W139
+[     126 ms] [worker-145] RESOURCE_ACQUIRED  job=W138 resource=DATABASE waited=0ms
+[     125 ms] [worker-136] RESOURCE_ACQUIRED  job=W130 resource=DATABASE waited=0ms
+[     125 ms] [worker-137] RESOURCE_WAIT      job=W129 resource=PRINTER
+[     126 ms] [worker-153] WORK_FINISHED      job=W145
+[     126 ms] [worker-146] RESOURCE_WAIT      job=W139 resource=PRINTER
+[     126 ms] [worker-152] WORK_FINISHED      job=W144
+[     126 ms] [worker-146] RESOURCE_ACQUIRED  job=W139 resource=PRINTER waited=0ms
+[     126 ms] [worker-147] RESOURCE_WAIT      job=W140 resource=DATABASE
+[     126 ms] [worker-151] WORK_FINISHED      job=W143
+[     126 ms] [worker-148] RESOURCE_WAIT      job=W141 resource=PRINTER
+[     125 ms] [worker-142] RESOURCE_ACQUIRED  job=W135 resource=PRINTER waited=0ms
+[     125 ms] [worker-150] WORK_FINISHED      job=W142
+[     125 ms] [worker-141] RESOURCE_ACQUIRED  job=W134 resource=DATABASE waited=0ms
+[     126 ms] [worker-150] RESOURCE_WAIT      job=W142 resource=DATABASE
+[     126 ms] [worker-157] WORK_FINISHED      job=W148
+[     125 ms] [worker-140] RESOURCE_ACQUIRED  job=W133 resource=PRINTER waited=0ms
+[     126 ms] [worker-157] RESOURCE_WAIT      job=W148 resource=DATABASE
+[     126 ms] [worker-158] WORK_FINISHED      job=W149
+[     126 ms] [worker-150] RESOURCE_ACQUIRED  job=W142 resource=DATABASE waited=0ms
+[     126 ms] [worker-148] RESOURCE_ACQUIRED  job=W141 resource=PRINTER waited=0ms
+[     126 ms] [worker-151] RESOURCE_WAIT      job=W143 resource=PRINTER
+[     126 ms] [worker-147] RESOURCE_ACQUIRED  job=W140 resource=DATABASE waited=0ms
+[     126 ms] [worker-156] WORK_FINISHED      job=W147
+[     126 ms] [worker-152] RESOURCE_WAIT      job=W144 resource=DATABASE
+[     126 ms] [worker-153] RESOURCE_WAIT      job=W145 resource=PRINTER
+[     126 ms] [worker-137] RESOURCE_ACQUIRED  job=W129 resource=PRINTER waited=0ms
+[     127 ms] [worker-153] RESOURCE_ACQUIRED  job=W145 resource=PRINTER waited=0ms
+[     126 ms] [worker-155] WORK_FINISHED      job=W146
+[     127 ms] [worker-152] RESOURCE_ACQUIRED  job=W144 resource=DATABASE waited=0ms
+[     127 ms] [worker-156] RESOURCE_WAIT      job=W147 resource=PRINTER
+[     127 ms] [worker-162] WORK_FINISHED      job=W153
+[     127 ms] [worker-151] RESOURCE_ACQUIRED  job=W143 resource=PRINTER waited=0ms
+[     127 ms] [worker-161] WORK_FINISHED      job=W152
+[     127 ms] [worker-160] WORK_FINISHED      job=W151
+[     127 ms] [worker-158] RESOURCE_WAIT      job=W149 resource=PRINTER
+[     127 ms] [worker-157] RESOURCE_ACQUIRED  job=W148 resource=DATABASE waited=0ms
+[     127 ms] [worker-158] RESOURCE_ACQUIRED  job=W149 resource=PRINTER waited=0ms
+[     126 ms] [worker-159] WORK_FINISHED      job=W150
+[     127 ms] [worker-160] RESOURCE_WAIT      job=W151 resource=PRINTER
+[     127 ms] [worker-166] WORK_FINISHED      job=W158
+[     127 ms] [worker-161] RESOURCE_WAIT      job=W152 resource=DATABASE
+[     127 ms] [worker-167] WORK_FINISHED      job=W157
+[     127 ms] [worker-161] RESOURCE_ACQUIRED  job=W152 resource=DATABASE waited=0ms
+[     127 ms] [worker-162] RESOURCE_WAIT      job=W153 resource=PRINTER
+[     127 ms] [worker-170] WORK_FINISHED      job=W160
+[     127 ms] [worker-156] RESOURCE_ACQUIRED  job=W147 resource=PRINTER waited=0ms
+[     128 ms] [worker-170] RESOURCE_WAIT      job=W160 resource=DATABASE
+[     127 ms] [worker-165] WORK_FINISHED      job=W156
+[     127 ms] [worker-155] RESOURCE_WAIT      job=W146 resource=DATABASE
+[     127 ms] [worker-163] WORK_FINISHED      job=W154
+[     127 ms] [worker-164] WORK_FINISHED      job=W155
+[     128 ms] [worker-163] RESOURCE_WAIT      job=W154 resource=DATABASE
+[     128 ms] [worker-155] RESOURCE_ACQUIRED  job=W146 resource=DATABASE waited=0ms
+[     128 ms] [worker-163] RESOURCE_ACQUIRED  job=W154 resource=DATABASE waited=0ms
+[     128 ms] [worker-165] RESOURCE_WAIT      job=W156 resource=DATABASE
+[     128 ms] [worker-175] WORK_FINISHED      job=W161
+[     128 ms] [worker-170] RESOURCE_ACQUIRED  job=W160 resource=DATABASE waited=0ms
+[     127 ms] [worker-162] RESOURCE_ACQUIRED  job=W153 resource=PRINTER waited=0ms
+[     127 ms] [worker-167] RESOURCE_WAIT      job=W157 resource=PRINTER
+[     128 ms] [worker-180] WORK_FINISHED      job=W166
+[     127 ms] [worker-166] RESOURCE_WAIT      job=W158 resource=DATABASE
+[     127 ms] [worker-160] RESOURCE_ACQUIRED  job=W151 resource=PRINTER waited=0ms
+[     127 ms] [worker-159] RESOURCE_WAIT      job=W150 resource=DATABASE
+[     127 ms] [worker-169] WORK_FINISHED      job=W159
+[     128 ms] [worker-159] RESOURCE_ACQUIRED  job=W150 resource=DATABASE waited=0ms
+[     128 ms] [worker-169] RESOURCE_WAIT      job=W159 resource=PRINTER
+[     128 ms] [worker-166] RESOURCE_ACQUIRED  job=W158 resource=DATABASE waited=0ms
+[     128 ms] [worker-169] RESOURCE_ACQUIRED  job=W159 resource=PRINTER waited=0ms
+[     128 ms] [worker-180] RESOURCE_WAIT      job=W166 resource=DATABASE
+[     128 ms] [worker-182] WORK_FINISHED      job=W169
+[     128 ms] [worker-167] RESOURCE_ACQUIRED  job=W157 resource=PRINTER waited=0ms
+[     128 ms] [worker-177] WORK_FINISHED      job=W164
+[     128 ms] [worker-175] RESOURCE_WAIT      job=W161 resource=PRINTER
+[     128 ms] [worker-165] RESOURCE_ACQUIRED  job=W156 resource=DATABASE waited=0ms
+[     129 ms] [worker-175] RESOURCE_ACQUIRED  job=W161 resource=PRINTER waited=0ms
+[     128 ms] [worker-176] WORK_FINISHED      job=W163
+[     128 ms] [worker-174] WORK_FINISHED      job=W162
+[     129 ms] [worker-176] RESOURCE_WAIT      job=W163 resource=PRINTER
+[     129 ms] [worker-174] RESOURCE_WAIT      job=W162 resource=DATABASE
+[     128 ms] [worker-164] RESOURCE_WAIT      job=W155 resource=PRINTER
+[     129 ms] [worker-174] RESOURCE_ACQUIRED  job=W162 resource=DATABASE waited=0ms
+[     129 ms] [worker-176] RESOURCE_ACQUIRED  job=W163 resource=PRINTER waited=0ms
+[     129 ms] [worker-186] WORK_FINISHED      job=W172
+[     129 ms] [worker-185] WORK_FINISHED      job=W171
+[     128 ms] [worker-177] RESOURCE_WAIT      job=W164 resource=DATABASE
+[     129 ms] [worker-185] RESOURCE_WAIT      job=W171 resource=PRINTER
+[     128 ms] [worker-183] WORK_FINISHED      job=W170
+[     128 ms] [worker-180] RESOURCE_ACQUIRED  job=W166 resource=DATABASE waited=0ms
+[     129 ms] [worker-183] RESOURCE_WAIT      job=W170 resource=DATABASE
+[     128 ms] [worker-182] RESOURCE_WAIT      job=W169 resource=PRINTER
+[     129 ms] [worker-183] RESOURCE_ACQUIRED  job=W170 resource=DATABASE waited=0ms
+[     128 ms] [worker-181] WORK_FINISHED      job=W168
+[     128 ms] [worker-179] WORK_FINISHED      job=W167
+[     129 ms] [worker-181] RESOURCE_WAIT      job=W168 resource=DATABASE
+[     128 ms] [worker-178] WORK_FINISHED      job=W165
+[     129 ms] [worker-179] RESOURCE_WAIT      job=W167 resource=PRINTER
+[     129 ms] [worker-190] WORK_FINISHED      job=W176
+[     129 ms] [worker-178] RESOURCE_WAIT      job=W165 resource=PRINTER
+[     129 ms] [worker-190] RESOURCE_WAIT      job=W176 resource=DATABASE
+[     129 ms] [worker-182] RESOURCE_ACQUIRED  job=W169 resource=PRINTER waited=0ms
+[     129 ms] [worker-189] WORK_FINISHED      job=W175
+[     129 ms] [worker-177] RESOURCE_ACQUIRED  job=W164 resource=DATABASE waited=0ms
+[     129 ms] [worker-189] RESOURCE_WAIT      job=W175 resource=PRINTER
+[     129 ms] [worker-185] RESOURCE_ACQUIRED  job=W171 resource=PRINTER waited=0ms
+[     129 ms] [worker-186] RESOURCE_WAIT      job=W172 resource=DATABASE
+[     129 ms] [worker-188] WORK_FINISHED      job=W174
+[     129 ms] [worker-187] WORK_FINISHED      job=W173
+[     130 ms] [worker-188] RESOURCE_WAIT      job=W174 resource=DATABASE
+[     129 ms] [worker-164] RESOURCE_ACQUIRED  job=W155 resource=PRINTER waited=0ms
+[     130 ms] [worker-188] RESOURCE_ACQUIRED  job=W174 resource=DATABASE waited=0ms
+[     130 ms] [worker-187] RESOURCE_WAIT      job=W173 resource=PRINTER
+[     130 ms] [worker-186] RESOURCE_ACQUIRED  job=W172 resource=DATABASE waited=0ms
+[     130 ms] [worker-193] WORK_FINISHED      job=W179
+[     129 ms] [worker-192] WORK_FINISHED      job=W178
+[     129 ms] [worker-189] RESOURCE_ACQUIRED  job=W175 resource=PRINTER waited=0ms
+[     129 ms] [worker-191] WORK_FINISHED      job=W177
+[     129 ms] [worker-190] RESOURCE_ACQUIRED  job=W176 resource=DATABASE waited=0ms
+[     129 ms] [worker-178] RESOURCE_ACQUIRED  job=W165 resource=PRINTER waited=0ms
+[     129 ms] [worker-179] RESOURCE_ACQUIRED  job=W167 resource=PRINTER waited=0ms
+[     129 ms] [worker-181] RESOURCE_ACQUIRED  job=W168 resource=DATABASE waited=0ms
+[     130 ms] [worker-199] WORK_FINISHED      job=W185
+[     130 ms] [worker-198] WORK_FINISHED      job=W184
+[     130 ms] [worker-199] RESOURCE_WAIT      job=W185 resource=PRINTER
+[     130 ms] [worker-197] WORK_FINISHED      job=W183
+[     130 ms] [worker-191] RESOURCE_WAIT      job=W177 resource=PRINTER
+[     130 ms] [worker-197] RESOURCE_WAIT      job=W183 resource=PRINTER
+[     130 ms] [worker-192] RESOURCE_WAIT      job=W178 resource=DATABASE
+[     130 ms] [worker-197] RESOURCE_ACQUIRED  job=W183 resource=PRINTER waited=0ms
+[     130 ms] [worker-193] RESOURCE_WAIT      job=W179 resource=PRINTER
+[     130 ms] [worker-196] WORK_FINISHED      job=W182
+[     130 ms] [worker-187] RESOURCE_ACQUIRED  job=W173 resource=PRINTER waited=0ms
+[     130 ms] [worker-195] WORK_FINISHED      job=W181
+[     130 ms] [worker-194] WORK_FINISHED      job=W180
+[     130 ms] [worker-195] RESOURCE_WAIT      job=W181 resource=PRINTER
+[     130 ms] [worker-211] WORK_FINISHED      job=W189
+[     130 ms] [worker-196] RESOURCE_WAIT      job=W182 resource=DATABASE
+[     130 ms] [worker-193] RESOURCE_ACQUIRED  job=W179 resource=PRINTER waited=0ms
+[     130 ms] [worker-207] WORK_FINISHED      job=W188
+[     131 ms] [worker-206] WORK_FINISHED      job=W190
+[     131 ms] [worker-207] RESOURCE_WAIT      job=W188 resource=DATABASE
+[     130 ms] [worker-192] RESOURCE_ACQUIRED  job=W178 resource=DATABASE waited=0ms
+[     130 ms] [worker-199] RESOURCE_ACQUIRED  job=W185 resource=PRINTER waited=0ms
+[     130 ms] [worker-198] RESOURCE_WAIT      job=W184 resource=DATABASE
+[     131 ms] [worker-213] WORK_FINISHED      job=W191
+[     131 ms] [worker-213] RESOURCE_WAIT      job=W191 resource=PRINTER
+[     131 ms] [worker-214] WORK_FINISHED      job=W192
+[     131 ms] [worker-214] RESOURCE_WAIT      job=W192 resource=DATABASE
+[     130 ms] [worker-201] WORK_FINISHED      job=W186
+[     130 ms] [worker-208] WORK_FINISHED      job=W187
+[     132 ms] [worker-201] RESOURCE_WAIT      job=W186 resource=DATABASE
+[     131 ms] [worker-214] RESOURCE_ACQUIRED  job=W192 resource=DATABASE waited=0ms
+[     131 ms] [worker-213] RESOURCE_ACQUIRED  job=W191 resource=PRINTER waited=0ms
+[     132 ms] [worker-216] WORK_FINISHED      job=W194
+[     131 ms] [worker-198] RESOURCE_ACQUIRED  job=W184 resource=DATABASE waited=0ms
+[     131 ms] [worker-207] RESOURCE_ACQUIRED  job=W188 resource=DATABASE waited=0ms
+[     132 ms] [worker-218] WORK_FINISHED      job=W195
+[     131 ms] [worker-206] RESOURCE_WAIT      job=W190 resource=DATABASE
+[     132 ms] [worker-218] RESOURCE_WAIT      job=W195 resource=PRINTER
+[     131 ms] [worker-196] RESOURCE_ACQUIRED  job=W182 resource=DATABASE waited=0ms
+[     131 ms] [worker-191] RESOURCE_ACQUIRED  job=W177 resource=PRINTER waited=0ms
+[     131 ms] [worker-211] RESOURCE_WAIT      job=W189 resource=PRINTER
+[     131 ms] [worker-195] RESOURCE_ACQUIRED  job=W181 resource=PRINTER waited=0ms
+[     131 ms] [worker-194] RESOURCE_WAIT      job=W180 resource=DATABASE
+[     133 ms] [worker-225] WORK_FINISHED      job=W199
+[     133 ms] [worker-194] RESOURCE_ACQUIRED  job=W180 resource=DATABASE waited=0ms
+[     133 ms] [worker-225] RESOURCE_WAIT      job=W199 resource=PRINTER
+[     132 ms] [worker-211] RESOURCE_ACQUIRED  job=W189 resource=PRINTER waited=0ms
+[     132 ms] [worker-224] WORK_FINISHED      job=W198
+[     132 ms] [worker-222] WORK_FINISHED      job=W197
+[     132 ms] [worker-218] RESOURCE_ACQUIRED  job=W195 resource=PRINTER waited=0ms
+[     133 ms] [worker-222] RESOURCE_WAIT      job=W197 resource=PRINTER
+[     132 ms] [worker-206] RESOURCE_ACQUIRED  job=W190 resource=DATABASE waited=0ms
+[     132 ms] [worker-219] WORK_FINISHED      job=W196
+[     132 ms] [worker-216] RESOURCE_WAIT      job=W194 resource=DATABASE
+[     133 ms] [worker-219] RESOURCE_WAIT      job=W196 resource=DATABASE
+[     133 ms] [worker-232] WORK_FINISHED      job=W203
+[     132 ms] [worker-217] WORK_FINISHED      job=W193
+[     133 ms] [worker-232] RESOURCE_WAIT      job=W203 resource=PRINTER
+[     132 ms] [worker-201] RESOURCE_ACQUIRED  job=W186 resource=DATABASE waited=0ms
+[     133 ms] [worker-232] RESOURCE_ACQUIRED  job=W203 resource=PRINTER waited=0ms
+[     132 ms] [worker-208] RESOURCE_WAIT      job=W187 resource=PRINTER
+[     133 ms] [worker-231] WORK_FINISHED      job=W204
+[     133 ms] [worker-217] RESOURCE_WAIT      job=W193 resource=PRINTER
+[     133 ms] [worker-219] RESOURCE_ACQUIRED  job=W196 resource=DATABASE waited=0ms
+[     133 ms] [worker-217] RESOURCE_ACQUIRED  job=W193 resource=PRINTER waited=0ms
+[     133 ms] [worker-216] RESOURCE_ACQUIRED  job=W194 resource=DATABASE waited=0ms
+[     133 ms] [worker-222] RESOURCE_ACQUIRED  job=W197 resource=PRINTER waited=0ms
+[     133 ms] [worker-228] WORK_FINISHED      job=W202
+[     133 ms] [worker-227] WORK_FINISHED      job=W201
+[     133 ms] [worker-224] RESOURCE_WAIT      job=W198 resource=DATABASE
+[     133 ms] [worker-225] RESOURCE_ACQUIRED  job=W199 resource=PRINTER waited=0ms
+[     133 ms] [worker-226] WORK_FINISHED      job=W200
+[     134 ms] [worker-224] RESOURCE_ACQUIRED  job=W198 resource=DATABASE waited=0ms
+[     134 ms] [worker-226] RESOURCE_WAIT      job=W200 resource=DATABASE
+[     133 ms] [worker-227] RESOURCE_WAIT      job=W201 resource=PRINTER
+[     133 ms] [worker-228] RESOURCE_WAIT      job=W202 resource=DATABASE
+[     133 ms] [worker-240] WORK_FINISHED      job=W209
+[     133 ms] [worker-241] WORK_FINISHED      job=W208
+[     133 ms] [worker-235] WORK_FINISHED      job=W207
+[     133 ms] [worker-234] WORK_FINISHED      job=W206
+[     134 ms] [worker-235] RESOURCE_WAIT      job=W207 resource=PRINTER
+[     134 ms] [worker-234] RESOURCE_WAIT      job=W206 resource=DATABASE
+[     133 ms] [worker-231] RESOURCE_WAIT      job=W204 resource=DATABASE
+[     133 ms] [worker-208] RESOURCE_ACQUIRED  job=W187 resource=PRINTER waited=0ms
+[     134 ms] [worker-231] RESOURCE_ACQUIRED  job=W204 resource=DATABASE waited=0ms
+[     133 ms] [worker-233] WORK_FINISHED      job=W205
+[     134 ms] [worker-234] RESOURCE_ACQUIRED  job=W206 resource=DATABASE waited=0ms
+[     134 ms] [worker-235] RESOURCE_ACQUIRED  job=W207 resource=PRINTER waited=0ms
+[     134 ms] [worker-241] RESOURCE_WAIT      job=W208 resource=DATABASE
+[     134 ms] [worker-249] WORK_FINISHED      job=W215
+[     134 ms] [worker-241] RESOURCE_ACQUIRED  job=W208 resource=DATABASE waited=0ms
+[     134 ms] [worker-240] RESOURCE_WAIT      job=W209 resource=PRINTER
+[     134 ms] [worker-228] RESOURCE_ACQUIRED  job=W202 resource=DATABASE waited=0ms
+[     134 ms] [worker-240] RESOURCE_ACQUIRED  job=W209 resource=PRINTER waited=0ms
+[     134 ms] [worker-227] RESOURCE_ACQUIRED  job=W201 resource=PRINTER waited=0ms
+[     134 ms] [worker-226] RESOURCE_ACQUIRED  job=W200 resource=DATABASE waited=0ms
+[     134 ms] [worker-243] WORK_FINISHED      job=W211
+[     135 ms] [worker-255] WORK_FINISHED      job=W220
+[     134 ms] [worker-242] WORK_FINISHED      job=W210
+[     135 ms] [worker-255] RESOURCE_WAIT      job=W220 resource=DATABASE
+[     135 ms] [worker-243] RESOURCE_WAIT      job=W211 resource=PRINTER
+[     134 ms] [worker-253] WORK_FINISHED      job=W219
+[     134 ms] [worker-252] WORK_FINISHED      job=W218
+[     135 ms] [worker-253] RESOURCE_WAIT      job=W219 resource=PRINTER
+[     134 ms] [worker-250] WORK_FINISHED      job=W217
+[     134 ms] [worker-248] WORK_FINISHED      job=W216
+[     135 ms] [worker-250] RESOURCE_WAIT      job=W217 resource=PRINTER
+[     135 ms] [worker-248] RESOURCE_WAIT      job=W216 resource=DATABASE
+[     134 ms] [worker-249] RESOURCE_WAIT      job=W215 resource=PRINTER
+[     134 ms] [worker-247] WORK_FINISHED      job=W214
+[     135 ms] [worker-249] RESOURCE_ACQUIRED  job=W215 resource=PRINTER waited=0ms
+[     134 ms] [worker-233] RESOURCE_WAIT      job=W205 resource=PRINTER
+[     134 ms] [worker-244] WORK_FINISHED      job=W212
+[     134 ms] [worker-245] WORK_FINISHED      job=W213
+[     135 ms] [worker-244] RESOURCE_WAIT      job=W212 resource=DATABASE
+[     135 ms] [worker-233] RESOURCE_ACQUIRED  job=W205 resource=PRINTER waited=0ms
+[     135 ms] [worker-75 ] WORK_FINISHED      job=W221
+[     135 ms] [worker-247] RESOURCE_WAIT      job=W214 resource=DATABASE
+[     135 ms] [worker-248] RESOURCE_ACQUIRED  job=W216 resource=DATABASE waited=0ms
+[     135 ms] [worker-247] RESOURCE_ACQUIRED  job=W214 resource=DATABASE waited=0ms
+[     135 ms] [worker-250] RESOURCE_ACQUIRED  job=W217 resource=PRINTER waited=0ms
+[     135 ms] [worker-122] WORK_FINISHED      job=W223
+[     135 ms] [worker-253] RESOURCE_ACQUIRED  job=W219 resource=PRINTER waited=0ms
+[     135 ms] [worker-122] RESOURCE_WAIT      job=W223 resource=PRINTER
+[     135 ms] [worker-252] RESOURCE_WAIT      job=W218 resource=DATABASE
+[     135 ms] [worker-138] WORK_FINISHED      job=W226
+[     135 ms] [worker-243] RESOURCE_ACQUIRED  job=W211 resource=PRINTER waited=0ms
+[     135 ms] [worker-255] RESOURCE_ACQUIRED  job=W220 resource=DATABASE waited=0ms
+[     135 ms] [worker-242] RESOURCE_WAIT      job=W210 resource=DATABASE
+[     136 ms] [worker-149] WORK_FINISHED      job=W227
+[     136 ms] [worker-138] RESOURCE_WAIT      job=W226 resource=DATABASE
+[     136 ms] [worker-252] RESOURCE_ACQUIRED  job=W218 resource=DATABASE waited=0ms
+[     135 ms] [worker-122] RESOURCE_ACQUIRED  job=W223 resource=PRINTER waited=0ms
+[     135 ms] [worker-134] WORK_FINISHED      job=W225
+[     135 ms] [worker-130] WORK_FINISHED      job=W224
+[     135 ms] [worker-121] WORK_FINISHED      job=W222
+[     136 ms] [worker-130] RESOURCE_WAIT      job=W224 resource=DATABASE
+[     135 ms] [worker-75 ] RESOURCE_WAIT      job=W221 resource=PRINTER
+[     135 ms] [worker-244] RESOURCE_ACQUIRED  job=W212 resource=DATABASE waited=0ms
+[     135 ms] [worker-245] RESOURCE_WAIT      job=W213 resource=PRINTER
+[     136 ms] [worker-75 ] RESOURCE_ACQUIRED  job=W221 resource=PRINTER waited=0ms
+[     136 ms] [worker-130] RESOURCE_ACQUIRED  job=W224 resource=DATABASE waited=0ms
+[     136 ms] [worker-121] RESOURCE_WAIT      job=W222 resource=DATABASE
+[     136 ms] [worker-134] RESOURCE_WAIT      job=W225 resource=PRINTER
+[     136 ms] [worker-171] WORK_FINISHED      job=W230
+[     136 ms] [worker-134] RESOURCE_ACQUIRED  job=W225 resource=PRINTER waited=0ms
+[     136 ms] [worker-168] WORK_FINISHED      job=W229
+[     136 ms] [worker-138] RESOURCE_ACQUIRED  job=W226 resource=DATABASE waited=0ms
+[     136 ms] [worker-242] RESOURCE_ACQUIRED  job=W210 resource=DATABASE waited=0ms
+[     136 ms] [worker-149] RESOURCE_WAIT      job=W227 resource=PRINTER
+[     136 ms] [worker-154] WORK_FINISHED      job=W228
+[     136 ms] [worker-204] WORK_FINISHED      job=W236
+[     136 ms] [worker-154] RESOURCE_WAIT      job=W228 resource=DATABASE
+[     136 ms] [worker-204] RESOURCE_WAIT      job=W236 resource=DATABASE
+[     136 ms] [worker-202] WORK_FINISHED      job=W235
+[     136 ms] [worker-200] WORK_FINISHED      job=W234
+[     136 ms] [worker-202] RESOURCE_WAIT      job=W235 resource=PRINTER
+[     136 ms] [worker-168] RESOURCE_WAIT      job=W229 resource=PRINTER
+[     136 ms] [worker-171] RESOURCE_WAIT      job=W230 resource=DATABASE
+[     136 ms] [worker-121] RESOURCE_ACQUIRED  job=W222 resource=DATABASE waited=0ms
+[     136 ms] [worker-184] WORK_FINISHED      job=W233
+[     136 ms] [worker-172] WORK_FINISHED      job=W232
+[     136 ms] [worker-245] RESOURCE_ACQUIRED  job=W213 resource=PRINTER waited=0ms
+[     136 ms] [worker-173] WORK_FINISHED      job=W231
+[     137 ms] [worker-172] RESOURCE_WAIT      job=W232 resource=DATABASE
+[     137 ms] [worker-205] WORK_FINISHED      job=W238
+[     137 ms] [worker-184] RESOURCE_WAIT      job=W233 resource=PRINTER
+[     137 ms] [worker-203] WORK_FINISHED      job=W237
+[     137 ms] [worker-184] RESOURCE_ACQUIRED  job=W233 resource=PRINTER waited=0ms
+[     137 ms] [worker-203] RESOURCE_WAIT      job=W237 resource=PRINTER
+[     137 ms] [worker-171] RESOURCE_ACQUIRED  job=W230 resource=DATABASE waited=0ms
+[     137 ms] [worker-168] RESOURCE_ACQUIRED  job=W229 resource=PRINTER waited=0ms
+[     137 ms] [worker-202] RESOURCE_ACQUIRED  job=W235 resource=PRINTER waited=1ms
+[     136 ms] [worker-200] RESOURCE_WAIT      job=W234 resource=DATABASE
+[     136 ms] [worker-204] RESOURCE_ACQUIRED  job=W236 resource=DATABASE waited=0ms
+[     137 ms] [worker-200] RESOURCE_ACQUIRED  job=W234 resource=DATABASE waited=0ms
+[     137 ms] [worker-220] WORK_FINISHED      job=W243
+[     137 ms] [worker-220] RESOURCE_WAIT      job=W243 resource=PRINTER
+[     137 ms] [worker-221] WORK_FINISHED      job=W244
+[     137 ms] [worker-220] RESOURCE_ACQUIRED  job=W243 resource=PRINTER waited=0ms
+[     137 ms] [worker-221] RESOURCE_WAIT      job=W244 resource=DATABASE
+[     136 ms] [worker-154] RESOURCE_ACQUIRED  job=W228 resource=DATABASE waited=0ms
+[     136 ms] [worker-149] RESOURCE_ACQUIRED  job=W227 resource=PRINTER waited=0ms
+[     137 ms] [worker-229] WORK_FINISHED      job=W246
+[     137 ms] [worker-223] WORK_FINISHED      job=W245
+[     137 ms] [worker-229] RESOURCE_WAIT      job=W246 resource=DATABASE
+[     137 ms] [worker-223] RESOURCE_WAIT      job=W245 resource=PRINTER
+[     138 ms] [worker-229] RESOURCE_ACQUIRED  job=W246 resource=DATABASE waited=0ms
+[     137 ms] [worker-221] RESOURCE_ACQUIRED  job=W244 resource=DATABASE waited=0ms
+[     137 ms] [worker-215] WORK_FINISHED      job=W242
+[     137 ms] [worker-209] WORK_FINISHED      job=W240
+[     137 ms] [worker-212] WORK_FINISHED      job=W241
+[     138 ms] [worker-209] RESOURCE_WAIT      job=W240 resource=DATABASE
+[     138 ms] [worker-212] RESOURCE_WAIT      job=W241 resource=PRINTER
+[     137 ms] [worker-210] WORK_FINISHED      job=W239
+[     137 ms] [worker-203] RESOURCE_ACQUIRED  job=W237 resource=PRINTER waited=0ms
+[     138 ms] [worker-210] RESOURCE_WAIT      job=W239 resource=PRINTER
+[     137 ms] [worker-205] RESOURCE_WAIT      job=W238 resource=DATABASE
+[     138 ms] [worker-210] RESOURCE_ACQUIRED  job=W239 resource=PRINTER waited=0ms
+[     137 ms] [worker-172] RESOURCE_ACQUIRED  job=W232 resource=DATABASE waited=0ms
+[     137 ms] [worker-173] RESOURCE_WAIT      job=W231 resource=PRINTER
+[     138 ms] [worker-239] JOB_STARTED        job=W251 priority=1
+[     138 ms] [worker-173] RESOURCE_ACQUIRED  job=W231 resource=PRINTER waited=0ms
+[     138 ms] [worker-238] JOB_STARTED        job=W250 priority=1
+[     138 ms] [worker-251] JOB_STARTED        job=W253 priority=1
+[     138 ms] [worker-205] RESOURCE_ACQUIRED  job=W238 resource=DATABASE waited=0ms
+[     138 ms] [worker-209] RESOURCE_ACQUIRED  job=W240 resource=DATABASE waited=0ms
+[     138 ms] [worker-212] RESOURCE_ACQUIRED  job=W241 resource=PRINTER waited=0ms
+[     138 ms] [worker-215] RESOURCE_WAIT      job=W242 resource=DATABASE
+[     138 ms] [worker-236] JOB_STARTED        job=W248 priority=1
+[     138 ms] [worker-237] JOB_STARTED        job=W249 priority=1
+[     138 ms] [worker-230] JOB_STARTED        job=W247 priority=1
+[     138 ms] [worker-223] RESOURCE_ACQUIRED  job=W245 resource=PRINTER waited=0ms
+[     139 ms] [worker-215] RESOURCE_ACQUIRED  job=W242 resource=DATABASE waited=0ms
+[     139 ms] [worker-76 ] JOB_STARTED        job=W256 priority=1
+[     138 ms] [worker-254] JOB_STARTED        job=W255 priority=1
+[     138 ms] [worker-256] JOB_STARTED        job=W254 priority=1
+[     138 ms] [worker-246] JOB_STARTED        job=W252 priority=1
+[     162 ms] [worker-7  ] RESOURCE_RELEASED  job=W007 resource=PRINTER
+[     162 ms] [worker-2  ] RESOURCE_RELEASED  job=W002 resource=DATABASE
+[     162 ms] [worker-12 ] RESOURCE_RELEASED  job=W012 resource=DATABASE
+[     163 ms] [worker-1  ] RESOURCE_RELEASED  job=W001 resource=PRINTER
+[     163 ms] [worker-9  ] RESOURCE_RELEASED  job=W009 resource=PRINTER
+[     162 ms] [worker-11 ] RESOURCE_RELEASED  job=W010 resource=DATABASE
+[     162 ms] [worker-8  ] RESOURCE_RELEASED  job=W008 resource=DATABASE
+[     163 ms] [worker-11 ] JOB_COMPLETED      job=W010
+[     163 ms] [worker-9  ] JOB_COMPLETED      job=W009
+[     163 ms] [worker-1  ] JOB_COMPLETED      job=W001
+[     163 ms] [worker-12 ] JOB_COMPLETED      job=W012
+[     163 ms] [worker-6  ] RESOURCE_RELEASED  job=W006 resource=DATABASE
+[     163 ms] [worker-3  ] RESOURCE_RELEASED  job=W003 resource=PRINTER
+[     162 ms] [worker-2  ] JOB_COMPLETED      job=W002
+[     162 ms] [worker-7  ] JOB_COMPLETED      job=W007
+[     162 ms] [worker-4  ] RESOURCE_RELEASED  job=W004 resource=DATABASE
+[     162 ms] [worker-5  ] RESOURCE_RELEASED  job=W005 resource=PRINTER
+[     162 ms] [worker-10 ] RESOURCE_RELEASED  job=W011 resource=PRINTER
+[     163 ms] [worker-5  ] JOB_COMPLETED      job=W005
+[     163 ms] [worker-4  ] JOB_COMPLETED      job=W004
+[     163 ms] [worker-3  ] JOB_COMPLETED      job=W003
+[     163 ms] [worker-6  ] JOB_COMPLETED      job=W006
+[     163 ms] [worker-8  ] JOB_COMPLETED      job=W008
+[     163 ms] [worker-10 ] JOB_COMPLETED      job=W011
+[     164 ms] [worker-31 ] RESOURCE_RELEASED  job=W028 resource=DATABASE
+[     164 ms] [worker-28 ] RESOURCE_RELEASED  job=W027 resource=PRINTER
+[     164 ms] [worker-13 ] RESOURCE_RELEASED  job=W013 resource=PRINTER
+[     164 ms] [worker-20 ] RESOURCE_RELEASED  job=W017 resource=PRINTER
+[     164 ms] [worker-19 ] RESOURCE_RELEASED  job=W016 resource=DATABASE
+[     164 ms] [worker-23 ] RESOURCE_RELEASED  job=W020 resource=DATABASE
+[     164 ms] [worker-23 ] JOB_COMPLETED      job=W020
+[     164 ms] [worker-24 ] RESOURCE_RELEASED  job=W021 resource=PRINTER
+[     164 ms] [worker-27 ] RESOURCE_RELEASED  job=W024 resource=DATABASE
+[     164 ms] [worker-26 ] RESOURCE_RELEASED  job=W023 resource=PRINTER
+[     164 ms] [worker-19 ] JOB_COMPLETED      job=W016
+[     164 ms] [worker-40 ] RESOURCE_RELEASED  job=W037 resource=PRINTER
+[     164 ms] [worker-20 ] JOB_COMPLETED      job=W017
+[     164 ms] [worker-32 ] RESOURCE_RELEASED  job=W029 resource=PRINTER
+[     164 ms] [worker-30 ] RESOURCE_RELEASED  job=W026 resource=DATABASE
+[     164 ms] [worker-13 ] JOB_COMPLETED      job=W013
+[     164 ms] [worker-28 ] JOB_COMPLETED      job=W027
+[     164 ms] [worker-25 ] RESOURCE_RELEASED  job=W022 resource=DATABASE
+[     165 ms] [worker-29 ] RESOURCE_RELEASED  job=W025 resource=PRINTER
+[     164 ms] [worker-31 ] JOB_COMPLETED      job=W028
+[     165 ms] [worker-29 ] JOB_COMPLETED      job=W025
+[     165 ms] [worker-25 ] JOB_COMPLETED      job=W022
+[     164 ms] [worker-21 ] RESOURCE_RELEASED  job=W018 resource=DATABASE
+[     164 ms] [worker-22 ] RESOURCE_RELEASED  job=W019 resource=PRINTER
+[     164 ms] [worker-30 ] JOB_COMPLETED      job=W026
+[     164 ms] [worker-32 ] JOB_COMPLETED      job=W029
+[     164 ms] [worker-40 ] JOB_COMPLETED      job=W037
+[     164 ms] [worker-26 ] JOB_COMPLETED      job=W023
+[     164 ms] [worker-27 ] JOB_COMPLETED      job=W024
+[     165 ms] [worker-35 ] RESOURCE_RELEASED  job=W032 resource=DATABASE
+[     165 ms] [worker-36 ] RESOURCE_RELEASED  job=W033 resource=PRINTER
+[     164 ms] [worker-24 ] JOB_COMPLETED      job=W021
+[     164 ms] [worker-38 ] RESOURCE_RELEASED  job=W035 resource=PRINTER
+[     165 ms] [worker-36 ] JOB_COMPLETED      job=W033
+[     165 ms] [worker-37 ] RESOURCE_RELEASED  job=W034 resource=DATABASE
+[     165 ms] [worker-35 ] JOB_COMPLETED      job=W032
+[     165 ms] [worker-17 ] RESOURCE_RELEASED  job=W014 resource=DATABASE
+[     165 ms] [worker-18 ] RESOURCE_RELEASED  job=W015 resource=PRINTER
+[     165 ms] [worker-22 ] JOB_COMPLETED      job=W019
+[     165 ms] [worker-33 ] RESOURCE_RELEASED  job=W030 resource=DATABASE
+[     165 ms] [worker-21 ] JOB_COMPLETED      job=W018
+[     165 ms] [worker-39 ] RESOURCE_RELEASED  job=W036 resource=DATABASE
+[     165 ms] [worker-16 ] RESOURCE_RELEASED  job=W039 resource=PRINTER
+[     165 ms] [worker-14 ] RESOURCE_RELEASED  job=W044 resource=DATABASE
+[     165 ms] [worker-14 ] JOB_COMPLETED      job=W044
+[     165 ms] [worker-39 ] JOB_COMPLETED      job=W036
+[     166 ms] [worker-57 ] RESOURCE_RELEASED  job=W056 resource=DATABASE
+[     166 ms] [worker-45 ] RESOURCE_RELEASED  job=W043 resource=PRINTER
+[     165 ms] [worker-48 ] RESOURCE_RELEASED  job=W047 resource=PRINTER
+[     165 ms] [worker-33 ] JOB_COMPLETED      job=W030
+[     165 ms] [worker-18 ] JOB_COMPLETED      job=W015
+[     166 ms] [worker-47 ] RESOURCE_RELEASED  job=W046 resource=DATABASE
+[     166 ms] [worker-47 ] JOB_COMPLETED      job=W046
+[     165 ms] [worker-46 ] RESOURCE_RELEASED  job=W045 resource=PRINTER
+[     165 ms] [worker-17 ] JOB_COMPLETED      job=W014
+[     165 ms] [worker-50 ] RESOURCE_RELEASED  job=W049 resource=PRINTER
+[     165 ms] [worker-37 ] JOB_COMPLETED      job=W034
+[     166 ms] [worker-42 ] RESOURCE_RELEASED  job=W040 resource=DATABASE
+[     166 ms] [worker-42 ] JOB_COMPLETED      job=W040
+[     166 ms] [worker-60 ] RESOURCE_RELEASED  job=W060 resource=DATABASE
+[     165 ms] [worker-38 ] JOB_COMPLETED      job=W035
+[     167 ms] [worker-34 ] RESOURCE_RELEASED  job=W031 resource=PRINTER
+[     167 ms] [worker-34 ] JOB_COMPLETED      job=W031
+[     165 ms] [worker-41 ] RESOURCE_RELEASED  job=W038 resource=DATABASE
+[     166 ms] [worker-60 ] JOB_COMPLETED      job=W060
+[     166 ms] [worker-66 ] RESOURCE_RELEASED  job=W066 resource=DATABASE
+[     167 ms] [worker-66 ] JOB_COMPLETED      job=W066
+[     166 ms] [worker-50 ] JOB_COMPLETED      job=W049
+[     167 ms] [worker-61 ] RESOURCE_RELEASED  job=W061 resource=PRINTER
+[     166 ms] [worker-46 ] JOB_COMPLETED      job=W045
+[     166 ms] [worker-44 ] RESOURCE_RELEASED  job=W042 resource=DATABASE
+[     166 ms] [worker-54 ] RESOURCE_RELEASED  job=W053 resource=PRINTER
+[     166 ms] [worker-48 ] JOB_COMPLETED      job=W047
+[     167 ms] [worker-54 ] JOB_COMPLETED      job=W053
+[     166 ms] [worker-45 ] JOB_COMPLETED      job=W043
+[     167 ms] [worker-58 ] RESOURCE_RELEASED  job=W058 resource=DATABASE
+[     167 ms] [worker-15 ] RESOURCE_RELEASED  job=W057 resource=PRINTER
+[     166 ms] [worker-57 ] JOB_COMPLETED      job=W056
+[     165 ms] [worker-16 ] JOB_COMPLETED      job=W039
+[     167 ms] [worker-64 ] RESOURCE_RELEASED  job=W064 resource=DATABASE
+[     168 ms] [worker-64 ] JOB_COMPLETED      job=W064
+[     168 ms] [worker-52 ] RESOURCE_RELEASED  job=W051 resource=PRINTER
+[     168 ms] [worker-52 ] JOB_COMPLETED      job=W051
+[     167 ms] [worker-15 ] JOB_COMPLETED      job=W057
+[     167 ms] [worker-58 ] JOB_COMPLETED      job=W058
+[     167 ms] [worker-55 ] RESOURCE_RELEASED  job=W054 resource=DATABASE
+[     167 ms] [worker-44 ] JOB_COMPLETED      job=W042
+[     167 ms] [worker-43 ] RESOURCE_RELEASED  job=W041 resource=PRINTER
+[     167 ms] [worker-61 ] JOB_COMPLETED      job=W061
+[     168 ms] [worker-83 ] RESOURCE_RELEASED  job=W075 resource=PRINTER
+[     167 ms] [worker-59 ] RESOURCE_RELEASED  job=W059 resource=PRINTER
+[     167 ms] [worker-69 ] RESOURCE_RELEASED  job=W069 resource=PRINTER
+[     168 ms] [worker-59 ] JOB_COMPLETED      job=W059
+[     167 ms] [worker-41 ] JOB_COMPLETED      job=W038
+[     168 ms] [worker-69 ] JOB_COMPLETED      job=W069
+[     168 ms] [worker-62 ] RESOURCE_RELEASED  job=W062 resource=DATABASE
+[     168 ms] [worker-65 ] RESOURCE_RELEASED  job=W065 resource=PRINTER
+[     168 ms] [worker-68 ] RESOURCE_RELEASED  job=W068 resource=DATABASE
+[     168 ms] [worker-83 ] JOB_COMPLETED      job=W075
+[     168 ms] [worker-43 ] JOB_COMPLETED      job=W041
+[     168 ms] [worker-51 ] RESOURCE_RELEASED  job=W050 resource=DATABASE
+[     168 ms] [worker-73 ] RESOURCE_RELEASED  job=W073 resource=PRINTER
+[     168 ms] [worker-71 ] RESOURCE_RELEASED  job=W071 resource=PRINTER
+[     168 ms] [worker-55 ] JOB_COMPLETED      job=W054
+[     168 ms] [worker-49 ] RESOURCE_RELEASED  job=W048 resource=DATABASE
+[     168 ms] [worker-56 ] RESOURCE_RELEASED  job=W055 resource=PRINTER
+[     167 ms] [worker-63 ] RESOURCE_RELEASED  job=W063 resource=PRINTER
+[     168 ms] [worker-56 ] JOB_COMPLETED      job=W055
+[     168 ms] [worker-72 ] RESOURCE_RELEASED  job=W072 resource=DATABASE
+[     168 ms] [worker-49 ] JOB_COMPLETED      job=W048
+[     168 ms] [worker-71 ] JOB_COMPLETED      job=W071
+[     168 ms] [worker-239] WORK_FINISHED      job=W251
+[     168 ms] [worker-73 ] JOB_COMPLETED      job=W073
+[     168 ms] [worker-238] WORK_FINISHED      job=W250
+[     168 ms] [worker-51 ] JOB_COMPLETED      job=W050
+[     168 ms] [worker-251] WORK_FINISHED      job=W253
+[     168 ms] [worker-70 ] RESOURCE_RELEASED  job=W070 resource=DATABASE
+[     169 ms] [worker-78 ] RESOURCE_RELEASED  job=W078 resource=DATABASE
+[     169 ms] [worker-70 ] JOB_COMPLETED      job=W070
+[     168 ms] [worker-68 ] JOB_COMPLETED      job=W068
+[     168 ms] [worker-65 ] JOB_COMPLETED      job=W065
+[     168 ms] [worker-62 ] JOB_COMPLETED      job=W062
+[     169 ms] [worker-237] WORK_FINISHED      job=W249
+[     168 ms] [worker-53 ] RESOURCE_RELEASED  job=W052 resource=DATABASE
+[     169 ms] [worker-79 ] RESOURCE_RELEASED  job=W079 resource=PRINTER
+[     169 ms] [worker-237] RESOURCE_WAIT      job=W249 resource=PRINTER
+[     169 ms] [worker-230] WORK_FINISHED      job=W247
+[     169 ms] [worker-236] WORK_FINISHED      job=W248
+[     169 ms] [worker-78 ] JOB_COMPLETED      job=W078
+[     169 ms] [worker-236] RESOURCE_WAIT      job=W248 resource=DATABASE
+[     169 ms] [worker-251] RESOURCE_WAIT      job=W253 resource=PRINTER
+[     168 ms] [worker-238] RESOURCE_WAIT      job=W250 resource=DATABASE
+[     168 ms] [worker-74 ] RESOURCE_RELEASED  job=W074 resource=DATABASE
+[     169 ms] [worker-238] RESOURCE_ACQUIRED  job=W250 resource=DATABASE waited=0ms
+[     168 ms] [worker-239] RESOURCE_WAIT      job=W251 resource=PRINTER
+[     169 ms] [worker-85 ] RESOURCE_RELEASED  job=W084 resource=DATABASE
+[     169 ms] [worker-239] RESOURCE_ACQUIRED  job=W251 resource=PRINTER waited=0ms
+[     168 ms] [worker-72 ] JOB_COMPLETED      job=W072
+[     168 ms] [worker-63 ] JOB_COMPLETED      job=W063
+[     169 ms] [worker-254] WORK_FINISHED      job=W255
+[     169 ms] [worker-256] WORK_FINISHED      job=W254
+[     169 ms] [worker-254] RESOURCE_WAIT      job=W255 resource=PRINTER
+[     169 ms] [worker-256] RESOURCE_WAIT      job=W254 resource=DATABASE
+[     169 ms] [worker-85 ] JOB_COMPLETED      job=W084
+[     169 ms] [worker-256] RESOURCE_ACQUIRED  job=W254 resource=DATABASE waited=0ms
+[     169 ms] [worker-74 ] JOB_COMPLETED      job=W074
+[     169 ms] [worker-67 ] RESOURCE_RELEASED  job=W067 resource=PRINTER
+[     169 ms] [worker-251] RESOURCE_ACQUIRED  job=W253 resource=PRINTER waited=0ms
+[     169 ms] [worker-236] RESOURCE_ACQUIRED  job=W248 resource=DATABASE waited=0ms
+[     169 ms] [worker-76 ] WORK_FINISHED      job=W256
+[     169 ms] [worker-86 ] RESOURCE_RELEASED  job=W085 resource=PRINTER
+[     170 ms] [worker-76 ] RESOURCE_WAIT      job=W256 resource=DATABASE
+[     170 ms] [worker-86 ] JOB_COMPLETED      job=W085
+[     169 ms] [worker-237] RESOURCE_ACQUIRED  job=W249 resource=PRINTER waited=0ms
+[     169 ms] [worker-230] RESOURCE_WAIT      job=W247 resource=PRINTER
+[     170 ms] [worker-77 ] RESOURCE_RELEASED  job=W077 resource=PRINTER
+[     169 ms] [worker-79 ] JOB_COMPLETED      job=W079
+[     169 ms] [worker-53 ] JOB_COMPLETED      job=W052
+[     170 ms] [worker-77 ] JOB_COMPLETED      job=W077
+[     170 ms] [worker-230] RESOURCE_ACQUIRED  job=W247 resource=PRINTER waited=0ms
+[     170 ms] [worker-133] RESOURCE_RELEASED  job=W076 resource=DATABASE
+[     170 ms] [worker-76 ] RESOURCE_ACQUIRED  job=W256 resource=DATABASE waited=0ms
+[     169 ms] [worker-82 ] RESOURCE_RELEASED  job=W082 resource=DATABASE
+[     169 ms] [worker-81 ] RESOURCE_RELEASED  job=W081 resource=PRINTER
+[     169 ms] [worker-67 ] JOB_COMPLETED      job=W067
+[     169 ms] [worker-89 ] RESOURCE_RELEASED  job=W088 resource=DATABASE
+[     169 ms] [worker-254] RESOURCE_ACQUIRED  job=W255 resource=PRINTER waited=0ms
+[     169 ms] [worker-246] WORK_FINISHED      job=W252
+[     170 ms] [worker-99 ] RESOURCE_RELEASED  job=W098 resource=DATABASE
+[     170 ms] [worker-89 ] JOB_COMPLETED      job=W088
+[     170 ms] [worker-81 ] JOB_COMPLETED      job=W081
+[     170 ms] [worker-91 ] RESOURCE_RELEASED  job=W090 resource=DATABASE
+[     170 ms] [worker-82 ] JOB_COMPLETED      job=W082
+[     170 ms] [worker-104] RESOURCE_RELEASED  job=W103 resource=PRINTER
+[     170 ms] [worker-84 ] RESOURCE_RELEASED  job=W083 resource=PRINTER
+[     170 ms] [worker-94 ] RESOURCE_RELEASED  job=W093 resource=PRINTER
+[     170 ms] [worker-84 ] JOB_COMPLETED      job=W083
+[     170 ms] [worker-133] JOB_COMPLETED      job=W076
+[     170 ms] [worker-80 ] RESOURCE_RELEASED  job=W080 resource=DATABASE
+[     170 ms] [worker-93 ] RESOURCE_RELEASED  job=W092 resource=DATABASE
+[     170 ms] [worker-97 ] RESOURCE_RELEASED  job=W096 resource=DATABASE
+[     170 ms] [worker-93 ] JOB_COMPLETED      job=W092
+[     170 ms] [worker-92 ] RESOURCE_RELEASED  job=W091 resource=PRINTER
+[     170 ms] [worker-80 ] JOB_COMPLETED      job=W080
+[     170 ms] [worker-101] RESOURCE_RELEASED  job=W100 resource=DATABASE
+[     170 ms] [worker-94 ] JOB_COMPLETED      job=W093
+[     170 ms] [worker-104] JOB_COMPLETED      job=W103
+[     170 ms] [worker-91 ] JOB_COMPLETED      job=W090
+[     170 ms] [worker-95 ] RESOURCE_RELEASED  job=W094 resource=DATABASE
+[     170 ms] [worker-99 ] JOB_COMPLETED      job=W098
+[     170 ms] [worker-87 ] RESOURCE_RELEASED  job=W086 resource=DATABASE
+[     170 ms] [worker-246] RESOURCE_WAIT      job=W252 resource=DATABASE
+[     171 ms] [worker-87 ] JOB_COMPLETED      job=W086
+[     171 ms] [worker-95 ] JOB_COMPLETED      job=W094
+[     171 ms] [worker-96 ] RESOURCE_RELEASED  job=W095 resource=PRINTER
+[     171 ms] [worker-103] RESOURCE_RELEASED  job=W102 resource=DATABASE
+[     171 ms] [worker-96 ] JOB_COMPLETED      job=W095
+[     171 ms] [worker-100] RESOURCE_RELEASED  job=W099 resource=PRINTER
+[     171 ms] [worker-107] RESOURCE_RELEASED  job=W106 resource=DATABASE
+[     170 ms] [worker-108] RESOURCE_RELEASED  job=W107 resource=PRINTER
+[     170 ms] [worker-101] JOB_COMPLETED      job=W100
+[     170 ms] [worker-102] RESOURCE_RELEASED  job=W101 resource=PRINTER
+[     170 ms] [worker-92 ] JOB_COMPLETED      job=W091
+[     170 ms] [worker-97 ] JOB_COMPLETED      job=W096
+[     171 ms] [worker-110] RESOURCE_RELEASED  job=W109 resource=PRINTER
+[     171 ms] [worker-90 ] RESOURCE_RELEASED  job=W089 resource=PRINTER
+[     171 ms] [worker-102] JOB_COMPLETED      job=W101
+[     171 ms] [worker-109] RESOURCE_RELEASED  job=W108 resource=DATABASE
+[     171 ms] [worker-108] JOB_COMPLETED      job=W107
+[     171 ms] [worker-107] JOB_COMPLETED      job=W106
+[     171 ms] [worker-105] RESOURCE_RELEASED  job=W105 resource=PRINTER
+[     171 ms] [worker-100] JOB_COMPLETED      job=W099
+[     171 ms] [worker-105] JOB_COMPLETED      job=W105
+[     171 ms] [worker-103] JOB_COMPLETED      job=W102
+[     171 ms] [worker-246] RESOURCE_ACQUIRED  job=W252 resource=DATABASE waited=0ms
+[     171 ms] [worker-88 ] RESOURCE_RELEASED  job=W087 resource=PRINTER
+[     171 ms] [worker-109] JOB_COMPLETED      job=W108
+[     171 ms] [worker-115] RESOURCE_RELEASED  job=W115 resource=PRINTER
+[     171 ms] [worker-90 ] JOB_COMPLETED      job=W089
+[     171 ms] [worker-110] JOB_COMPLETED      job=W109
+[     172 ms] [worker-115] JOB_COMPLETED      job=W115
+[     172 ms] [worker-88 ] JOB_COMPLETED      job=W087
+[     177 ms] [worker-114] RESOURCE_RELEASED  job=W113 resource=PRINTER
+[     178 ms] [worker-106] RESOURCE_RELEASED  job=W104 resource=DATABASE
+[     178 ms] [worker-98 ] RESOURCE_RELEASED  job=W097 resource=PRINTER
+[     178 ms] [worker-112] RESOURCE_RELEASED  job=W110 resource=DATABASE
+[     178 ms] [worker-106] JOB_COMPLETED      job=W104
+[     178 ms] [worker-113] RESOURCE_RELEASED  job=W112 resource=DATABASE
+[     178 ms] [worker-118] RESOURCE_RELEASED  job=W117 resource=PRINTER
+[     178 ms] [worker-116] RESOURCE_RELEASED  job=W114 resource=DATABASE
+[     178 ms] [worker-117] RESOURCE_RELEASED  job=W116 resource=DATABASE
+[     178 ms] [worker-116] JOB_COMPLETED      job=W114
+[     178 ms] [worker-124] RESOURCE_RELEASED  job=W121 resource=PRINTER
+[     178 ms] [worker-114] JOB_COMPLETED      job=W113
+[     178 ms] [worker-124] JOB_COMPLETED      job=W121
+[     178 ms] [worker-120] RESOURCE_RELEASED  job=W123 resource=PRINTER
+[     178 ms] [worker-129] RESOURCE_RELEASED  job=W125 resource=PRINTER
+[     178 ms] [worker-120] JOB_COMPLETED      job=W123
+[     178 ms] [worker-117] JOB_COMPLETED      job=W116
+[     178 ms] [worker-119] RESOURCE_RELEASED  job=W118 resource=DATABASE
+[     178 ms] [worker-125] RESOURCE_RELEASED  job=W120 resource=DATABASE
+[     178 ms] [worker-118] JOB_COMPLETED      job=W117
+[     178 ms] [worker-125] JOB_COMPLETED      job=W120
+[     178 ms] [worker-123] RESOURCE_RELEASED  job=W119 resource=PRINTER
+[     178 ms] [worker-113] JOB_COMPLETED      job=W112
+[     178 ms] [worker-135] RESOURCE_RELEASED  job=W128 resource=DATABASE
+[     178 ms] [worker-112] JOB_COMPLETED      job=W110
+[     178 ms] [worker-111] RESOURCE_RELEASED  job=W111 resource=PRINTER
+[     178 ms] [worker-127] RESOURCE_RELEASED  job=W126 resource=DATABASE
+[     178 ms] [worker-111] JOB_COMPLETED      job=W111
+[     178 ms] [worker-127] JOB_COMPLETED      job=W126
+[     178 ms] [worker-98 ] JOB_COMPLETED      job=W097
+[     178 ms] [worker-126] RESOURCE_RELEASED  job=W122 resource=DATABASE
+[     178 ms] [worker-135] JOB_COMPLETED      job=W128
+[     178 ms] [worker-131] RESOURCE_RELEASED  job=W131 resource=PRINTER
+[     178 ms] [worker-123] JOB_COMPLETED      job=W119
+[     178 ms] [worker-131] JOB_COMPLETED      job=W131
+[     178 ms] [worker-132] RESOURCE_RELEASED  job=W127 resource=PRINTER
+[     178 ms] [worker-146] RESOURCE_RELEASED  job=W139 resource=PRINTER
+[     178 ms] [worker-119] JOB_COMPLETED      job=W118
+[     178 ms] [worker-129] JOB_COMPLETED      job=W125
+[     178 ms] [worker-139] RESOURCE_RELEASED  job=W132 resource=DATABASE
+[     178 ms] [worker-128] RESOURCE_RELEASED  job=W124 resource=DATABASE
+[     179 ms] [worker-139] JOB_COMPLETED      job=W132
+[     179 ms] [worker-140] RESOURCE_RELEASED  job=W133 resource=PRINTER
+[     179 ms] [worker-141] RESOURCE_RELEASED  job=W134 resource=DATABASE
+[     178 ms] [worker-146] JOB_COMPLETED      job=W139
+[     178 ms] [worker-132] JOB_COMPLETED      job=W127
+[     179 ms] [worker-150] RESOURCE_RELEASED  job=W142 resource=DATABASE
+[     178 ms] [worker-142] RESOURCE_RELEASED  job=W135 resource=PRINTER
+[     179 ms] [worker-147] RESOURCE_RELEASED  job=W140 resource=DATABASE
+[     179 ms] [worker-150] JOB_COMPLETED      job=W142
+[     178 ms] [worker-136] RESOURCE_RELEASED  job=W130 resource=DATABASE
+[     178 ms] [worker-126] JOB_COMPLETED      job=W122
+[     178 ms] [worker-145] RESOURCE_RELEASED  job=W138 resource=DATABASE
+[     178 ms] [worker-144] RESOURCE_RELEASED  job=W137 resource=PRINTER
+[     179 ms] [worker-153] RESOURCE_RELEASED  job=W145 resource=PRINTER
+[     179 ms] [worker-144] JOB_COMPLETED      job=W137
+[     178 ms] [worker-143] RESOURCE_RELEASED  job=W136 resource=DATABASE
+[     179 ms] [worker-153] JOB_COMPLETED      job=W145
+[     179 ms] [worker-151] RESOURCE_RELEASED  job=W143 resource=PRINTER
+[     179 ms] [worker-151] JOB_COMPLETED      job=W143
+[     179 ms] [worker-145] JOB_COMPLETED      job=W138
+[     179 ms] [worker-137] RESOURCE_RELEASED  job=W129 resource=PRINTER
+[     179 ms] [worker-136] JOB_COMPLETED      job=W130
+[     179 ms] [worker-158] RESOURCE_RELEASED  job=W149 resource=PRINTER
+[     179 ms] [worker-147] JOB_COMPLETED      job=W140
+[     179 ms] [worker-161] RESOURCE_RELEASED  job=W152 resource=DATABASE
+[     179 ms] [worker-161] JOB_COMPLETED      job=W152
+[     179 ms] [worker-156] RESOURCE_RELEASED  job=W147 resource=PRINTER
+[     179 ms] [worker-142] JOB_COMPLETED      job=W135
+[     179 ms] [worker-148] RESOURCE_RELEASED  job=W141 resource=PRINTER
+[     179 ms] [worker-141] JOB_COMPLETED      job=W134
+[     179 ms] [worker-140] JOB_COMPLETED      job=W133
+[     179 ms] [worker-128] JOB_COMPLETED      job=W124
+[     179 ms] [worker-148] JOB_COMPLETED      job=W141
+[     180 ms] [worker-162] RESOURCE_RELEASED  job=W153 resource=PRINTER
+[     180 ms] [worker-162] JOB_COMPLETED      job=W153
+[     180 ms] [worker-159] RESOURCE_RELEASED  job=W150 resource=DATABASE
+[     180 ms] [worker-159] JOB_COMPLETED      job=W150
+[     180 ms] [worker-166] RESOURCE_RELEASED  job=W158 resource=DATABASE
+[     179 ms] [worker-163] RESOURCE_RELEASED  job=W154 resource=DATABASE
+[     179 ms] [worker-156] JOB_COMPLETED      job=W147
+[     179 ms] [worker-155] RESOURCE_RELEASED  job=W146 resource=DATABASE
+[     179 ms] [worker-158] JOB_COMPLETED      job=W149
+[     179 ms] [worker-157] RESOURCE_RELEASED  job=W148 resource=DATABASE
+[     180 ms] [worker-157] JOB_COMPLETED      job=W148
+[     179 ms] [worker-137] JOB_COMPLETED      job=W129
+[     179 ms] [worker-152] RESOURCE_RELEASED  job=W144 resource=DATABASE
+[     180 ms] [worker-175] RESOURCE_RELEASED  job=W161 resource=PRINTER
+[     180 ms] [worker-174] RESOURCE_RELEASED  job=W162 resource=DATABASE
+[     179 ms] [worker-143] JOB_COMPLETED      job=W136
+[     180 ms] [worker-174] JOB_COMPLETED      job=W162
+[     180 ms] [worker-175] JOB_COMPLETED      job=W161
+[     180 ms] [worker-152] JOB_COMPLETED      job=W144
+[     180 ms] [worker-165] RESOURCE_RELEASED  job=W156 resource=DATABASE
+[     180 ms] [worker-183] RESOURCE_RELEASED  job=W170 resource=DATABASE
+[     180 ms] [worker-167] RESOURCE_RELEASED  job=W157 resource=PRINTER
+[     180 ms] [worker-155] JOB_COMPLETED      job=W146
+[     180 ms] [worker-163] JOB_COMPLETED      job=W154
+[     180 ms] [worker-169] RESOURCE_RELEASED  job=W159 resource=PRINTER
+[     180 ms] [worker-166] JOB_COMPLETED      job=W158
+[     180 ms] [worker-160] RESOURCE_RELEASED  job=W151 resource=PRINTER
+[     180 ms] [worker-170] RESOURCE_RELEASED  job=W160 resource=DATABASE
+[     180 ms] [worker-164] RESOURCE_RELEASED  job=W155 resource=PRINTER
+[     180 ms] [worker-160] JOB_COMPLETED      job=W151
+[     180 ms] [worker-185] RESOURCE_RELEASED  job=W171 resource=PRINTER
+[     180 ms] [worker-169] JOB_COMPLETED      job=W159
+[     180 ms] [worker-177] RESOURCE_RELEASED  job=W164 resource=DATABASE
+[     180 ms] [worker-188] RESOURCE_RELEASED  job=W174 resource=DATABASE
+[     180 ms] [worker-167] JOB_COMPLETED      job=W157
+[     180 ms] [worker-183] JOB_COMPLETED      job=W170
+[     180 ms] [worker-182] RESOURCE_RELEASED  job=W169 resource=PRINTER
+[     180 ms] [worker-165] JOB_COMPLETED      job=W156
+[     180 ms] [worker-180] RESOURCE_RELEASED  job=W166 resource=DATABASE
+[     180 ms] [worker-176] RESOURCE_RELEASED  job=W163 resource=PRINTER
+[     181 ms] [worker-180] JOB_COMPLETED      job=W166
+[     181 ms] [worker-190] RESOURCE_RELEASED  job=W176 resource=DATABASE
+[     181 ms] [worker-189] RESOURCE_RELEASED  job=W175 resource=PRINTER
+[     181 ms] [worker-179] RESOURCE_RELEASED  job=W167 resource=PRINTER
+[     181 ms] [worker-182] JOB_COMPLETED      job=W169
+[     180 ms] [worker-186] RESOURCE_RELEASED  job=W172 resource=DATABASE
+[     180 ms] [worker-188] JOB_COMPLETED      job=W174
+[     180 ms] [worker-177] JOB_COMPLETED      job=W164
+[     180 ms] [worker-185] JOB_COMPLETED      job=W171
+[     180 ms] [worker-164] JOB_COMPLETED      job=W155
+[     180 ms] [worker-170] JOB_COMPLETED      job=W160
+[     181 ms] [worker-193] RESOURCE_RELEASED  job=W179 resource=PRINTER
+[     181 ms] [worker-187] RESOURCE_RELEASED  job=W173 resource=PRINTER
+[     181 ms] [worker-197] RESOURCE_RELEASED  job=W183 resource=PRINTER
+[     181 ms] [worker-181] RESOURCE_RELEASED  job=W168 resource=DATABASE
+[     181 ms] [worker-197] JOB_COMPLETED      job=W183
+[     181 ms] [worker-181] JOB_COMPLETED      job=W168
+[     181 ms] [worker-186] JOB_COMPLETED      job=W172
+[     181 ms] [worker-214] RESOURCE_RELEASED  job=W192 resource=DATABASE
+[     181 ms] [worker-179] JOB_COMPLETED      job=W167
+[     181 ms] [worker-214] JOB_COMPLETED      job=W192
+[     181 ms] [worker-189] JOB_COMPLETED      job=W175
+[     181 ms] [worker-190] JOB_COMPLETED      job=W176
+[     181 ms] [worker-176] JOB_COMPLETED      job=W163
+[     181 ms] [worker-191] RESOURCE_RELEASED  job=W177 resource=PRINTER
+[     181 ms] [worker-178] RESOURCE_RELEASED  job=W165 resource=PRINTER
+[     181 ms] [worker-194] RESOURCE_RELEASED  job=W180 resource=DATABASE
+[     181 ms] [worker-195] RESOURCE_RELEASED  job=W181 resource=PRINTER
+[     181 ms] [worker-191] JOB_COMPLETED      job=W177
+[     181 ms] [worker-195] JOB_COMPLETED      job=W181
+[     181 ms] [worker-196] RESOURCE_RELEASED  job=W182 resource=DATABASE
+[     181 ms] [worker-211] RESOURCE_RELEASED  job=W189 resource=PRINTER
+[     181 ms] [worker-196] JOB_COMPLETED      job=W182
+[     181 ms] [worker-207] RESOURCE_RELEASED  job=W188 resource=DATABASE
+[     181 ms] [worker-198] RESOURCE_RELEASED  job=W184 resource=DATABASE
+[     181 ms] [worker-206] RESOURCE_RELEASED  job=W190 resource=DATABASE
+[     181 ms] [worker-198] JOB_COMPLETED      job=W184
+[     181 ms] [worker-213] RESOURCE_RELEASED  job=W191 resource=PRINTER
+[     181 ms] [worker-187] JOB_COMPLETED      job=W173
+[     181 ms] [worker-199] RESOURCE_RELEASED  job=W185 resource=PRINTER
+[     181 ms] [worker-201] RESOURCE_RELEASED  job=W186 resource=DATABASE
+[     182 ms] [worker-232] RESOURCE_RELEASED  job=W203 resource=PRINTER
+[     182 ms] [worker-201] JOB_COMPLETED      job=W186
+[     181 ms] [worker-192] RESOURCE_RELEASED  job=W178 resource=DATABASE
+[     181 ms] [worker-193] JOB_COMPLETED      job=W179
+[     182 ms] [worker-192] JOB_COMPLETED      job=W178
+[     182 ms] [worker-232] JOB_COMPLETED      job=W203
+[     181 ms] [worker-199] JOB_COMPLETED      job=W185
+[     182 ms] [worker-216] RESOURCE_RELEASED  job=W194 resource=DATABASE
+[     181 ms] [worker-213] JOB_COMPLETED      job=W191
+[     181 ms] [worker-206] JOB_COMPLETED      job=W190
+[     181 ms] [worker-207] JOB_COMPLETED      job=W188
+[     181 ms] [worker-211] JOB_COMPLETED      job=W189
+[     182 ms] [worker-208] RESOURCE_RELEASED  job=W187 resource=PRINTER
+[     182 ms] [worker-231] RESOURCE_RELEASED  job=W204 resource=DATABASE
+[     181 ms] [worker-218] RESOURCE_RELEASED  job=W195 resource=PRINTER
+[     181 ms] [worker-194] JOB_COMPLETED      job=W180
+[     182 ms] [worker-218] JOB_COMPLETED      job=W195
+[     181 ms] [worker-178] JOB_COMPLETED      job=W165
+[     182 ms] [worker-234] RESOURCE_RELEASED  job=W206 resource=DATABASE
+[     182 ms] [worker-241] RESOURCE_RELEASED  job=W208 resource=DATABASE
+[     182 ms] [worker-234] JOB_COMPLETED      job=W206
+[     182 ms] [worker-231] JOB_COMPLETED      job=W204
+[     182 ms] [worker-208] JOB_COMPLETED      job=W187
+[     182 ms] [worker-240] RESOURCE_RELEASED  job=W209 resource=PRINTER
+[     182 ms] [worker-240] JOB_COMPLETED      job=W209
+[     182 ms] [worker-224] RESOURCE_RELEASED  job=W198 resource=DATABASE
+[     182 ms] [worker-226] RESOURCE_RELEASED  job=W200 resource=DATABASE
+[     182 ms] [worker-249] RESOURCE_RELEASED  job=W215 resource=PRINTER
+[     182 ms] [worker-225] RESOURCE_RELEASED  job=W199 resource=PRINTER
+[     182 ms] [worker-222] RESOURCE_RELEASED  job=W197 resource=PRINTER
+[     182 ms] [worker-216] JOB_COMPLETED      job=W194
+[     182 ms] [worker-217] RESOURCE_RELEASED  job=W193 resource=PRINTER
+[     182 ms] [worker-219] RESOURCE_RELEASED  job=W196 resource=DATABASE
+[     182 ms] [worker-217] JOB_COMPLETED      job=W193
+[     182 ms] [worker-219] JOB_COMPLETED      job=W196
+[     182 ms] [worker-222] JOB_COMPLETED      job=W197
+[     182 ms] [worker-225] JOB_COMPLETED      job=W199
+[     182 ms] [worker-247] RESOURCE_RELEASED  job=W214 resource=DATABASE
+[     182 ms] [worker-226] JOB_COMPLETED      job=W200
+[     182 ms] [worker-250] RESOURCE_RELEASED  job=W217 resource=PRINTER
+[     182 ms] [worker-249] JOB_COMPLETED      job=W215
+[     182 ms] [worker-243] RESOURCE_RELEASED  job=W211 resource=PRINTER
+[     182 ms] [worker-224] JOB_COMPLETED      job=W198
+[     182 ms] [worker-227] RESOURCE_RELEASED  job=W201 resource=PRINTER
+[     182 ms] [worker-255] RESOURCE_RELEASED  job=W220 resource=DATABASE
+[     182 ms] [worker-228] RESOURCE_RELEASED  job=W202 resource=DATABASE
+[     182 ms] [worker-241] JOB_COMPLETED      job=W208
+[     182 ms] [worker-235] RESOURCE_RELEASED  job=W207 resource=PRINTER
+[     183 ms] [worker-228] JOB_COMPLETED      job=W202
+[     182 ms] [worker-252] RESOURCE_RELEASED  job=W218 resource=DATABASE
+[     182 ms] [worker-255] JOB_COMPLETED      job=W220
+[     182 ms] [worker-227] JOB_COMPLETED      job=W201
+[     182 ms] [worker-243] JOB_COMPLETED      job=W211
+[     183 ms] [worker-75 ] RESOURCE_RELEASED  job=W221 resource=PRINTER
+[     182 ms] [worker-250] JOB_COMPLETED      job=W217
+[     182 ms] [worker-253] RESOURCE_RELEASED  job=W219 resource=PRINTER
+[     182 ms] [worker-247] JOB_COMPLETED      job=W214
+[     183 ms] [worker-253] JOB_COMPLETED      job=W219
+[     182 ms] [worker-248] RESOURCE_RELEASED  job=W216 resource=DATABASE
+[     182 ms] [worker-233] RESOURCE_RELEASED  job=W205 resource=PRINTER
+[     183 ms] [worker-248] JOB_COMPLETED      job=W216
+[     183 ms] [worker-233] JOB_COMPLETED      job=W205
+[     183 ms] [worker-121] RESOURCE_RELEASED  job=W222 resource=DATABASE
+[     183 ms] [worker-242] RESOURCE_RELEASED  job=W210 resource=DATABASE
+[     183 ms] [worker-138] RESOURCE_RELEASED  job=W226 resource=DATABASE
+[     183 ms] [worker-184] RESOURCE_RELEASED  job=W233 resource=PRINTER
+[     183 ms] [worker-134] RESOURCE_RELEASED  job=W225 resource=PRINTER
+[     183 ms] [worker-184] JOB_COMPLETED      job=W233
+[     183 ms] [worker-130] RESOURCE_RELEASED  job=W224 resource=DATABASE
+[     183 ms] [worker-75 ] JOB_COMPLETED      job=W221
+[     183 ms] [worker-252] JOB_COMPLETED      job=W218
+[     183 ms] [worker-244] RESOURCE_RELEASED  job=W212 resource=DATABASE
+[     183 ms] [worker-202] RESOURCE_RELEASED  job=W235 resource=PRINTER
+[     183 ms] [worker-244] JOB_COMPLETED      job=W212
+[     183 ms] [worker-122] RESOURCE_RELEASED  job=W223 resource=PRINTER
+[     183 ms] [worker-235] JOB_COMPLETED      job=W207
+[     183 ms] [worker-130] JOB_COMPLETED      job=W224
+[     183 ms] [worker-202] JOB_COMPLETED      job=W235
+[     183 ms] [worker-171] RESOURCE_RELEASED  job=W230 resource=DATABASE
+[     183 ms] [worker-200] RESOURCE_RELEASED  job=W234 resource=DATABASE
+[     184 ms] [worker-171] JOB_COMPLETED      job=W230
+[     183 ms] [worker-168] RESOURCE_RELEASED  job=W229 resource=PRINTER
+[     184 ms] [worker-200] JOB_COMPLETED      job=W234
+[     184 ms] [worker-168] JOB_COMPLETED      job=W229
+[     183 ms] [worker-134] JOB_COMPLETED      job=W225
+[     183 ms] [worker-138] JOB_COMPLETED      job=W226
+[     183 ms] [worker-242] JOB_COMPLETED      job=W210
+[     183 ms] [worker-245] RESOURCE_RELEASED  job=W213 resource=PRINTER
+[     183 ms] [worker-121] JOB_COMPLETED      job=W222
+[     184 ms] [worker-245] JOB_COMPLETED      job=W213
+[     184 ms] [worker-210] RESOURCE_RELEASED  job=W239 resource=PRINTER
+[     184 ms] [worker-172] RESOURCE_RELEASED  job=W232 resource=DATABASE
+[     184 ms] [worker-205] RESOURCE_RELEASED  job=W238 resource=DATABASE
+[     184 ms] [worker-203] RESOURCE_RELEASED  job=W237 resource=PRINTER
+[     184 ms] [worker-205] JOB_COMPLETED      job=W238
+[     184 ms] [worker-229] RESOURCE_RELEASED  job=W246 resource=DATABASE
+[     184 ms] [worker-221] RESOURCE_RELEASED  job=W244 resource=DATABASE
+[     184 ms] [worker-209] RESOURCE_RELEASED  job=W240 resource=DATABASE
+[     184 ms] [worker-149] RESOURCE_RELEASED  job=W227 resource=PRINTER
+[     184 ms] [worker-154] RESOURCE_RELEASED  job=W228 resource=DATABASE
+[     183 ms] [worker-220] RESOURCE_RELEASED  job=W243 resource=PRINTER
+[     183 ms] [worker-122] JOB_COMPLETED      job=W223
+[     184 ms] [worker-220] JOB_COMPLETED      job=W243
+[     183 ms] [worker-204] RESOURCE_RELEASED  job=W236 resource=DATABASE
+[     184 ms] [worker-212] RESOURCE_RELEASED  job=W241 resource=PRINTER
+[     184 ms] [worker-154] JOB_COMPLETED      job=W228
+[     184 ms] [worker-149] JOB_COMPLETED      job=W227
+[     184 ms] [worker-221] JOB_COMPLETED      job=W244
+[     184 ms] [worker-209] JOB_COMPLETED      job=W240
+[     184 ms] [worker-229] JOB_COMPLETED      job=W246
+[     184 ms] [worker-203] JOB_COMPLETED      job=W237
+[     184 ms] [worker-172] JOB_COMPLETED      job=W232
+[     184 ms] [worker-210] JOB_COMPLETED      job=W239
+[     184 ms] [worker-173] RESOURCE_RELEASED  job=W231 resource=PRINTER
+[     184 ms] [worker-212] JOB_COMPLETED      job=W241
+[     184 ms] [worker-173] JOB_COMPLETED      job=W231
+[     184 ms] [worker-204] JOB_COMPLETED      job=W236
+[     193 ms] [worker-215] RESOURCE_RELEASED  job=W242 resource=DATABASE
+[     193 ms] [worker-215] JOB_COMPLETED      job=W242
+[     193 ms] [worker-223] RESOURCE_RELEASED  job=W245 resource=PRINTER
+[     193 ms] [worker-223] JOB_COMPLETED      job=W245
+[     224 ms] [worker-239] RESOURCE_RELEASED  job=W251 resource=PRINTER
+[     224 ms] [worker-236] RESOURCE_RELEASED  job=W248 resource=DATABASE
+[     224 ms] [worker-230] RESOURCE_RELEASED  job=W247 resource=PRINTER
+[     224 ms] [worker-256] RESOURCE_RELEASED  job=W254 resource=DATABASE
+[     224 ms] [worker-237] RESOURCE_RELEASED  job=W249 resource=PRINTER
+[     224 ms] [worker-251] RESOURCE_RELEASED  job=W253 resource=PRINTER
+[     224 ms] [worker-246] RESOURCE_RELEASED  job=W252 resource=DATABASE
+[     224 ms] [worker-251] JOB_COMPLETED      job=W253
+[     224 ms] [worker-238] RESOURCE_RELEASED  job=W250 resource=DATABASE
+[     224 ms] [worker-246] JOB_COMPLETED      job=W252
+[     224 ms] [worker-237] JOB_COMPLETED      job=W249
+[     224 ms] [worker-256] JOB_COMPLETED      job=W254
+[     224 ms] [worker-230] JOB_COMPLETED      job=W247
+[     224 ms] [worker-236] JOB_COMPLETED      job=W248
+[     224 ms] [worker-254] RESOURCE_RELEASED  job=W255 resource=PRINTER
+[     224 ms] [worker-76 ] RESOURCE_RELEASED  job=W256 resource=DATABASE
+[     225 ms] [worker-254] JOB_COMPLETED      job=W255
+[     224 ms] [worker-239] JOB_COMPLETED      job=W251
+[     225 ms] [worker-76 ] JOB_COMPLETED      job=W256
+[     224 ms] [worker-238] JOB_COMPLETED      job=W250
+===== SUMMARY =====
+Completed: 256/256
+Cancelled: 0
+Average Waiting Time: 3 ms
+Average Total Queue Waiting Time: 3 ms
+Average Turnaround Time: 105 ms
+Throughput: 1137.78 jobs/s
+Average Resource Wait Time: 0 ms
+[     346 ms] [main      ] SYSTEM_STOP        completed=256 cancelled=0 total=256

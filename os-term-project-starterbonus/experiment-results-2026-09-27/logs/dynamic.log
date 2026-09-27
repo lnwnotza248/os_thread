@@ -1,0 +1,49 @@
+[      31 ms] [main      ] SYSTEM_START       workload=C:\Users\not24\OneDrive\Desktop\os-term-project-starterbonus\workloads\jobs_dynamic.csv policy=fcfs workers=4 printer=1 database=1 aging=off dynamic=true virtual=false resourceTimeoutMs=0
+[      35 ms] [main      ] SYSTEM             โหลดงานได้ 8 ชิ้น
+[      45 ms] [generator ] JOB_ARRIVED        job=D01 priority=1 work=500ms
+[      46 ms] [generator ] JOB_ARRIVED        job=D02 priority=1 work=500ms
+[      46 ms] [generator ] JOB_ARRIVED        job=D03 priority=1 work=500ms
+[      46 ms] [generator ] JOB_ARRIVED        job=D04 priority=1 work=500ms
+[      46 ms] [generator ] JOB_ARRIVED        job=D05 priority=1 work=500ms
+[      46 ms] [generator ] JOB_ARRIVED        job=D06 priority=1 work=500ms
+[      46 ms] [generator ] JOB_ARRIVED        job=D07 priority=1 work=500ms
+[      46 ms] [generator ] JOB_ARRIVED        job=D08 priority=1 work=500ms
+[      46 ms] [worker-poo] WORKER_POOL        active=1 target=1
+[      51 ms] [worker-1  ] JOB_STARTED        job=D01 priority=1
+[      51 ms] [monitor   ] MONITOR            ready=0 running=0 completed=0 printer=0/1 database=0/1
+[     148 ms] [worker-poo] WORKER_POOL        active=4 target=4
+[     148 ms] [worker-2  ] JOB_STARTED        job=D02 priority=1
+[     148 ms] [worker-4  ] JOB_STARTED        job=D03 priority=1
+[     148 ms] [worker-3  ] JOB_STARTED        job=D04 priority=1
+[     553 ms] [worker-1  ] WORK_FINISHED      job=D01
+[     553 ms] [worker-1  ] JOB_COMPLETED      job=D01
+[     554 ms] [worker-1  ] JOB_STARTED        job=D05 priority=1
+[     583 ms] [worker-poo] WORKER_POOL        active=3 target=3
+[     649 ms] [worker-4  ] WORK_FINISHED      job=D03
+[     649 ms] [worker-2  ] WORK_FINISHED      job=D02
+[     649 ms] [worker-4  ] JOB_COMPLETED      job=D03
+[     649 ms] [worker-2  ] JOB_COMPLETED      job=D02
+[     649 ms] [worker-2  ] JOB_STARTED        job=D06 priority=1
+[     663 ms] [worker-3  ] WORK_FINISHED      job=D04
+[     663 ms] [worker-3  ] JOB_COMPLETED      job=D04
+[     663 ms] [worker-3  ] JOB_STARTED        job=D07 priority=1
+[     694 ms] [worker-poo] WORKER_POOL        active=1 target=1
+[    1066 ms] [worker-1  ] WORK_FINISHED      job=D05
+[    1066 ms] [monitor   ] MONITOR            ready=1 running=3 completed=4 printer=0/1 database=0/1
+[    1066 ms] [worker-1  ] JOB_COMPLETED      job=D05
+[    1066 ms] [worker-1  ] JOB_STARTED        job=D08 priority=1
+[    1160 ms] [worker-2  ] WORK_FINISHED      job=D06
+[    1161 ms] [worker-2  ] JOB_COMPLETED      job=D06
+[    1176 ms] [worker-3  ] WORK_FINISHED      job=D07
+[    1176 ms] [worker-3  ] JOB_COMPLETED      job=D07
+[    1580 ms] [worker-1  ] WORK_FINISHED      job=D08
+[    1580 ms] [worker-1  ] JOB_COMPLETED      job=D08
+===== SUMMARY =====
+Completed: 8/8
+Cancelled: 0
+Average Waiting Time: 381 ms
+Average Total Queue Waiting Time: 381 ms
+Average Turnaround Time: 891 ms
+Throughput: 5.06 jobs/s
+Average Resource Wait Time: 0 ms
+[    1695 ms] [main      ] SYSTEM_STOP        completed=8 cancelled=0 total=8
