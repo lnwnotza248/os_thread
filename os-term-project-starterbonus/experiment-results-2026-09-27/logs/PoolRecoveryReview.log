@@ -1,4 +1,0 @@
-PASS replacement, remaining job completion, permits, terminal time: dynamic=false virtual=false
-PASS replacement, remaining job completion, permits, terminal time: dynamic=false virtual=true
-PASS replacement, remaining job completion, permits, terminal time: dynamic=true virtual=false
-PASS replacement, remaining job completion, permits, terminal time: dynamic=true virtual=true
