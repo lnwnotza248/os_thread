@@ -1,0 +1,3 @@
+id,arrivalMs,priority,workMs,resource,resourceMs
+LONG,0,1,650,NONE,0
+SHORT,50,5,50,NONE,0
