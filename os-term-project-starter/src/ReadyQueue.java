@@ -1,62 +1,104 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * คิวงานที่พร้อมถูกหยิบไปทำ
+ * Ready Queue ที่รองรับหลาย Worker อย่างปลอดภัย
  *
- * ===== ไฟล์นี้เป็นโครงเปล่า นักศึกษาต้องเขียนเอง =====
- *
- * สิ่งที่คลาสนี้ต้องทำได้:
- *   - เก็บงานที่รอ Worker อยู่
- *   - หยิบงานถัดไปตามนโยบายที่เลือก (FCFS หรือ Priority)
- *   - ถูกเรียกจากหลาย Thread พร้อมกันได้อย่างปลอดภัย
- *
- * ข้อกำหนดจากโจทย์ที่เกี่ยวกับคลาสนี้:
- *   - หัวข้อ 4: priority = 1 สูงสุด เมื่อเท่ากันต้องมีกติกาตัดสินลำดับ (tie-break)
- *     ที่ตัดสินจากข้อมูลของ Job ไม่ขึ้นกับว่า Thread ใดเข้าถึงคิวก่อน
- *   - หัวข้อ 7: ห้ามวนลูปเช็กแบบกิน CPU (busy waiting) — Worker ที่ไม่มีงานทำ
- *     ต้องถูกพักไว้ ไม่ใช่วนถามซ้ำ ๆ
- *
- * จะออกแบบเป็นคลาสเดียวที่รับนโยบายเข้ามา หรือแยกเป็นสองคลาส
- * หรือใช้โครงสร้างข้อมูลสำเร็จรูปของ Java ก็ได้ ขอให้อธิบายเหตุผลได้ใน Demo
  */
-import java.util.Comparator;//กฎการเปรียบเทียบ
-import java.util.concurrent.BlockingQueue;//เป็น interface ที่เราประกาศว่า queue ของเราจะต้องเป็น Queue ที่รองรับการทำงานแบบหลาย Thread และสามารถ รอ (block) ได้ โดยไม่ต้องเขียน loop เช็ก Queue ตลอดเวลา ซึ่งจะเปลือง CPU
-import java.util.concurrent.LinkedBlockingQueue;//คิวแบบ FIFO ที่รองรับการทำงานแบบหลาย Thread และสามารถรอ (block) ได้
-import java.util.concurrent.PriorityBlockingQueue;//คิวแบบ Priority ที่รองรับการทำงานแบบหลาย Thread และสามารถรอ (block) ได้
-
 public class ReadyQueue {
 
-    private final BlockingQueue<Job> queue;// เก็บนโยบาย (Config.Policy) และโครงสร้างข้อมูลที่ใช้เก็บงาน
+    private final Config.Policy policy;
+    private final List<Job> jobs = new ArrayList<>();
+    private final ReentrantLock lock = new ReentrantLock();
+    private final Condition notEmpty = lock.newCondition();
+    private boolean closed = false;
+
+    private final Comparator<Job> priorityComparator =
+            Comparator.comparingInt((Job job) -> job.priority)
+                    .thenComparingInt(job -> job.sequence)
+                    .thenComparing(job -> job.id);
 
     public ReadyQueue(Config.Policy policy) {
-        if (policy == Config.Policy.FCFS) {
-            queue = new LinkedBlockingQueue<>();
-        } else {
-            Comparator<Job> priorityOrder = Comparator
-                    .comparingInt((Job job) -> job.priority)
-                    .thenComparingInt(job -> job.sequence);
-
-            queue = new PriorityBlockingQueue<>(11, priorityOrder);
-        }
-        
+        this.policy = policy;
     }
 
     /** ใส่งานเข้าคิว เรียกโดย Scheduler Thread */
     public void add(Job job) {
-        queue.add(job);
+        if (job == null) {
+            throw new IllegalArgumentException("job ห้ามเป็น null");
+        }
+        lock.lock();
+        try {
+            if (closed) {
+                throw new IllegalStateException("ReadyQueue ถูกปิดแล้ว");
+            }
+            jobs.add(job);
+            notEmpty.signal();
+        } finally {
+            lock.unlock();
+        }
     }
 
     /**
-     * หยิบงานถัดไปตามนโยบาย เรียกโดย Worker Thread
-     *
-     * ถ้ายังไม่มีงาน ต้องรอโดยไม่กิน CPU
-     * ต้องคิดด้วยว่าจะบอก Worker อย่างไรเมื่อไม่มีงานเหลือแล้วและควรหยุดทำงาน
+     * หยิบงานถัดไปตามนโยบาย
+     * ถ้ายังไม่มีงานจะรอด้วย Condition ไม่ busy wait
+     * ถ้าคิวถูกปิดและไม่มีงานเหลือ จะคืน null
      */
     public Job take() throws InterruptedException {
-        return queue.take();
+        lock.lockInterruptibly();
+        try {
+            while (jobs.isEmpty() && !closed) {
+                notEmpty.await();
+            }
+
+            if (jobs.isEmpty()) {
+                return null;
+            }
+
+            int selectedIndex = 0;
+            if (policy == Config.Policy.PRIORITY) {
+                for (int i = 1; i < jobs.size(); i++) {
+                    if (priorityComparator.compare(jobs.get(i), jobs.get(selectedIndex)) < 0) {
+                        selectedIndex = i;
+                    }
+                }
+            }
+            return jobs.remove(selectedIndex);
+        } finally {
+            lock.unlock();
+        }
     }
 
-    /** จำนวนงานที่รออยู่ตอนนี้ ใช้โดย Monitor — ต้องอ่านได้อย่างปลอดภัย */
+    /** จำนวนงานที่รออยู่ตอนนี้ */
     public int size() {
-        return queue.size();
+        lock.lock();
+        try {
+            return jobs.size();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    /** ปิดคิวและปลุก Worker ที่กำลังรออยู่ */
+    public void close() {
+        lock.lock();
+        try {
+            closed = true;
+            notEmpty.signalAll();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public boolean isClosed() {
+        lock.lock();
+        try {
+            return closed;
+        } finally {
+            lock.unlock();
+        }
     }
 }

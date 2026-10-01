@@ -1,30 +1,16 @@
 /**
- * Thread ที่ดึงงานจาก Ready Queue ไปทำจนเสร็จ
- *
- * ===== ไฟล์นี้เป็นโครงเปล่า นักศึกษาต้องเขียนเอง =====
- *
- * ลำดับการทำงานของ Job หนึ่งชิ้น บังคับตามหัวข้อ 6 ของโจทย์:
- * 1. รับงานจาก Ready Queue แล้วบันทึกเวลาเริ่ม
- * 2. จำลองงานหลักด้วย Thread.sleep(job.workMs)
- * 3. ถ้า job.resource != NONE ให้บันทึกเวลาเริ่มรอ แล้ว acquire
- * 4. จำลองการถือครองด้วย Thread.sleep(job.resourceMs)
- * 5. release แล้วบันทึกเวลาจบ
- *
- * ห้ามสลับขั้นที่ 2 กับ 3 เพราะจะทำให้ผลของทุกกลุ่มเทียบกันไม่ได้
- *
- * จุดที่มักพลาด:
- * - ถ้า exception หรือ interrupt เกิดขึ้นหลัง acquire แต่ก่อน release
- * permit จะค้างถาวรและระบบจะแขวน ต้องออกแบบให้คืนได้เสมอ
- * - Worker ต้องหยุดเองได้เมื่อไม่มีงานเหลือแล้ว ไม่ใช่วนรอตลอดไป
+ * Worker หลายตัวใช้ Ready Queue เดียวร่วมกัน
+ * และใช้ ResourceManager ตัวเดียวร่วมกันทั้งระบบ
  */
 public class Worker extends Thread {
+
     private final ReadyQueue readyQueue;
     private final ResourceManager resources;
     private final Statistics statistics;
     private final ProjectLogger logger;
 
     public Worker(String name, ReadyQueue readyQueue, ResourceManager resources,
-            Statistics statistics, ProjectLogger logger) {
+                  Statistics statistics, ProjectLogger logger) {
         super(name);
         this.readyQueue = readyQueue;
         this.resources = resources;
@@ -37,51 +23,65 @@ public class Worker extends Thread {
         try {
             while (!isInterrupted()) {
                 Job job = readyQueue.take();
-                statistics.jobStarted();
-                try {
-                    processJob(job);
-                } finally {
-                    statistics.jobFinished();
+                if (job == null) {
+                    logger.systemEvent(getName() + " shutdown: ready queue drained");
+                    return;
                 }
+                processJob(job);
             }
-        } catch (InterruptedException exception) {
+        } catch (InterruptedException e) {
+            // Interrupt is an emergency stop. processJob() releases a resource
+            // in finally if this Worker already acquired it.
             Thread.currentThread().interrupt();
+            logger.systemEvent(getName() + " interrupted; exiting safely");
         }
     }
 
-    /** ทำงานหนึ่งชิ้นให้จบตามลำดับ 5 ขั้นด้านบน */
     private void processJob(Job job) throws InterruptedException {
-        job.startTime = logger.now();
+        job.setState(JobState.RUNNING);
         logger.jobStarted(job);
+        statistics.recordStart(job, logger.now());
 
+        // CPU/work portion: ยังไม่เกี่ยวกับ shared resource
         Thread.sleep(job.workMs);
         logger.workFinished(job);
 
+        if (job.resource == ResourceType.NONE) {
+            job.setState(JobState.COMPLETED);
+            logger.jobCompleted(job);
+            statistics.recordCompletion(job, logger.now());
+            return;
+        }
+
+        // Resource wait starts immediately before acquire().
+        job.setState(JobState.WAITING_RESOURCE);
+        logger.resourceWaitStarted(job);
+        long waitStart = logger.now();
+        statistics.recordResourceWaitStart(job, waitStart);
         boolean acquired = false;
-
         try {
-            if (job.resource != ResourceType.NONE) {
-                job.resourceWaitStartTime = logger.now();
-                logger.resourceWaitStarted(job);
+            resources.acquire(job.resource);
+            acquired = true;
 
-                resources.acquire(job.resource);
-                acquired = true;
+            job.setState(JobState.RUNNING);
+            long acquiredAt = logger.now();
+            long waitedMs = acquiredAt - waitStart;
+            statistics.recordResourceAcquired(job, acquiredAt);
+            logger.resourceAcquired(job, waitedMs);
 
-                job.resourceWaitMs = logger.now() - job.resourceWaitStartTime;
-
-                logger.resourceAcquired(job, job.resourceWaitMs);
-
-                Thread.sleep(job.resourceMs);
-            }
-        } finally { // ถ้า acquire() สำเร็จแล้วเกิด interrupt ระหว่าง Thread.sleep(job.resourceMs) ต้องเรียก release() คืน permit เสมอ
+            // Simulate using the shared resource while holding its permit.
+            Thread.sleep(job.resourceMs);
+        } finally {
+            // Only release when this Worker actually acquired the permit.
+            // This prevents an interrupted acquire() from leaking/inflating permits.
             if (acquired) {
                 resources.release(job.resource);
                 logger.resourceReleased(job);
             }
         }
 
-        job.completionTime = logger.now();
+        job.setState(JobState.COMPLETED);
         logger.jobCompleted(job);
-        statistics.recordCompletion(job);
+        statistics.recordCompletion(job, logger.now());
     }
 }
