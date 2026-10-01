@@ -1,121 +1,170 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
-/**
- * รวบรวมและคำนวณค่าที่ใช้วัดผลของการรันหนึ่งครั้ง
- *
- * ===== ไฟล์นี้เป็นโครงเปล่า นักศึกษาต้องเขียนเอง =====
- *
- * ข้อกำหนดจากโจทย์ที่เกี่ยวกับคลาสนี้ (หัวข้อ 8):
- *   - Waiting Time, Turnaround Time, Throughput, Resource Wait Time
- *   - ต้องถูกอัปเดตจากหลาย Worker พร้อมกันได้อย่างปลอดภัย
- *   - ผลต้องสอดคล้องกับสมการตรวจสอบ:
- *       Turnaround = Waiting + workMs + Resource Wait + resourceMs
- *     ใช้สมการนี้ตรวจงานทีละชิ้นได้ว่าค่าไหนคำนวณผิด
- *
- * ข้อควรระวัง: ค่าเฉลี่ยของ Resource Wait ให้คิดเฉพาะงานที่ใช้ resource
- * ส่วนงานที่ resource = NONE ให้ถือว่า Resource Wait เป็น 0
- */
-public class Statistics {
-    private final AtomicInteger running = new AtomicInteger();
-    private final AtomicInteger completed = new AtomicInteger();
-    private final AtomicInteger cancelled = new AtomicInteger();
-    private final AtomicLong totalWaiting = new AtomicLong();
-    private final AtomicLong totalQueueWaiting = new AtomicLong();
-    private final AtomicLong totalTurnaround = new AtomicLong();
-    private final AtomicLong totalResourceWait = new AtomicLong();
-    private final AtomicLong lastTerminalTimeMs = new AtomicLong();
-    private final AtomicInteger resourceJobCount = new AtomicInteger();
-    // นับถอยหลังจากจำนวนงานทั้งหมด ให้ Main รอแบบไม่ต้อง poll/เดาเวลา
-    private final CountDownLatch allCompleted;
 
-    public Statistics(int totalJobs) {
-        this.allCompleted = new CountDownLatch(totalJobs);
+/** เก็บเวลาของแต่ละ Job และคำนวณ metric จากข้อมูลชุดเดียวกับ log */
+public class Statistics {
+
+    public static final class JobMetric {
+        public final String jobId;
+        public final long actualArrivalMs;
+        public final long startMs;
+        public final long resourceWaitMs;
+        public final long completionMs;
+        public final long waitingMs;
+        public final long turnaroundMs;
+
+        private JobMetric(String jobId, long actualArrivalMs, long startMs,
+                          long resourceWaitMs, long completionMs) {
+            this.jobId = jobId;
+            this.actualArrivalMs = actualArrivalMs;
+            this.startMs = startMs;
+            this.resourceWaitMs = resourceWaitMs;
+            this.completionMs = completionMs;
+            this.waitingMs = startMs - actualArrivalMs;
+            this.turnaroundMs = completionMs - actualArrivalMs;
+        }
     }
 
-    /** บันทึกว่างานชิ้นหนึ่งเสร็จแล้ว เรียกโดย Worker หลายตัวพร้อมกันได้ */
-    public void recordCompletion(Job job) {
-        totalWaiting.addAndGet(job.waitingTime());
-        totalQueueWaiting.addAndGet(job.totalQueueWaitingTime());
-        totalTurnaround.addAndGet(job.turnaroundTime());
+    private static final class MutableMetric {
+        long arrivalMs = -1;
+        long startMs = -1;
+        long resourceWaitStartMs = -1;
+        long resourceWaitMs = 0;
+        long completionMs = -1;
+    }
 
-        if (job.resource != ResourceType.NONE) {
-            totalResourceWait.addAndGet(job.resourceWaitMs);
-            resourceJobCount.incrementAndGet();
+    private final java.util.Map<String, MutableMetric> metrics = new java.util.HashMap<>();
+    private int runningCount = 0;
+
+    public synchronized void recordArrival(Job job, long actualArrivalMs) {
+        MutableMetric metric = metricFor(job);
+        metric.arrivalMs = actualArrivalMs;
+    }
+
+    public synchronized void recordStart(Job job, long startMs) {
+        MutableMetric metric = metricFor(job);
+        metric.startMs = startMs;
+        runningCount++;
+    }
+
+    public synchronized void recordResourceWaitStart(Job job, long waitStartMs) {
+        MutableMetric metric = metricFor(job);
+        metric.resourceWaitStartMs = waitStartMs;
+    }
+
+    public synchronized void recordResourceAcquired(Job job, long acquiredMs) {
+        MutableMetric metric = metricFor(job);
+        if (metric.resourceWaitStartMs >= 0) {
+            metric.resourceWaitMs += Math.max(0, acquiredMs - metric.resourceWaitStartMs);
+            metric.resourceWaitStartMs = -1;
+        }
+    }
+
+    public synchronized void recordCompletion(Job job, long completionMs) {
+        MutableMetric metric = metricFor(job);
+        metric.completionMs = completionMs;
+        if (runningCount > 0) {
+            runningCount--;
+        }
+    }
+
+    /** จำนวน Job ที่กำลังอยู่ในขั้นตอนของ Worker */
+    public synchronized int runningCount() {
+        return runningCount;
+    }
+
+    private MutableMetric metricFor(Job job) {
+        return metrics.computeIfAbsent(job.id, key -> new MutableMetric());
+    }
+
+    public synchronized int completedCount() {
+        int count = 0;
+        for (MutableMetric metric : metrics.values()) {
+            if (metric.completionMs >= 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public synchronized List<JobMetric> snapshotCompleted() {
+        List<JobMetric> result = new ArrayList<>();
+        for (java.util.Map.Entry<String, MutableMetric> entry : metrics.entrySet()) {
+            MutableMetric m = entry.getValue();
+            if (m.arrivalMs >= 0 && m.startMs >= 0 && m.completionMs >= 0) {
+                result.add(new JobMetric(entry.getKey(), m.arrivalMs, m.startMs,
+                        m.resourceWaitMs, m.completionMs));
+            }
+        }
+        Collections.sort(result, Comparator.comparing(item -> item.jobId));
+        return result;
+    }
+
+    public synchronized void printSummary(List<Job> allJobs, long makespanMs) {
+        List<JobMetric> completed = snapshotCompleted();
+        if (completed.isEmpty()) {
+            System.out.println("=== Statistics ===");
+            System.out.println("Completed jobs: 0/" + allJobs.size());
+            System.out.println("No completed-job metrics available.");
+            return;
         }
 
-        completed.incrementAndGet();
-        lastTerminalTimeMs.accumulateAndGet(job.completionTime, Math::max);
-        allCompleted.countDown();
-    }
+        long totalWaiting = 0;
+        long totalTurnaround = 0;
+        long totalResourceWait = 0;
+        int resourceJobCount = 0;
 
-    public void recordCancellation(Job job) {
-        cancelled.incrementAndGet();
-        lastTerminalTimeMs.accumulateAndGet(job.completionTime, Math::max);
-        allCompleted.countDown();
-    }
+        for (JobMetric metric : completed) {
+            totalWaiting += metric.waitingMs;
+            totalTurnaround += metric.turnaroundMs;
 
-    /** พัก Thread ที่เรียกไว้จนกว่างานทุกชิ้นจะ countDown ครบ ไม่กินCPUระหว่างรอ */
-    public void awaitAllCompleted() throws InterruptedException {
-        allCompleted.await();
-    }
+            Job job = findJob(allJobs, metric.jobId);
+            if (job != null && job.resource != ResourceType.NONE) {
+                totalResourceWait += metric.resourceWaitMs;
+                resourceJobCount++;
+            }
+        }
 
-    /** จำนวนงานที่เสร็จแล้ว ใช้โดย Monitor และใช้ตรวจว่างานครบหรือยัง */
-    public int completedCount() {
-        return completed.get();
-    }
-
-    public int cancelledCount() {
-        return cancelled.get();
-    }
-
-    public long lastTerminalTimeMs() {
-        return lastTerminalTimeMs.get();
-    }
-    public void jobStarted() {
-    running.incrementAndGet();
-}
-
-public void jobFinished() {
-    running.decrementAndGet();
-}
-
-public int runningCount() {
-    return running.get();
-}
-
-    /**
-     * พิมพ์ตารางสรุปผลตอนจบโปรแกรม
-     * อย่างน้อยต้องมี avg Waiting Time, avg Turnaround Time,
-     * Throughput และ avg Resource Wait Time
-     *
-     * ตามหัวข้อ 14 ให้รายงานเวลาเป็นจำนวนเต็มหน่วย ms
-     * และ Throughput อย่างน้อย 2 ตำแหน่งทศนิยม
-     */
-    public void printSummary(List<Job> allJobs, long makespanMs) {
-        int count = completed.get();
-
-        long avgWaiting = count == 0 ? 0 : totalWaiting.get() / count;
-        long avgTotalQueueWaiting = count == 0 ? 0 : totalQueueWaiting.get() / count;
-        long avgTurnaround = count == 0 ? 0 : totalTurnaround.get() / count;
-        long avgResourceWait = resourceJobCount.get() == 0
-                ? 0
-                : totalResourceWait.get() / resourceJobCount.get();
-
-        double throughput = makespanMs == 0
+        double avgWaiting = (double) totalWaiting / completed.size();
+        double avgTurnaround = (double) totalTurnaround / completed.size();
+        double avgResourceWait = resourceJobCount == 0
                 ? 0.0
-                : count * 1000.0 / makespanMs;
+                : (double) totalResourceWait / resourceJobCount;
+        double throughput = makespanMs <= 0
+                ? 0.0
+                : completed.size() / (makespanMs / 1000.0);
 
-        System.out.println("===== SUMMARY =====");
-        System.out.println("Completed: " + count + "/" + allJobs.size());
-        System.out.println("Cancelled: " + cancelled.get());
-        System.out.println("Average Waiting Time: " + avgWaiting + " ms");
-        System.out.println("Average Total Queue Waiting Time: " + avgTotalQueueWaiting + " ms");
-        System.out.println("Average Turnaround Time: " + avgTurnaround + " ms");
-        System.out.printf("Throughput: %.2f jobs/s%n", throughput);
-        System.out.println("Average Resource Wait Time: "
-                + avgResourceWait + " ms");
+        System.out.println("=== Statistics ===");
+        System.out.println("Completed jobs: " + completed.size() + "/" + allJobs.size());
+        System.out.printf("Average Waiting Time: %.0f ms%n", avgWaiting);
+        System.out.printf("Average Turnaround Time: %.0f ms%n", avgTurnaround);
+        System.out.printf("Average Resource Wait Time: %.0f ms%n", avgResourceWait);
+        System.out.printf("Throughput: %.2f jobs/sec%n", throughput);
+        System.out.println();
+        System.out.println("Per-job metrics:");
+        System.out.printf("%-8s %-10s %-10s %-12s %-12s%n",
+                "Job", "Wait(ms)", "TAT(ms)", "ResWait(ms)", "Check(ms)");
+
+        for (JobMetric metric : completed) {
+            Job job = findJob(allJobs, metric.jobId);
+            long expected = metric.waitingMs;
+            if (job != null) {
+                expected += job.workMs + metric.resourceWaitMs + job.resourceMs;
+            }
+            System.out.printf("%-8s %-10d %-10d %-12d %-12d%n",
+                    metric.jobId, metric.waitingMs, metric.turnaroundMs,
+                    metric.resourceWaitMs, expected);
+        }
+    }
+
+    private Job findJob(List<Job> jobs, String id) {
+        for (Job job : jobs) {
+            if (job.id.equals(id)) {
+                return job;
+            }
+        }
+        return null;
     }
 }
-

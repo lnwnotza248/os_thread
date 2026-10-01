@@ -17,7 +17,7 @@ import java.util.Set;
  *
  * รูปแบบไฟล์ที่รองรับ:
  *   id,arrivalMs,priority,workMs,resource,resourceMs
- *   J01,0,5,2500,PRINTER+DATABASE,500
+ *   J01,0,5,2500,NONE,0
  *
  * - บรรทัดแรกเป็นหัวตารางหรือไม่มีก็ได้ ตัวอ่านตรวจจับให้เอง
  * - บรรทัดว่างถูกข้าม
@@ -110,41 +110,25 @@ public final class WorkloadLoader {
         int priority = parsePositiveInt(parts[2], "priority", lineNumber);
         long workMs = parseNonNegativeLong(parts[3], "workMs", lineNumber);
 
-        List<ResourceType> resources = parseResources(parts[4], lineNumber);
-
-        long resourceMs = parseNonNegativeLong(parts[5], "resourceMs", lineNumber);
-
-        if (resources.isEmpty() && resourceMs != 0) {
-            throw new WorkloadFormatException(lineNumber,
-                    "เมื่อ resource เป็น NONE ค่า resourceMs ต้องเป็น 0 แต่พบ " + resourceMs);
-        }
-        if (!resources.isEmpty() && resourceMs <= 0) {
-            throw new WorkloadFormatException(lineNumber,
-                    "เมื่อใช้ resource ค่า resourceMs ต้องมากกว่า 0 แต่พบ " + resourceMs);
-        }
-
-        return new Job(id, arrivalMs, priority, workMs, resources, resourceMs, sequence);
-    }
-
-    private static List<ResourceType> parseResources(String text, int lineNumber)
-            throws WorkloadFormatException {
+        ResourceType resource;
         try {
-            if (text.equalsIgnoreCase("NONE")) {
-                return List.of();
-            }
-            List<ResourceType> resources = new ArrayList<>();
-            for (String item : text.split("\\+", -1)) {
-                ResourceType type = ResourceType.parse(item);
-                if (type == ResourceType.NONE || resources.contains(type)) {
-                    throw new IllegalArgumentException("resource list ห้ามมี NONE หรือชนิดซ้ำ");
-                }
-                resources.add(type);
-            }
-            resources.sort(java.util.Comparator.comparingInt(Enum::ordinal));
-            return List.copyOf(resources);
+            resource = ResourceType.parse(parts[4]);
         } catch (IllegalArgumentException e) {
             throw new WorkloadFormatException(lineNumber, e.getMessage());
         }
+
+        long resourceMs = parseNonNegativeLong(parts[5], "resourceMs", lineNumber);
+
+        if (resource == ResourceType.NONE && resourceMs != 0) {
+            throw new WorkloadFormatException(lineNumber,
+                    "เมื่อ resource เป็น NONE ค่า resourceMs ต้องเป็น 0 แต่พบ " + resourceMs);
+        }
+        if (resource != ResourceType.NONE && resourceMs <= 0) {
+            throw new WorkloadFormatException(lineNumber,
+                    "เมื่อ resource เป็น " + resource + " ค่า resourceMs ต้องมากกว่า 0 แต่พบ " + resourceMs);
+        }
+
+        return new Job(id, arrivalMs, priority, workMs, resource, resourceMs, sequence);
     }
 
     private static long parseNonNegativeLong(String text, String column, int lineNumber)

@@ -1,169 +1,100 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
-/** Scales the worker count between one and the configured maximum. */
+/** คอยเพิ่ม/ลดจำนวน Worker ตามจำนวนงานใน ReadyQueue */
 public final class DynamicWorkerPool extends Thread {
-    private final int maxWorkers;
-    private final boolean dynamicSizing;
-    private final boolean virtualThreads;
-    private final long resourceTimeoutMs;
     private final ReadyQueue readyQueue;
     private final ResourceManager resources;
-    private final Statistics statistics;
     private final ProjectLogger logger;
-    private final List<ManagedWorker> workers = new ArrayList<>();
-    private volatile boolean stopping;
-    private int nextWorkerId;
-    private int lastLoggedActive = -1;
-    private int lastLoggedTarget = -1;
+    private final CountDownLatch completed;
+    private final int minWorkers;
+    private final int maxWorkers;
+    private final int scaleThreshold;
+    private final List<DynamicWorker> workers = Collections.synchronizedList(new ArrayList<>());
+    private volatile boolean stop;
+    private int nextId = 1;
 
-        public DynamicWorkerPool(int maxWorkers, boolean dynamicSizing, boolean virtualThreads,
-            long resourceTimeoutMs,
-            ReadyQueue readyQueue, ResourceManager resources, Statistics statistics,
-            ProjectLogger logger) {
-        super("worker-pool-manager");
-        this.maxWorkers = maxWorkers;
-        this.dynamicSizing = dynamicSizing;
-        this.virtualThreads = virtualThreads;
-        this.resourceTimeoutMs = resourceTimeoutMs;
+    public DynamicWorkerPool(ReadyQueue readyQueue, ResourceManager resources,
+                             ProjectLogger logger, CountDownLatch completed,
+                             int minWorkers, int maxWorkers, int scaleThreshold) {
+        super("dynamic-pool");
+        if (minWorkers < 1 || maxWorkers < minWorkers || scaleThreshold < 1) {
+            throw new IllegalArgumentException("worker/threshold ไม่ถูกต้อง");
+        }
         this.readyQueue = readyQueue;
         this.resources = resources;
-        this.statistics = statistics;
         this.logger = logger;
+        this.completed = completed;
+        this.minWorkers = minWorkers;
+        this.maxWorkers = maxWorkers;
+        this.scaleThreshold = scaleThreshold;
     }
 
     @Override
     public void run() {
-        try {
-            while (!stopping) {
-                int desired = dynamicSizing
-                        ? Math.max(1, Math.min(maxWorkers, readyQueue.size()))
-                        : maxWorkers;
-                scaleTo(desired);
-                Thread.sleep(100);
-            }
-        } catch (InterruptedException exception) {
-            if (!stopping) {
-                Thread.currentThread().interrupt();
-            }
-        } finally {
-            retireAndJoinAll();
+        for (int i = 0; i < minWorkers; i++) addWorker();
+        while (!stop) {
+            cleanupDead();
+            int queueSize = readyQueue.size();
+            int count = currentCount();
+
+            if (queueSize >= scaleThreshold && count < maxWorkers) addWorker();
+            else if (queueSize == 0 && count > minWorkers) stopOneIdle();
+
+            try { Thread.sleep(100L); }
+            catch (InterruptedException e) { if (stop) break; }
         }
     }
 
-    public void shutdownAndJoin() throws InterruptedException {
-        stopping = true;
+    private void addWorker() {
+        DynamicWorker worker = new DynamicWorker("dynamic-worker-" + nextId++, readyQueue, resources, logger, completed);
+        workers.add(worker);
+        worker.start();
+        logger.systemEvent("DYNAMIC_ADD " + worker.getName() + " total=" + currentCount());
+    }
+
+    private void stopOneIdle() {
+        synchronized (workers) {
+            for (Iterator<DynamicWorker> it = workers.iterator(); it.hasNext();) {
+                DynamicWorker worker = it.next();
+                if (worker.isAlive() && worker.isIdle()) {
+                    worker.requestStop();
+                    logger.systemEvent("DYNAMIC_REMOVE " + worker.getName());
+                    return;
+                }
+            }
+        }
+    }
+
+    private void cleanupDead() {
+        synchronized (workers) { workers.removeIf(w -> !w.isAlive()); }
+    }
+
+    private int currentCount() {
+        synchronized (workers) { return workers.size(); }
+    }
+
+    public void shutdown() {
+        stop = true;
         interrupt();
-        join();
-    }
-
-    private synchronized void scaleTo(int desired) {
-        removeTerminatedWorkers();
-
-        int active = 0;
-        for (ManagedWorker managed : workers) {
-            if (managed.thread.isAlive() && !managed.worker.retirementRequested()) {
-                active++;
-            }
-        }
-
-        if (active < desired) {
-            for (int i = workers.size() - 1; i >= 0 && active < desired; i--) {
-                ManagedWorker managed = workers.get(i);
-                if (managed.thread.isAlive() && managed.worker.retirementRequested()) {
-                    managed.worker.cancelRetirementRequest();
-                    active++;
-                }
-            }
-            while (active < desired) {
-                startWorker();
-                active++;
-            }
-        } else if (active > desired) {
-            int toRetire = active - desired;
-            for (ManagedWorker managed : workers) {
-                if (toRetire == 0) {
-                    break;
-                }
-                if (managed.thread.isAlive() && !managed.worker.retirementRequested()
-                        && !managed.worker.isProcessing()) {
-                    managed.worker.requestRetirement();
-                    toRetire--;
-                }
-            }
-            for (int i = workers.size() - 1; i >= 0 && toRetire > 0; i--) {
-                ManagedWorker managed = workers.get(i);
-                if (managed.thread.isAlive() && !managed.worker.retirementRequested()) {
-                    managed.worker.requestRetirement();
-                    toRetire--;
-                }
-            }
-        }
-
-        int available = 0;
-        for (ManagedWorker managed : workers) {
-            if (managed.thread.isAlive()) {
-                if (!managed.worker.retirementRequested()) {
-                    available++;
-                }
-            }
-        }
-        if (available != lastLoggedActive || desired != lastLoggedTarget) {
-            logger.workerPoolChanged(available, desired);
-            lastLoggedActive = available;
-            lastLoggedTarget = desired;
+        synchronized (workers) {
+            for (DynamicWorker worker : workers) worker.requestStop();
         }
     }
 
-    private void startWorker() {
-        String name = "worker-" + (++nextWorkerId);
-        Worker worker = new Worker(name, readyQueue, resources, statistics, logger,
-                resourceTimeoutMs, true);
-        Thread thread;
-        if (virtualThreads) {
-            thread = Thread.ofVirtual().name(name).start(worker);
-        } else {
-            worker.start();
-            thread = worker;
-        }
-        workers.add(new ManagedWorker(worker, thread));
-    }
-
-    private synchronized void removeTerminatedWorkers() {
-        Iterator<ManagedWorker> iterator = workers.iterator();
-        while (iterator.hasNext()) {
-            if (!iterator.next().thread.isAlive()) {
-                iterator.remove();
+    public void awaitWorkers() throws InterruptedException {
+        while (true) {
+            synchronized (workers) {
+                boolean allDead = true;
+                for (DynamicWorker worker : workers) {
+                    worker.join(10L);
+                    if (worker.isAlive()) allDead = false;
+                }
+                if (allDead) return;
             }
-        }
-    }
-
-    private void retireAndJoinAll() {
-        List<ManagedWorker> snapshot;
-        synchronized (this) {
-            snapshot = new ArrayList<>(workers);
-            for (ManagedWorker managed : snapshot) {
-                managed.worker.requestRetirement();
-            }
-        }
-        for (ManagedWorker managed : snapshot) {
-            try {
-                managed.thread.join();
-            } catch (InterruptedException exception) {
-                Thread.currentThread().interrupt();
-                return;
-            }
-        }
-    }
-
-    private static final class ManagedWorker {
-        private final Worker worker;
-        private final Thread thread;
-
-        private ManagedWorker(Worker worker, Thread thread) {
-            this.worker = worker;
-            this.thread = thread;
         }
     }
 }

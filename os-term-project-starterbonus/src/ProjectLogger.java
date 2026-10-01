@@ -53,13 +53,8 @@ public final class ProjectLogger {
         write("SYSTEM", detail);
     }
 
-    public void workerPoolChanged(int active, int target) {
-        write("WORKER_POOL", "active=" + active + " target=" + target);
-    }
-
-    public void systemStop(int completedJobs, int cancelledJobs, int totalJobs) {
-        write("SYSTEM_STOP", "completed=" + completedJobs + " cancelled=" + cancelledJobs
-                + " total=" + totalJobs);
+    public void systemStop(int completedJobs, int totalJobs) {
+        write("SYSTEM_STOP", "completed=" + completedJobs + "/" + totalJobs);
     }
 
     // ---------- เหตุการณ์ระดับ Job ----------
@@ -74,44 +69,30 @@ public final class ProjectLogger {
         write("JOB_STARTED", "job=" + job.id + " priority=" + job.priority);
     }
 
-    public void jobResumed(Job job, int level, long remainingWorkMs) {
-        write("JOB_RESUMED", "job=" + job.id + " level=" + level
-                + " remainingWorkMs=" + remainingWorkMs);
-    }
-
-    public void jobRequeued(Job job, int level, long remainingWorkMs) {
-        write("JOB_REQUEUED", "job=" + job.id + " level=" + level
-                + " remainingWorkMs=" + remainingWorkMs);
-    }
-
     /** งานหลักเสร็จแล้ว ขั้นถัดไปคือขอใช้ทรัพยากร (ถ้ามี) */
     public void workFinished(Job job) {
         write("WORK_FINISHED", "job=" + job.id);
     }
 
     /** เริ่มรอสิทธิ์ใช้ทรัพยากร */
-    public void resourceWaitStarted(Job job, ResourceType resource) {
-        write("RESOURCE_WAIT", "job=" + job.id + " resource=" + resource);
+    public void resourceWaitStarted(Job job) {
+        write("RESOURCE_WAIT", "job=" + job.id + " resource=" + job.resource);
     }
 
     /** ได้สิทธิ์ใช้ทรัพยากรแล้ว waitedMs คือเวลาที่รออยู่ */
-    public void resourceAcquired(Job job, ResourceType resource, long waitedMs) {
+    public void resourceAcquired(Job job, long waitedMs) {
         write("RESOURCE_ACQUIRED",
-                "job=" + job.id + " resource=" + resource + " waited=" + waitedMs + "ms");
+                "job=" + job.id + " resource=" + job.resource + " waited=" + waitedMs + "ms");
     }
 
     /** คืนสิทธิ์ใช้ทรัพยากรแล้ว */
-    public void resourceReleased(Job job, ResourceType resource) {
-        write("RESOURCE_RELEASED", "job=" + job.id + " resource=" + resource);
+    public void resourceReleased(Job job) {
+        write("RESOURCE_RELEASED", "job=" + job.id + " resource=" + job.resource);
     }
 
     /** งานเสร็จสมบูรณ์ */
     public void jobCompleted(Job job) {
         write("JOB_COMPLETED", "job=" + job.id);
-    }
-
-    public void jobCancelled(Job job, String reason) {
-        write("JOB_CANCELLED", "job=" + job.id + " reason=" + reason);
     }
 
     // ---------- เหตุการณ์จาก Monitor ----------
@@ -135,8 +116,8 @@ public final class ProjectLogger {
         sb.append("job=").append(job.id)
           .append(" priority=").append(job.priority)
           .append(" work=").append(job.workMs).append("ms");
-        if (!job.resources.isEmpty()) {
-            sb.append(" resource=").append(job.resources)
+        if (job.resource != ResourceType.NONE) {
+            sb.append(" resource=").append(job.resource)
               .append('(').append(job.resourceMs).append("ms)");
         }
         return sb.toString();

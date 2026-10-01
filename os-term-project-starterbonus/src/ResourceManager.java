@@ -1,104 +1,97 @@
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
 
 /**
- * ควบคุมสิทธิ์การใช้ทรัพยากรร่วมของทั้งระบบ
+ * จัดการสิทธิ์ใช้ทรัพยากรร่วมของระบบ
  *
- * ===== ไฟล์นี้เป็นโครงเปล่า นักศึกษาต้องเขียนเอง =====
- *
- * ข้อกำหนดจากโจทย์ที่เกี่ยวกับคลาสนี้:
- * - หัวข้อ 5: ใช้ Semaphore ควบคุม PRINTER และ DATABASE
- * จำนวน permit มาจาก command line (Config)
- * ในส่วนบังคับให้สร้าง Semaphore แบบ fair = true
- * - Worker ทุกตัวต้องใช้ ResourceManager object เดียวกัน
- * - หัวข้อ 7: permit ต้องไม่สูญหายหรือค้าง แม้เกิด exception
- * หรือถูก interrupt ระหว่างถือ resource
- *
- * คำถามที่จะถูกถามใน Demo:
- * - ทำไมต้อง fair = true และถ้าเปลี่ยนเป็น false จะเกิดอะไรขึ้น
- * ตอบtrue หมายถึง Worker ที่เข้าคิวรอก่อนควรได้ permit ก่อน false หมายถึงอาจเกิดการแซงคิวได้ (มาถึงตอน permit ถูก release พอดี)
- * - ถ้า Thread ถูก interrupt หลัง acquire สำเร็จแต่ก่อน release
- * โค้ดของกลุ่มยังคืน permit ได้หรือไม่ 
- * ตอบ Semaphore ไม่คืน permit อัตโนมัติ แต่ Worker รับประกันว่าจะเรียก release() ใน finally
+ * PRINTER และ DATABASE ใช้ Semaphore คนละตัว และสร้างแบบ fair
+ * เพื่อให้การรอสิทธิ์มีลำดับที่ยุติธรรมตามคิวของ Semaphore
  */
 public class ResourceManager {
 
-    private final Semaphore printerPermits;
-    private final Semaphore databasePermits;
-    private final int printerTotal;
-    private final int databaseTotal;
+    private final int printerCapacity;
+    private final int databaseCapacity;
+    private final Semaphore printer;
+    private final Semaphore database;
 
     public ResourceManager(int printerPermits, int databasePermits) {
-        // TODO
-        this.printerPermits = new Semaphore(printerPermits, true);// fair = true เป็นข้อกำหนดของโจทย์ ช่วยให้ Worker
-                                                                  // ที่รอก่อนได้สิทธิ์ก่อน ลดโอกาสที่ Thread ใด Thread
-                                                                  // หนึ่งจะถูกแซงซ้ำ ๆ
-        this.databasePermits = new Semaphore(databasePermits, true);
-        this.printerTotal = printerPermits;
-        this.databaseTotal = databasePermits;
+        if (printerPermits < 1 || databasePermits < 1) {
+            throw new IllegalArgumentException("resource permits ต้องมีค่าตั้งแต่ 1 ขึ้นไป");
+        }
+
+        this.printerCapacity = printerPermits;
+        this.databaseCapacity = databasePermits;
+        this.printer = new Semaphore(printerPermits, true);
+        this.database = new Semaphore(databasePermits, true);
     }
 
-    /** ขอสิทธิ์ใช้ทรัพยากร จะรอจนกว่าจะได้ */
+    /**
+     * ขอสิทธิ์ใช้ทรัพยากร และ block อย่างปลอดภัยเมื่อ permit เต็ม
+     */
     public void acquire(ResourceType type) throws InterruptedException {
         switch (type) {
-            case PRINTER:
-                printerPermits.acquire();
-                break;
-            case DATABASE:
-                databasePermits.acquire();
-                break;
             case NONE:
-                break;
-        }
-    }
-
-    /** Waits up to timeoutMs for one permit; timeoutMs <= 0 means wait indefinitely. */
-    public boolean tryAcquire(ResourceType type, long timeoutMs) throws InterruptedException {
-        Semaphore semaphore = semaphoreFor(type);
-        if (semaphore == null) {
-            return true;
-        }
-        return semaphore.tryAcquire(timeoutMs, TimeUnit.MILLISECONDS);
-    }
-
-    /** คืนสิทธิ์ใช้ทรัพยากร */
-    public void release(ResourceType type) {
-        switch (type) {
+                return;
             case PRINTER:
-                printerPermits.release();
-                break;
+                printer.acquire();
+                return;
             case DATABASE:
-                databasePermits.release();
-                break;
-            case NONE:
-                break;
-        }
-    }
-
-    private Semaphore semaphoreFor(ResourceType type) {
-        switch (type) {
-            case PRINTER:
-                return printerPermits;
-            case DATABASE:
-                return databasePermits;
-            case NONE:
-                return null;
+                database.acquire();
+                return;
             default:
-                throw new IllegalArgumentException("Unsupported resource: " + type);
+                throw new IllegalArgumentException("ไม่รู้จัก resource: " + type);
+        }
+    }
+
+    /** ขอ resource แบบมีเวลารอจำกัด ใช้สำหรับ Bonus timeout/cancellation */
+    public boolean tryAcquire(ResourceType type, long timeoutMs) throws InterruptedException {
+        if (timeoutMs < 0) throw new IllegalArgumentException("timeoutMs ต้องไม่ติดลบ");
+        switch (type) {
+            case NONE:
+                return true;
+            case PRINTER:
+                return printer.tryAcquire(timeoutMs, java.util.concurrent.TimeUnit.MILLISECONDS);
+            case DATABASE:
+                return database.tryAcquire(timeoutMs, java.util.concurrent.TimeUnit.MILLISECONDS);
+            default:
+                throw new IllegalArgumentException("ไม่รู้จัก resource: " + type);
         }
     }
 
     /**
-     * ข้อความสั้น ๆ บอกสถานะการใช้ทรัพยากร สำหรับส่งให้ ProjectLogger.monitor()
-     * เช่น "printer=1/1 database=0/2"
+     * คืนสิทธิ์ใช้ทรัพยากรหลังใช้งานเสร็จ
+     */
+    public void release(ResourceType type) {
+        switch (type) {
+            case NONE:
+                return;
+            case PRINTER:
+                printer.release();
+                return;
+            case DATABASE:
+                database.release();
+                return;
+            default:
+                throw new IllegalArgumentException("ไม่รู้จัก resource: " + type);
+        }
+    }
+
+    /**
+     * snapshot แบบสั้นสำหรับ Monitor/Log
+     * used/total = จำนวนที่กำลังถูกใช้งาน / จำนวน permit ทั้งหมด
      */
     public String status() {
-        int printerUsed = printerTotal - printerPermits.availablePermits();
-        int databaseUsed = databaseTotal - databasePermits.availablePermits();
+        int printerUsed = printerCapacity - printer.availablePermits();
+        int databaseUsed = databaseCapacity - database.availablePermits();
+        return String.format("printer=%d/%d database=%d/%d",
+                printerUsed, printerCapacity,
+                databaseUsed, databaseCapacity);
+    }
 
-        return String.format(
-                "printer=%d/%d database=%d/%d",
-                printerUsed, printerTotal,
-                databaseUsed, databaseTotal);
+    public int printerInUse() {
+        return printerCapacity - printer.availablePermits();
+    }
+
+    public int databaseInUse() {
+        return databaseCapacity - database.availablePermits();
     }
 }
