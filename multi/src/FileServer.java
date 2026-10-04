@@ -8,6 +8,9 @@ import java.nio.channels.SocketChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.HexFormat;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -50,18 +53,26 @@ public class FileServer {
         }
     }
 
-    private static void handleClient(SocketChannel channel) {// channel คือ connection ที่ได้จาก serverChannel.accept() ใช้รับส่งข้อมูลกับ Client คนนั้นโดยเฉพาะ
-        try (SocketChannel ch = channel;// ch อ้างถึง connection เดิม ไม่ได้เปิด connection ใหม่
-             InputStream rawIn = Channels.newInputStream(ch);// rawIn ใช้อ่าน bytes ที่ Client ส่งมา
-             OutputStream out = Channels.newOutputStream(ch)) {// out ใช้ส่ง bytes กลับไปหา Client
+    /** จัดการคำขอทั้งหมดจาก client หนึ่งรายผ่าน connection ที่รับมาจาก accept(). */
+    private static void handleClient(SocketChannel channel) {
+        // เปิด stream สำหรับอ่านและเขียนผ่าน connection เดิม; try-with-resources จะปิดทั้งหมดเมื่อจบเมธอด
+        try (SocketChannel ch = channel;
+             InputStream rawIn = Channels.newInputStream(ch);
+             OutputStream out = Channels.newOutputStream(ch)) {
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(rawIn, StandardCharsets.UTF_8));//
+            // แปลง bytes ที่รับมาเป็นข้อความ UTF-8 เพื่ออ่านคำสั่งซึ่งจบแต่ละบรรทัดด้วย newline
+            BufferedReader reader = new BufferedReader(new InputStreamReader(rawIn, StandardCharsets.UTF_8));
             String line;
+            // อ่านคำสั่งต่อไปเรื่อย ๆ จน client ปิด connection (readLine() คืนค่า null)
             while ((line = reader.readLine()) != null) {
+                // ข้ามบรรทัดว่าง ไม่ต้องส่งไปประมวลผล
                 if (line.isBlank()) continue;
+
+                // ส่งคำสั่งไปยัง handler ที่ตรงกับชนิดคำขอ เช่น LIST, INFO หรือ GET
                 handleCommand(line, out, ch);
             }
         } catch (IOException e) {
+            // บันทึกปัญหาการรับส่งข้อมูล เช่น client ตัดการเชื่อมต่อหรือเกิดข้อผิดพลาดระหว่างอ่าน/เขียน
             System.out.println("Client disconnected/error: " + e.getMessage());
         }
     }
@@ -101,7 +112,8 @@ public class FileServer {
             sendError(out, 404, "File not found");
             return;
         }
-        out.write(("SIZE " + Files.size(file) + "\n").getBytes(StandardCharsets.UTF_8));
+        out.write(("SIZE " + Files.size(file) + " SHA256 " + sha256(file) + "\n")
+                .getBytes(StandardCharsets.UTF_8));
         out.flush();
     }
 
@@ -173,6 +185,22 @@ public class FileServer {
         Path candidate = rootDir.resolve(name).normalize();
         if (!candidate.startsWith(rootDir)) return null;
         return candidate;
+    }
+
+    private static String sha256(Path file) throws IOException {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] buffer = new byte[64 * 1024];
+            try (InputStream in = Files.newInputStream(file)) {
+                int n;
+                while ((n = in.read(buffer)) != -1) {
+                    digest.update(buffer, 0, n);
+                }
+            }
+            return HexFormat.of().formatHex(digest.digest());
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-256 is unavailable", e);
+        }
     }
 }
 /*Server ทำหน้าที่ **รอรับคำขอและส่งไฟล์ให้ Client ผ่าน TCP** โดยทำงานคร่าว ๆ ดังนี้ครับ:
