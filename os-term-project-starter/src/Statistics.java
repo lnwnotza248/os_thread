@@ -18,8 +18,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * ส่วนงานที่ resource = NONE ให้ถือว่า Resource Wait เป็น 0
  */
 public class Statistics {
-    private final AtomicInteger running = new AtomicInteger();
-    private final AtomicInteger completed = new AtomicInteger();
+    private int ready;
+    private int running;
+    private int completed;
     private final AtomicLong totalWaiting = new AtomicLong();
     private final AtomicLong totalTurnaround = new AtomicLong();
     private final AtomicLong totalResourceWait = new AtomicLong();
@@ -31,8 +32,19 @@ public class Statistics {
         this.allCompleted = new CountDownLatch(totalJobs);
     }
 
+    /** บันทึกว่างานหนึ่งชิ้นถูกส่งเข้า Ready Queue */
+    public synchronized void jobQueued() {
+        ready++;
+    }
+
+    /** ย้ายงานหนึ่งชิ้นจาก Ready Queue ไปเป็นงานที่กำลังทำ */
+    public synchronized void jobStarted() {
+        ready--;
+        running++;
+    }
+
     /** บันทึกว่างานชิ้นหนึ่งเสร็จแล้ว เรียกโดย Worker หลายตัวพร้อมกันได้ */
-    public void recordCompletion(Job job) {
+    public synchronized void recordCompletion(Job job) {
         totalWaiting.addAndGet(job.waitingTime());
         totalTurnaround.addAndGet(job.turnaroundTime());
 
@@ -41,7 +53,8 @@ public class Statistics {
             resourceJobCount.incrementAndGet();
         }
 
-        completed.incrementAndGet();
+        running--;
+        completed++;
         allCompleted.countDown();
     }
 
@@ -51,20 +64,35 @@ public class Statistics {
     }
 
     /** จำนวนงานที่เสร็จแล้ว ใช้โดย Monitor และใช้ตรวจว่างานครบหรือยัง */
-    public int completedCount() {
-        return completed.get();
+    public synchronized int completedCount() {
+        return completed;
     }
-    public void jobStarted() {
-    running.incrementAndGet();
-}
 
-public void jobFinished() {
-    running.decrementAndGet();
-}
+    /** ลด running เมื่องานถูกขัดจังหวะหรือทำไม่สำเร็จก่อนบันทึก completion */
+    public synchronized void jobFinished() {
+        running--;
+    }
 
-public int runningCount() {
-    return running.get();
-}
+    public synchronized int runningCount() {
+        return running;
+    }
+
+    /** อ่าน ready, running และ completed ภายใต้ lock เดียวกัน */
+    public synchronized Snapshot snapshot() {
+        return new Snapshot(ready, running, completed);
+    }
+
+    public static final class Snapshot {
+        public final int ready;
+        public final int running;
+        public final int completed;
+
+        private Snapshot(int ready, int running, int completed) {
+            this.ready = ready;
+            this.running = running;
+            this.completed = completed;
+        }
+    }
 
     /**
      * พิมพ์ตารางสรุปผลตอนจบโปรแกรม
@@ -75,7 +103,10 @@ public int runningCount() {
      * และ Throughput อย่างน้อย 2 ตำแหน่งทศนิยม
      */
     public void printSummary(List<Job> allJobs, long makespanMs) {
-        int count = completed.get();
+        int count;
+        synchronized (this) {
+            count = completed;
+        }
 
         long avgWaiting = count == 0 ? 0 : totalWaiting.get() / count;
         long avgTurnaround = count == 0 ? 0 : totalTurnaround.get() / count;
@@ -96,4 +127,3 @@ public int runningCount() {
                 + avgResourceWait + " ms");
     }
 }
-

@@ -37,11 +37,14 @@ public class Worker extends Thread {
         try {
             while (!isInterrupted()) {
                 Job job = readyQueue.take();
-                statistics.jobStarted();
+                boolean completed = false;
                 try {
                     processJob(job);
+                    completed = true;
                 } finally {
-                    statistics.jobFinished();
+                    if (!completed) {
+                        statistics.jobFinished();
+                    }
                 }
             }
         } catch (InterruptedException exception) {

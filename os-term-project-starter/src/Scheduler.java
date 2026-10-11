@@ -1,4 +1,4 @@
-
+import java.util.concurrent.BlockingQueue;
 /**
  * รับงานจาก JobGenerator แล้วจัดเข้า Ready Queue
  *
@@ -10,9 +10,10 @@
  *
  * ข้อควรคิด:
  *   - Scheduler รับงานจาก JobGenerator ผ่านอะไร และรอโดยไม่กิน CPU อย่างไร
+ * ผ่าน BlockingQueue<Job> ชื่อ schedulerQueue และรอโดย take() จะ พัก Scheduler ไว้ จนมี Job เข้ามา จึงไม่ต้องวนเช็คคิวและไม่กิน CPU ระหว่างรอ
  *   - เมื่อ JobGenerator ปล่อยงานครบแล้ว Scheduler รู้ได้อย่างไรว่าควรหยุด
+ * Scheduler จะหยุดเมื่อได้รับงานครบตามจำนวนที่กำหนด (jobCount)
  */
-import java.util.concurrent.BlockingQueue;
 
 public class Scheduler extends Thread {
 

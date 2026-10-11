@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-
 /**
  * จุดเริ่มต้นของโปรแกรม
  *
@@ -52,10 +51,10 @@ public class Main {
         ResourceManager resources = new ResourceManager(
                 config.printerPermits,
                 config.databasePermits);
-        // TODO: สร้าง ReadyQueue ตามนโยบายใน config
-        ReadyQueue readyQueue = new ReadyQueue(config.policy);
         // TODO: สร้าง Statistics
         Statistics statistics = new Statistics(jobs.size());
+        // ReadyQueue ใช้ Statistics lock ร่วมกับ Monitor เพื่ออัปเดต snapshot
+        ReadyQueue readyQueue = new ReadyQueue(config.policy, statistics);
 
         BlockingQueue<Job> schedulerQueue = new LinkedBlockingQueue<>();
         // ---------- 4. สร้างและเริ่ม Thread ----------
@@ -75,7 +74,7 @@ public class Main {
         Scheduler scheduler = new Scheduler(schedulerQueue, readyQueue, jobs.size(), logger);
         scheduler.start();
         // TODO: สร้างและ start Monitor
-        Monitor monitor = new Monitor(readyQueue, resources, statistics, logger);
+        Monitor monitor = new Monitor(resources, statistics, logger);
         monitor.start();
         // TODO: สร้างและ start JobGenerator
         JobGenerator jobGenerator = new JobGenerator(jobs, schedulerQueue, logger);
