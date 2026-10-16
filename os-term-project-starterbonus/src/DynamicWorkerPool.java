@@ -38,7 +38,7 @@ public final class DynamicWorkerPool extends Thread {
         try {
             while (!stopping) {
                 int desired = dynamicSizing
-                        ? Math.max(1, Math.min(maxWorkers, readyQueue.size()))
+                        ? Math.max(1, Math.min(maxWorkers, readyQueue.size())) // Scale based on the current ready queue size
                         : maxWorkers;
                 scaleTo(desired);
                 Thread.sleep(100);

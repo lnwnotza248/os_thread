@@ -21,7 +21,7 @@ public class Scheduler extends Thread {
     // หมายเหตุ: constructor ด้านล่างยังไม่มี parameter สำหรับ "ช่องทางรับงาน"
     // ให้เพิ่มเข้าไปให้ตรงกับที่ออกแบบไว้ใน JobGenerator
     // เพิ่ม parameter ได้ แต่อย่าเปลี่ยนชื่อคลาส
-    private final BlockingQueue<Job> schedulerQueue;
+    private final BlockingQueue<Job> schedulerQueue; // ช่องทางรับงานจาก JobGenerator
     private final ReadyQueue readyQueue;
     private final ProjectLogger logger;
     private final int jobCount;
@@ -39,7 +39,7 @@ public class Scheduler extends Thread {
         // TODO: วนรับงานเข้ามาแล้วใส่ ReadyQueue จนกว่าจะได้รับสัญญาณให้หยุด
         try {
             for (int i = 0; i < jobCount; i++) {
-                Job job = schedulerQueue.take();
+                Job job = schedulerQueue.take();//ไม่กิน CPU ขณะรอรับงาน
                 readyQueue.add(job);
             }
         } catch (InterruptedException exception) {

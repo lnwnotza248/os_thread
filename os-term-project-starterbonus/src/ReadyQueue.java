@@ -61,7 +61,8 @@ public class ReadyQueue {
             }
             notEmpty.signal();
         } finally {
-            lock.unlock();
+            lock.unlock();// ปลดล็อกหลังจากเพิ่มงานเข้าคิวแล้ว เพื่อให้ Worker ที่รออยู่สามารถเข้าถึงคิวได้
+        
         }
     }
 
@@ -81,20 +82,20 @@ public class ReadyQueue {
         try {
             while (isEmpty()) {
                 if (timeoutMs <= 0) {
-                    notEmpty.await();
-                } else if (notEmpty.await(timeoutMs, TimeUnit.MILLISECONDS) == false) {
+                    notEmpty.await();// รอจนกว่าจะมีงานเข้าคิว
+                } else if (notEmpty.await(timeoutMs, TimeUnit.MILLISECONDS) == false) {// รอจนกว่าจะมีงานเข้าคิวหรือ timeout
                     return null;
                 }
             }
-
+            
             if (policy == Config.Policy.MLFQ) {
                 for (List<Job> levelQueue : mlfqQueues) {
-                    if (!levelQueue.isEmpty()) {
+                    if (!levelQueue.isEmpty()) {// เลือกงานแรกจากระดับ แรกที่ไม่ว่างเปล่า
                         return levelQueue.remove(0);
                     }
                 }
             }
-            int nextIndex = policy == Config.Policy.FCFS ? 0 : findHighestPriorityJob();
+            int nextIndex = policy == Config.Policy.FCFS ? 0 : findHighestPriorityJob();// หาตำแหน่งงานที่มี priority สูงสุดในคิว
             return queue.remove(nextIndex).job;
         } finally {
             lock.unlock();
@@ -137,11 +138,11 @@ public class ReadyQueue {
         lock.lock();
         try {
             job.remainingWorkMs = remainingWorkMs;
-            job.mlfqLevel = Math.min(job.mlfqLevel + 1, MLFQ_QUANTA_MS.length - 1);
-            logger.jobRequeued(job, job.mlfqLevel, remainingWorkMs);
-            mlfqQueues.get(job.mlfqLevel).add(job);
-            notEmpty.signal();
-            return job.mlfqLevel;
+            job.mlfqLevel = Math.min(job.mlfqLevel + 1, MLFQ_QUANTA_MS.length - 1);// เลื่อนงานไปยังระดับถัดไปของ MLFQ แต่ไม่เกินระดับสูงสุด
+            logger.jobRequeued(job, job.mlfqLevel, remainingWorkMs);// บันทึกการ requeue งาน
+            mlfqQueues.get(job.mlfqLevel).add(job);// เพิ่มงานกลับเข้าคิว MLFQ ในระดับที่ถูกเลื่อนลง
+            notEmpty.signal();// แจ้งให้ Worker ที่รออยู่ทราบว่ามีงานใหม่เข้าคิวแล้ว
+            return job.mlfqLevel;// คืนระดับ MLFQ ของงานที่ถูก requeue
         } finally {
             lock.unlock();
         }
@@ -159,7 +160,7 @@ public class ReadyQueue {
         return true;
     }
 
-    private int findHighestPriorityJob() {
+    private int findHighestPriorityJob() { // หาตำแหน่งงานที่มี priority สูงสุดในคิว
         long now = System.nanoTime();
         int bestIndex = 0;
         QueuedJob best = queue.get(0);
@@ -179,7 +180,7 @@ public class ReadyQueue {
         return bestIndex;
     }
 
-    private long effectivePriority(QueuedJob queuedJob, long now) {
+    private long effectivePriority(QueuedJob queuedJob, long now) {// คำนวณ priority ที่แท้จริงของงานโดยพิจารณา aging
         if (!agingEnabled) {
             return queuedJob.job.priority;
         }

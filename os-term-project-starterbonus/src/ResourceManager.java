@@ -74,7 +74,7 @@ public class ResourceManager {
                 break;
         }
     }
-
+ //จับคู่ว่า ResourceType ไหนตรงกับ Semaphore ไหน
     private Semaphore semaphoreFor(ResourceType type) {
         switch (type) {
             case PRINTER:

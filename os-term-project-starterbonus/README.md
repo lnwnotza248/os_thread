@@ -62,7 +62,7 @@ dynamic worker pool, virtual threads, resource timeout และ multi-resource 
 ## 2. ลองรันดูก่อน
 
 ```bash
-cd src
+cd cd C:\Users\not24\OneDrive\Desktop\os-term-project-starterbonus
 javac *.java
 java Main ../workloads/jobs_standard.csv priority 3 1 2
 ```

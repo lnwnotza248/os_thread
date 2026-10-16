@@ -60,7 +60,7 @@ public class Job {
         this.workMs = workMs;
         List<ResourceType> orderedResources = new ArrayList<>(resources);
         orderedResources.sort(Comparator.comparingInt(Enum::ordinal));
-        for (int i = 0; i < orderedResources.size(); i++) {
+        for (int i = 0; i < orderedResources.size(); i++) { // ตรวจสอบว่า resource ไม่มีซ้ำและไม่ใช่ NONE
             ResourceType resource = orderedResources.get(i);
             if (resource == ResourceType.NONE || (i > 0 && resource == orderedResources.get(i - 1))) {
                 throw new IllegalArgumentException("Resource list must contain distinct real resources");

@@ -51,7 +51,7 @@ public class Worker extends Thread {
     public void run() {
         try {
             while (!Thread.currentThread().isInterrupted()) {
-                if (retirementRequested) {
+                if (retirementRequested) { // ออกเมื่อมีการร้องขอเกษียณ
                     break;
                 }
                 Job job = dynamicPolling ? readyQueue.take(100) : readyQueue.take();
@@ -94,7 +94,7 @@ public class Worker extends Thread {
         }
 
         if (readyQueue.isMlfq()) {
-            long quantumMs = readyQueue.timeQuantumMs(job);
+            long quantumMs = readyQueue.timeQuantumMs(job);// 
             long workSliceMs = Math.min(job.remainingWorkMs, quantumMs);
             Thread.sleep(workSliceMs);
             long remainingWorkMs = job.remainingWorkMs - workSliceMs;
@@ -133,11 +133,11 @@ public class Worker extends Thread {
                         waitedMs = logger.now() - waitStart;
                         job.resourceWaitMs += waitedMs;
                     }
-                    if (obtained) {
-                        acquired.add(resource);
+                    if (obtained) { // 
+                        acquired.add(resource);// เพิ่ม resource ที่ได้มาแล้วลงในรายการ acquired
                     } else {
                         String releasedResources = acquired.toString();
-                        releaseAcquired(job, acquired);
+                        releaseAcquired(job, acquired); // คืนทรัพยากรที่ได้มาแล้วทั้งหมด
                         job.completionTime = logger.now();
                         logger.jobCancelled(job, "resource-timeout=" + resource
                                 + " released=" + releasedResources);
