@@ -36,11 +36,14 @@ java -cp out GenerateTestFile shared_files\sample.bin 52428800
 java -cp out FileServer
 ```
 
-ค่าเริ่มต้นคือ port `9000` และโฟลเดอร์ `shared_files` โดยอ้างอิงจากโฟลเดอร์ที่ใช้รันคำสั่ง หากต้องการกำหนดเอง:
+ค่าเริ่มต้นคือ port `9000`, โฟลเดอร์ `shared_files` (อ้างอิงจากโฟลเดอร์ที่ใช้รันคำสั่ง) และ Server แบบ `NIO` หากต้องการกำหนด port, โฟลเดอร์ หรือโหมด Server เอง:
 
 ```powershell
-java -cp out FileServer 9000 shared_files
+java -cp out FileServer 9000 shared_files io
+java -cp out FileServer 9000 shared_files nio
 ```
+
+เลือกโหมดได้เป็น `io` หรือ `nio` (ไม่สนตัวพิมพ์เล็ก/ใหญ่) โดยค่าเริ่มต้นเป็น `nio` เพื่อรักษาพฤติกรรมเดิม Server แสดงจำนวน connection ของ Client ที่กำลังทำงานในรูปแบบ `Active client connections: <จำนวน>`
 
 ### 3. ใช้ Client
 
@@ -57,13 +60,14 @@ java -cp out FileClient localhost 9000 info sample.bin
 java -cp out FileClient localhost 9000 hash sample.bin
 
 # ดาวน์โหลดด้วย 4 workers และโหมด traditional
-java -cp out FileClient localhost 9000 download sample.bin downloads\sample.bin 4 traditional
+java -cp out FileClient localhost 9000 download sample.bin C:\multi\downloads\test.mp4 4 traditional
 
 # ดาวน์โหลดด้วย 4 workers และโหมด zerocopy
 java -cp out FileClient localhost 9000 download sample.bin downloads\sample-zerocopy.bin 4 zerocopy
 ```
 
 Client แบ่งไฟล์เป็น byte ranges ที่ไม่ซ้อนกัน ให้แต่ละ worker ดาวน์โหลดผ่าน connection ของตัวเอง จากนั้นเขียนแต่ละช่วงลงตำแหน่งที่ถูกต้องในไฟล์ปลายทาง พร้อมรายงานเวลา ความเร็ว และตรวจ SHA-256 ของไฟล์ที่ดาวน์โหลดเทียบกับต้นฉบับบน Server
+ระหว่างดาวน์โหลด Client แสดงเปอร์เซ็นต์และจำนวนไบต์ของแต่ละช่วง เช่น `Downloading: worker 1/4 - 50% (bytes/total bytes)`
 
 ## รัน benchmark
 
